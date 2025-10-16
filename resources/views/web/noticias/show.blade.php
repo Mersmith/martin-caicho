@@ -90,7 +90,7 @@
                                 @foreach ($otrosPosts as $post)
                                     <div class="post_item">
                                         <a href="{{ route('noticias.show', $post->slug) }}">
-                                            <img src="{{ $post->image }}">
+                                            <img src="{{ $post->imagen }}">
                                             <p class="titulo">{{ $post->titulo }}</p>
                                             <p class="fecha">{{ $post->created_at->format('d M Y') }}</p>
                                             <p class="descripcion">{{ $post->contenido }}</p>
