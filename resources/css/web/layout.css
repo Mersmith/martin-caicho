@@ -1,3 +1,39 @@
-.layout-web main{
+.layout-web main {
     margin-top: 80px;
+}
+
+.g_contenedor_pagina {
+    background-color: var(--color-fondo-pagina);
+}
+
+.g_centrar_pagina {
+    margin: 0 auto;
+    max-width: var(--ancho-centrar-pagina);
+    width: 100%;
+}
+
+.g_pading_pagina {
+    padding: 10px;
+}
+
+.g_gap_pagina {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.g_margin_top_40 {
+    margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+
+    .g_gap_pagina {
+        gap: 20px;
+    }
+
+    .g_margin_top_40 {
+        margin-top: 20px;
+    }
+
 }
