@@ -1,11 +1,106 @@
 @extends('layouts.app')
 
-@section('titulo', $noticia->titulo)
-
 @section('contenido')
-    <h1 class="text-3xl font-bold mb-4">{{ $noticia->titulo }}</h1>
-    <img src="{{ $noticia->imagen }}" alt="" class="w-full rounded mb-4">
-    <div class="prose max-w-none">
-        {!! $noticia->contenido !!}
+    <div class="g_contenedor_pagina">
+        <div class="g_centrar_pagina">
+            <div class="g_pading_pagina g_gap_pagina">
+
+                <div class="g_grid_pagina_2_columnas">
+
+                    <!-- COLUMNA 1: Post principal -->
+                    <div class="g_grid_columna_1">
+                        <article class="g_card_panel contenedor_post">
+
+                            <!-- Título -->
+                            <h1 class="titulo">{{ $post->titulo }}</h1>
+
+                            <!-- AUTOR -->
+                            <a class="contenedor_autor" href=" ">
+
+                                <div class="imagen">
+
+                                    <img src="{{ asset('assets/imagen/default.jpg') }}">
+
+                                </div>
+
+                                <div class="datos">
+                                    <p> Nombre </p>
+                                    <span> Cargo</span>
+                                </div>
+                            </a>
+
+                            <!-- FECHA -->
+                            <div class="fecha">
+                                <i class="fa-solid fa-clock"></i>
+                                @php
+                                    use Carbon\Carbon;
+                                    setlocale(LC_TIME, 'es_ES.UTF-8'); // Establece español
+                                    $fecha = Carbon::parse($post->created_at)->translatedFormat('d M Y');
+                                @endphp
+
+                                <span>{{ $fecha }}</span>
+                            </div>
+
+                            @php
+                                // Reemplaza todos los <oembed> por <iframe>
+                                $contenido = preg_replace_callback(
+                                    '/<oembed url="([^"]+)"><\/oembed>/i',
+                                    function ($matches) {
+                                        $url = $matches[1];
+
+                                        // Extraer el ID del video de YouTube
+                                        if (preg_match('/(?:v=|\/)([a-zA-Z0-9_-]{11})/', $url, $id)) {
+                                            $videoId = $id[1];
+                                            return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' .
+                                                $videoId .
+                                                '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                                        }
+
+                                        return '';
+                                    },
+                                    $post->contenido,
+                                );
+                            @endphp
+
+                            <div class="contenido_post">
+                                {!! $contenido !!}
+                            </div>
+
+                        </article>
+
+                        <div class="g_card_panel g_card_partial_column">
+                          
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA 2: Sidebar o contenido adicional -->
+                    <div class="g_grid_columna_2">
+                        @if ($otrosPosts->count())
+                            <div class="contenedor_lista_post">
+                                <h3 class="g_texto_nivel_1">Más publicaciones </h3>
+
+                                @foreach ($otrosPosts as $post)
+                                    <div class="post_item">
+                                        <a href="{{ route('noticias.show', $post->slug) }}">
+                                            <img src="{{ $post->image }}">
+                                            <p class="titulo">{{ $post->titulo }}</p>
+                                            <p class="fecha">{{ $post->created_at->format('d M Y') }}</p>
+                                            <p class="descripcion">{{ $post->contenido }}</p>
+                                        </a>
+                                    </div>
+                                @endforeach
+
+                                <!-- links de paginación -->
+                                <div class="paginacion">
+                                    {{ $otrosPosts->links() }}
+                                </div>
+                            </div>
+                        @endif
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
