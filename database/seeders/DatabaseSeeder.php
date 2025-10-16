@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         Menu::create(['nombre' => 'Contacto', 'slug' => 'contacto', 'pagina_id' => $contacto->id, 'orden' => 4]);
 
         // Noticias
-        Noticia::factory(5)->create(['candidato_id' => $candidato->id]);
+        Noticia::factory(15)->create(['candidato_id' => $candidato->id]);
 
         // Slider
         Slider::factory()->create([

@@ -14,9 +14,7 @@ class HomeController extends Controller
 
         $sliders = $this->getWebSlidersPrincipal();
 
-        //dd($sliders);
-
-        $noticias = Noticia::where('estado', true)->latest()->take(3)->get();
+        $noticias = $this->getNoticias();
 
         return view('web.home', compact('candidato', 'sliders', 'noticias'));
     }
@@ -30,6 +28,21 @@ class HomeController extends Controller
         return [
             'id' => $consulta_id,
             'imagenes' => $data,
+        ];
+    }
+
+    public function getNoticias()
+    {
+        $consulta_id = 1;
+
+        $titulo = 'Noticias';
+
+        $data = Noticia::where('estado', true)->latest()->take(6)->get();
+
+        return [
+            'id' => $consulta_id,
+            'titulo' => $titulo,
+            'posts' => $data,
         ];
     }
 }

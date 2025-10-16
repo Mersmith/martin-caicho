@@ -24,7 +24,7 @@ class NoticiaFactory extends Factory
             'titulo' => $titulo,
             'slug' => Str::slug($titulo),
             'contenido' => $this->faker->paragraphs(6, true),
-            'imagen' => 'https://via.placeholder.com/800x400.png?text=Noticia',
+            'imagen' => 'https://joselunagalvez.pe/wp-content/uploads/2023/07/Biografia-Jose-Luna-galvez.png.webp',
             'publicado_en' => now(),
             'estado' => true,
         ];
