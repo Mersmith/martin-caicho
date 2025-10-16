@@ -19,14 +19,17 @@ class NoticiaFactory extends Factory
     public function definition(): array
     {
         $titulo = $this->faker->sentence(6);
+        $contenido = $this->faker->sentence(6);
         return [
             'candidato_id' => Candidato::inRandomOrder()->first()?->id,
             'titulo' => $titulo,
             'slug' => Str::slug($titulo),
-            'contenido' => $this->faker->paragraphs(6, true),
+            'contenido' => $contenido,
             'imagen' => 'https://joselunagalvez.pe/wp-content/uploads/2023/07/Biografia-Jose-Luna-galvez.png.webp',
             'publicado_en' => now(),
             'estado' => true,
+            'meta_title' => $titulo,
+            'meta_description' => $contenido,
         ];
     }
 }

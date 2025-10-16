@@ -69,7 +69,15 @@
                         </article>
 
                         <div class="g_card_panel g_card_partial_column">
-                          
+                            @include('partials.social-share', [
+                                'url' => url()->current(),
+                                'title' => $post->titulo ?? 'VotaXmi',
+                                'description' =>
+                                    $post->meta_description ?? 'Participa y apoya a tu candidato favorito.',
+                                'image' => $post->imagen
+                                    ? url($post->imagen)
+                                    : asset('assets/imagen/default.jpg'),
+                            ])
                         </div>
                     </div>
 

@@ -11,8 +11,8 @@ class Noticia extends Model
     use HasFactory;
 
     protected $fillable = [
-        'candidato_id', 'titulo', 'slug', 'contenido', 'imagen', 'publicado_en', 'estado'
-    ];
+        'candidato_id', 'titulo', 'slug', 'contenido', 'imagen', 'publicado_en', 'estado', 'meta_title',
+        'meta_description', 'views'];
 
     public function candidato()
     {
