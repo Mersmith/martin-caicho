@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="@yield('descripcion')">
+
     <title>@yield('titulo', 'Candidato')</title>
 
     <!-- SCRIPTS -->
@@ -12,11 +16,11 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-50">
+<body>
 
     @include('partials.header')
 
-    <main class="container mx-auto py-6">
+    <main>
         @yield('contenido')
     </main>
 

@@ -11,11 +11,11 @@ use App\Http\Controllers\{
 };
 
 // 🏠 Página principal
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');//pagina personalizada
 
 // 📰 Noticias
-Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.index');
-Route::get('/noticias/{slug}', [NoticiaController::class, 'show'])->name('noticias.show');
+Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.index');//pagina personalizada
+Route::get('/noticias/{slug}', [NoticiaController::class, 'show'])->name('noticias.show');//pagina personalizada
 
 // 📄 Páginas informativas (Nosotros, Contacto, etc.)
 Route::get('/{slug}', [PaginaController::class, 'show'])->name('pagina');

@@ -3,20 +3,31 @@
     $menus = Menu::whereNull('parent_id')->where('estado', true)->orderBy('orden')->get();
 @endphp
 
-<header class="bg-white shadow">
-    <div class="container mx-auto flex justify-between items-center py-4">
-        <a href="{{ route('home') }}" class="font-bold text-xl">Candidato</a>
+<header class="web-header">
+    <div class="header-container">
+        <a href="{{ route('home') }}" class="logo">Candidato</a>
 
-        <nav class="flex space-x-6">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
             @foreach ($menus as $menu)
                 @if ($menu->pagina)
-                    <a href="{{ route('pagina', $menu->pagina->slug) }}"
-                        class="hover:text-blue-600">{{ $menu->nombre }}</a>
+                    <a href="{{ $menu->pagina->slug }}" class="nav-link">
+                        {{ $menu->nombre }}
+                    </a>
                 @elseif($menu->url)
-                    <!-- Existe Menu url, pero no existe página o no esta asignada -->
-                    <a href="{{ url($menu->url) }}" class="hover:text-blue-600">GA {{ $menu->nombre }}</a>
+                    <a href="{{ url($menu->url) }}" class="nav-link">{{ $menu->nombre }}</a>
                 @endif
             @endforeach
         </nav>
     </div>
 </header>
+
+<script>
+    // Muestra / oculta menú en móviles
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.toggle('active');
+    });
+</script>
