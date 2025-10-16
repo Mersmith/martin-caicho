@@ -16,7 +16,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body class="layout-web">
 
     @include('partials.header')
 

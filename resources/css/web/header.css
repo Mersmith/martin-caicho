@@ -13,7 +13,8 @@
 }
 
 /* Contenedor general */
-.header-container {
+.web-header .web-header-container {
+    height: 80px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 14px 20px;
@@ -23,7 +24,7 @@
 }
 
 /* Logo */
-.logo {
+.web-header .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #004aad;
@@ -31,18 +32,18 @@
     transition: color 0.3s ease;
 }
 
-.logo:hover {
+.web-header .logo:hover {
     color: #0077ff;
 }
 
 /* Navegación */
-.nav-menu {
+.web-header .web-nav-menu {
     display: flex;
     gap: 24px;
 }
 
 /* Enlaces */
-.nav-link {
+.web-header .nav-link {
     text-decoration: none;
     color: #333333;
     font-weight: 500;
@@ -50,14 +51,14 @@
     padding: 8px 4px;
 }
 
-.nav-link:hover {
+.web-header .nav-link:hover {
     color: #0077ff;
 }
 
 /* ================================
    MÓVIL
 ================================ */
-.menu-toggle {
+.web-header .web-menu-toggle {
     background: none;
     border: none;
     font-size: 26px;
@@ -68,11 +69,11 @@
 
 /* En móviles */
 @media (max-width: 768px) {
-    .menu-toggle {
+    .web-header .web-menu-toggle {
         display: block;
     }
 
-    .nav-menu {
+    .web-header .web-nav-menu {
         position: absolute;
         top: 60px;
         left: 0;
@@ -86,18 +87,18 @@
         transition: max-height 0.3s ease-in-out;
     }
 
-    .nav-menu.active {
+    .web-header .web-nav-menu.active {
         max-height: 300px;
         /* muestra el menú */
     }
 
-    .nav-link {
+    .web-header .nav-link {
         display: block;
         padding: 12px 20px;
         border-bottom: 1px solid #f0f0f0;
     }
 
-    .nav-link:hover {
+    .web-header .nav-link:hover {
         background-color: #f5f5f5;
     }
 }

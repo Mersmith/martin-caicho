@@ -4,14 +4,14 @@
 @endphp
 
 <header class="web-header">
-    <div class="header-container">
+    <div class="web-header-container">
         <a href="{{ route('home') }}" class="logo">Candidato</a>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <button class="web-menu-toggle" id="web-menu-toggle" aria-label="Abrir menú">
             ☰
         </button>
 
-        <nav class="nav-menu" id="nav-menu">
+        <nav class="web-nav-menu" id="web-nav-menu">
             @foreach ($menus as $menu)
                 @if ($menu->pagina)
                     <a href="{{ $menu->pagina->slug }}" class="nav-link">
@@ -27,7 +27,7 @@
 
 <script>
     // Muestra / oculta menú en móviles
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-        document.getElementById('nav-menu').classList.toggle('active');
+    document.getElementById('web-menu-toggle').addEventListener('click', () => {
+        document.getElementById('web-nav-menu').classList.toggle('active');
     });
 </script>
