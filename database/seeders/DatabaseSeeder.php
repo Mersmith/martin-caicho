@@ -50,7 +50,15 @@ class DatabaseSeeder extends Seeder
         Noticia::factory(5)->create(['candidato_id' => $candidato->id]);
 
         // Slider
-        Slider::factory(3)->create();
+        Slider::factory()->create([
+            'imagen_computadora' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e95e4fb_sliders-computadora-1.jpg',
+            'imagen_movil' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e975476_sliders-movil.jpg',
+        ]);
+
+        Slider::factory()->create([
+            'imagen_computadora' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e93cb15_sliders-computadora%20-%202.jpg',
+            'imagen_movil' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e98823e_sliders-movil-2.jpg',
+        ]);
 
         // Mensajes de prueba
         Mensaje::factory(3)->create();

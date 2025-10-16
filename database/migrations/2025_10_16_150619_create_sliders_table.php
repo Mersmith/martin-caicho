@@ -16,7 +16,8 @@ return new class extends Migration
 
             $table->string('titulo')->nullable();
             $table->string('subtitulo')->nullable();
-            $table->string('imagen')->nullable();
+            $table->string('imagen_computadora')->nullable();
+            $table->string('imagen_movil')->nullable();
             $table->string('enlace')->nullable();
             $table->integer('orden')->default(0);
             $table->boolean('estado')->default(true);
