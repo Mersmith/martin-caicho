@@ -11,6 +11,7 @@
 
 .partials_contenedor_slider_post .swiper-wrapper {
     display: flex;
+    padding: 40px 0px;
 }
 
 .partials_contenedor_slider_post .swiper-slide {
@@ -35,9 +36,9 @@
     padding: 10px;
     box-sizing: border-box;
     height: 320px;
-    border: 1px solid #e0e0e0;
+    border: var(--borde-card);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--color-blanco);
     overflow: hidden;
     box-shadow: var(--sombra);
 }
@@ -59,14 +60,14 @@
 .post_imagen_contenedor p.fecha {
     margin: 2px 0;
     font-size: 12px;
-    color: #666;
+    color: var(--color-negro);
 }
 
 /* Descripción: máximo 3 líneas */
 .post_imagen_contenedor p.descripcion {
     margin: 5px 0;
     font-size: 13px;
-    color: #444;
+    color: var(--color-negro);
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -82,53 +83,4 @@
     /*margin-top: auto;*/
     border-radius: 4px;
     flex-shrink: 0;
-}
-
-
-/* CONTROLES */
-.partials_contenedor_slider_post .swiper-button-next,
-.partials_contenedor_slider_post .swiper-button-prev {
-    background: transparent;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    color: var(--color-control-slider-texto);
-}
-
-.partials_contenedor_slider_post .swiper-button-next:hover,
-.partials_contenedor_slider_post .swiper-button-prev:hover {
-    background: var(--fondo-control-slider-fondo);
-    color: var(--color-control-slider-texto-hover);
-}
-
-.partials_contenedor_slider_post .swiper-button-next:after,
-.partials_contenedor_slider_post .swiper-button-prev:after {
-    font-size: 16px;
-}
-
-.partials_contenedor_slider_post .swiper-button-prev {
-    left: 10px;
-    box-shadow: var(--sombra-control-slider-izquierda)
-}
-
-.partials_contenedor_slider_post .swiper-button-next {
-    right: 10px;
-    box-shadow: var(--sombra-control-slider-derecha)
-}
-
-/* SLIDER THUMBNAILS */
-.partials_contenedor_slider_post .swiper-pagination {
-    position: initial;
-}
-
-.partials_contenedor_slider_post .swiper-pagination-bullet {
-    background-color: var(--fondo-control-slider-fondo);
-    width: 8px;
-    height: 8px;
-    opacity: 1;
-    border-radius: 50%;
-}
-
-.partials_contenedor_slider_post .swiper-pagination-bullet-active {
-    background-color: var(--fondo-control-slider-fondo-active);
 }

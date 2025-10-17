@@ -14,19 +14,15 @@
                         <div class="swiper-slide">
                             <a href="{{ route('noticias.show', $post->slug) }}">
                                 <div class="post_imagen_contenedor">
-                                 
                                     <img src="{{ $post->imagen }}">
                                     <p class="titulo">{{ $post->titulo }}</p>
                                     <p class="fecha">{{ $post->created_at->format('d M Y') }}</p>
                                     <p class="descripcion">{{ $post->contenido }}</p>
                                 </div>
-
                             </a>
                         </div>
                     @endforeach
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </div>
 
@@ -34,22 +30,24 @@
             var swiper = new Swiper('.SwiperSliderPost-{{ $p_elemento['id'] }}', {
                 slidesPerView: 3.5, // 👈 muestra 3 completos + un poco del siguiente
                 spaceBetween: 10, // espacio entre slides
-                navigation: {
-                    nextEl: '.SwiperSliderPost-{{ $p_elemento['id'] }} .swiper-button-next',
-                    prevEl: '.SwiperSliderPost-{{ $p_elemento['id'] }} .swiper-button-prev',
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
                 },
-             
+                loop: true,
+                grabCursor: true,
+
                 breakpoints: {
                     1024: {
-                        slidesPerView: 4.5, // 👈 más grande en desktop
+                        slidesPerView: 3.5,
                         spaceBetween: 15,
                     },
-                    700: {
-                        slidesPerView: 3.2,
+                    768: {
+                        slidesPerView: 2.5,
                         spaceBetween: 10,
                     },
                     0: {
-                        slidesPerView: 2.2,
+                        slidesPerView: 1.2,
                         spaceBetween: 5,
                     }
                 }
