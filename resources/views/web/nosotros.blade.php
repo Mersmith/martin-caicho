@@ -4,6 +4,7 @@
 
 @section('contenido')
 
+    @include('partials.banner', ['imagenUrl' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg', 'titulo' => 'Nosotros'])
 
     <div class="g_centrar_pagina">
         <div class="g_pading_pagina g_gap_pagina g_margin_top_40">
@@ -92,6 +93,7 @@
                     </div>
                 </div>
 
+                @include('partials.bloque-3')
 
             </div>
 
@@ -99,6 +101,8 @@
 
         </div>
     </div>
+
+    @include('partials.call-to-action')
 
 
 @endsection
