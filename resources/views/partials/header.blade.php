@@ -3,22 +3,22 @@
     $menus = Menu::whereNull('parent_id')->where('estado', true)->orderBy('orden')->get();
 @endphp
 
-<header class="web-header">
-    <div class="web-header-container">
+<header class="web_header">
+    <div class="web_header_cuerpo">
         <a href="{{ route('home') }}" class="logo">Candidato</a>
 
-        <button class="web-menu-toggle" id="web-menu-toggle" aria-label="Abrir menú">
+        <button class="web_menu_toggle" id="web_menu_toggle" aria-label="Abrir menú">
             ☰
         </button>
 
-        <nav class="web-nav-menu" id="web-nav-menu">
+        <nav class="web_nav_menu" id="web_nav_menu">
             @foreach ($menus as $menu)
                 @if ($menu->pagina)
-                    <a href="{{ $menu->pagina->slug }}" class="nav-link">
+                    <a href="{{ $menu->pagina->slug }}" class="nav_link">
                         {{ $menu->nombre }}
                     </a>
                 @elseif($menu->url)
-                    <a href="{{ url($menu->url) }}" class="nav-link">{{ $menu->nombre }}</a>
+                    <a href="{{ url($menu->url) }}" class="nav_link">{{ $menu->nombre }}</a>
                 @endif
             @endforeach
         </nav>
@@ -27,7 +27,7 @@
 
 <script>
     // Muestra / oculta menú en móviles
-    document.getElementById('web-menu-toggle').addEventListener('click', () => {
-        document.getElementById('web-nav-menu').classList.toggle('active');
+    document.getElementById('web_menu_toggle').addEventListener('click', () => {
+        document.getElementById('web_nav_menu').classList.toggle('active');
     });
 </script>

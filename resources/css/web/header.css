@@ -1,7 +1,7 @@
 /* ================================
    HEADER PRINCIPAL
 ================================ */
-.web-header {
+.web_header {
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -13,7 +13,7 @@
 }
 
 /* Contenedor general */
-.web-header .web-header-container {
+.web_header .web_header_cuerpo {
     height: 80px;
     max-width: 1200px;
     margin: 0 auto;
@@ -24,7 +24,7 @@
 }
 
 /* Logo */
-.web-header .logo {
+.web_header .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #004aad;
@@ -32,18 +32,18 @@
     transition: color 0.3s ease;
 }
 
-.web-header .logo:hover {
+.web_header .logo:hover {
     color: #0077ff;
 }
 
 /* Navegación */
-.web-header .web-nav-menu {
+.web_header .web_nav_menu {
     display: flex;
     gap: 24px;
 }
 
 /* Enlaces */
-.web-header .nav-link {
+.web_header .nav_link {
     text-decoration: none;
     color: #333333;
     font-weight: 500;
@@ -51,14 +51,14 @@
     padding: 8px 4px;
 }
 
-.web-header .nav-link:hover {
+.web_header .nav_link:hover {
     color: #0077ff;
 }
 
 /* ================================
    MÓVIL
 ================================ */
-.web-header .web-menu-toggle {
+.web_header .web_menu_toggle {
     background: none;
     border: none;
     font-size: 26px;
@@ -69,11 +69,11 @@
 
 /* En móviles */
 @media (max-width: 768px) {
-    .web-header .web-menu-toggle {
+    .web_header .web_menu_toggle {
         display: block;
     }
 
-    .web-header .web-nav-menu {
+    .web_header .web_nav_menu {
         position: absolute;
         top: 60px;
         left: 0;
@@ -87,18 +87,18 @@
         transition: max-height 0.3s ease-in-out;
     }
 
-    .web-header .web-nav-menu.active {
+    .web_header .web_nav_menu.active {
         max-height: 300px;
         /* muestra el menú */
     }
 
-    .web-header .nav-link {
+    .web_header .nav_link {
         display: block;
         padding: 12px 20px;
         border-bottom: 1px solid #f0f0f0;
     }
 
-    .web-header .nav-link:hover {
+    .web_header .nav_link:hover {
         background-color: #f5f5f5;
     }
 }

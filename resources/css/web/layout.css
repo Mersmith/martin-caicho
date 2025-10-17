@@ -6,6 +6,12 @@
     background-color: var(--color-fondo-pagina);
 }
 
+.g_container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .g_centrar_pagina {
     margin: 0 auto;
     max-width: var(--ancho-centrar-pagina);
