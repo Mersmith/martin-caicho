@@ -5,10 +5,12 @@
 
 <header class="web_header">
     <div class="web_header_cuerpo">
-        <a href="{{ route('home') }}" class="logo">Candidato</a>
+        <a href="{{ route('home') }}">
+            <img class="logo" src="http://127.0.0.1:8000/assets/imagen/logo.png" alt="Logo">
+        </a>
 
         <button class="web_menu_toggle" id="web_menu_toggle" aria-label="Abrir menú">
-            ☰
+            <i class="fa-solid fa-bars"></i>
         </button>
 
         <nav class="web_nav_menu" id="web_nav_menu">

@@ -1,9 +1,6 @@
-/* ================================
-   HEADER PRINCIPAL
-================================ */
 .web_header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra);
     position: fixed;
     width: 100%;
     top: 0;
@@ -12,10 +9,9 @@
     transition: all 0.3s ease;
 }
 
-/* Contenedor general */
 .web_header .web_header_cuerpo {
-    height: 80px;
-    max-width: 1200px;
+    height: var(--alto-header-web);
+    max-width: var(--ancho-centrar-pagina);
     margin: 0 auto;
     padding: 14px 20px;
     display: flex;
@@ -23,51 +19,36 @@
     align-items: center;
 }
 
-/* Logo */
 .web_header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #004aad;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    height: 50px;
 }
 
-.web_header .logo:hover {
-    color: #0077ff;
-}
-
-/* Navegación */
 .web_header .web_nav_menu {
     display: flex;
     gap: 24px;
 }
 
-/* Enlaces */
 .web_header .nav_link {
     text-decoration: none;
-    color: #333333;
+    color: var(--color-negro);
     font-weight: 500;
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 8px 4px;
 }
 
 .web_header .nav_link:hover {
-    color: #0077ff;
+    color: var(--color-verde);
 }
 
-/* ================================
-   MÓVIL
-================================ */
 .web_header .web_menu_toggle {
     background: none;
     border: none;
-    font-size: 26px;
+    font-size: 22px;
     cursor: pointer;
-    color: #333;
+    color: var(--color-negro);
     display: none;
 }
 
-/* En móviles */
 @media (max-width: 768px) {
     .web_header .web_menu_toggle {
         display: block;
@@ -77,28 +58,27 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #ffffff;
+        background-color: var(--color-blanco);
         width: 100%;
         flex-direction: column;
         gap: 0;
         max-height: 0;
         overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--sombra);
         transition: max-height 0.3s ease-in-out;
     }
 
     .web_header .web_nav_menu.active {
         max-height: 300px;
-        /* muestra el menú */
     }
 
     .web_header .nav_link {
         display: block;
         padding: 12px 20px;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: var(--borde-card);
     }
 
     .web_header .nav_link:hover {
-        background-color: #f5f5f5;
+        background-color: var(--color-plomo);
     }
 }
