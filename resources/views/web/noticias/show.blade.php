@@ -3,13 +3,13 @@
 @section('contenido')
     <div class="g_contenedor_pagina">
         <div class="g_centrar_pagina">
-            <div class="g_pading_pagina g_gap_pagina">
+            <div class="g_pading_pagina g_gap_pagina contenedor_post">
 
-                <div class="g_grid_pagina_2_columnas">
+                <div class="grid">
 
                     <!-- COLUMNA 1: Post principal -->
-                    <div class="g_grid_columna_1">
-                        <article class="g_card_panel contenedor_post">
+                    <div class="grid_1">
+                        <article>
 
                             <!-- Título -->
                             <h1 class="titulo">{{ $post->titulo }}</h1>
@@ -68,32 +68,27 @@
 
                         </article>
 
-                        <div class="g_card_panel g_card_partial_column">
-                            @include('partials.social-share', [
-                                'url' => url()->current(),
-                                'title' => $post->titulo ?? 'VotaXmi',
-                                'description' =>
-                                    $post->meta_description ?? 'Participa y apoya a tu candidato favorito.',
-                                'image' => $post->imagen
-                                    ? url($post->imagen)
-                                    : asset('assets/imagen/default.jpg'),
-                            ])
-                        </div>
+                        @include('partials.social-share', [
+                            'url' => url()->current(),
+                            'title' => $post->titulo ?? 'VotaXmi',
+                            'description' =>
+                                $post->meta_description ?? 'Participa y apoya a tu candidato favorito.',
+                            'image' => $post->imagen ? url($post->imagen) : asset('assets/imagen/default.jpg'),
+                        ])
                     </div>
 
                     <!-- COLUMNA 2: Sidebar o contenido adicional -->
-                    <div class="g_grid_columna_2">
+                    <div class="grid_2">
                         @if ($otrosPosts->count())
                             <div class="contenedor_lista_post">
-                                <h3 class="g_texto_nivel_1">Más publicaciones </h3>
 
                                 @foreach ($otrosPosts as $post)
-                                    <div class="post_item">
+                                    <div class="post_imagen_contenedor">
                                         <a href="{{ route('noticias.show', $post->slug) }}">
                                             <img src="{{ $post->imagen }}">
-                                            <p class="titulo">{{ $post->titulo }}</p>
+                                            <p class="titulo">{{ $post->meta_title }}</p>
                                             <p class="fecha">{{ $post->created_at->format('d M Y') }}</p>
-                                            <p class="descripcion">{{ $post->contenido }}</p>
+                                            <p class="descripcion">{{ $post->meta_description }}</p>
                                         </a>
                                     </div>
                                 @endforeach
@@ -104,7 +99,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
 
                 </div>
