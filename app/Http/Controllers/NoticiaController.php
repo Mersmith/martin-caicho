@@ -17,7 +17,7 @@ class NoticiaController extends Controller
         $post = Noticia::where('slug', $slug)->where('estado', true)->firstOrFail();
 
         $otrosPosts = Noticia::where('estado', true)->latest()
-            ->paginate(5);
+            ->simplePaginate(5);
 
         return view('web.noticias.show', compact('post', 'otrosPosts'));
     }
