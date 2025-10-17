@@ -1,0 +1,33 @@
+/* ALERTAS GENERALES */
+.alert-success,
+.alert-error {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ÉXITO */
+.alert-success {
+    background-color: #e6f9ed;
+    border: 1px solid #3bb54a;
+    color: #256d35;
+}
+
+/* ERROR */
+.alert-error {
+    background-color: #fdeaea;
+    border: 1px solid #e63946;
+    color: #a4161a;
+}
+
+/* ÍCONO OPCIONAL (si usas fontawesome) */
+.alert-success i,
+.alert-error i {
+    font-size: 18px;
+}

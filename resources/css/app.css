@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './variables.css';
+@import './alertas.css';
 @import './redes.css';
 @import './web/layout.css';
 @import './web/header.css';
@@ -8,6 +9,7 @@
 @import './web/slider-post.css';
 @import './web/code.css';
 @import './web/post.css';
+@import './web/contacto.css';
 @import './web/bloque-1.css';
 @import './web/bloque-2.css';
 @import './web/call-to-action.css';

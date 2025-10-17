@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     HomeController,
     PaginaController,
     NoticiaController,
-    ContactoController
+    MensajeController
 };
 
 // 🏠 Página principal
@@ -17,12 +17,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');//pagina persona
 Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.index');//pagina personalizada
 Route::get('/noticias/{slug}', [NoticiaController::class, 'show'])->name('noticias.show');//pagina personalizada
 
+// ✉️ Contacto (formulario)
+Route::get('/contacto', [MensajeController::class, 'index'])->name('contacto.index');//pagina personalizada
+Route::post('/contacto/enviar', [MensajeController::class, 'enviar'])->name('contacto.enviar');
+
 // 📄 Páginas informativas (Nosotros, Contacto, etc.)
 Route::get('/{slug}', [PaginaController::class, 'show'])->name('pagina');
-
-// ✉️ Contacto (formulario)
-Route::post('/contacto/enviar', [ContactoController::class, 'enviar'])->name('contacto.enviar');
-
 
 /*Route::get('/', function () {
     return view('welcome');

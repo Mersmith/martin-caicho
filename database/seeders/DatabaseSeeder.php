@@ -37,14 +37,15 @@ class DatabaseSeeder extends Seeder
         // Páginas informativas
         //$inicio = Pagina::factory()->create(['titulo' => 'Inicio', 'slug' => 'inicio']);
         $nosotros = Pagina::factory()->create(['titulo' => 'Nosotros', 'slug' => 'nosotros']);
-        $contacto = Pagina::factory()->create(['titulo' => 'Contacto', 'slug' => 'contacto']);
+        //$contacto = Pagina::factory()->create(['titulo' => 'Contacto', 'slug' => 'contacto']);
 
         // Menú principal
         //Menu::create(['nombre' => 'Inicio', 'slug' => 'inicio', 'pagina_id' => $inicio->id, 'orden' => 1]);
         Menu::create(['nombre' => 'Inicio', 'slug' => 'inicio', 'url' => '/', 'orden' => 1]);
         Menu::create(['nombre' => 'Nosotros', 'slug' => 'nosotros', 'pagina_id' => $nosotros->id, 'orden' => 2]);
         Menu::create(['nombre' => 'Noticias', 'slug' => 'noticias', 'url' => '/noticias', 'orden' => 3]);
-        Menu::create(['nombre' => 'Contacto', 'slug' => 'contacto', 'pagina_id' => $contacto->id, 'orden' => 4]);
+        //Menu::create(['nombre' => 'Contacto', 'slug' => 'contacto', 'pagina_id' => $contacto->id, 'orden' => 4]);
+        Menu::create(['nombre' => 'Contacto', 'slug' => 'contacto', 'url' => '/contacto', 'orden' => 4]);
 
         // Noticias
         Noticia::factory(15)->create(['candidato_id' => $candidato->id]);
