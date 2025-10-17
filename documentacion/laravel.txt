@@ -9,6 +9,7 @@ php artisan make:model Mensaje -mfsc
 php artisan make:model Imagen -mfsc
 
 php artisan make:controller HomeController
+php artisan make:controller NosotrosController
 php artisan make:controller CandidatoController
 php artisan make:controller PaginaController
 php artisan make:controller MenuController

@@ -9,21 +9,21 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--sombra);
 }
 
 /* ÉXITO */
 .alert-success {
-    background-color: #e6f9ed;
-    border: 1px solid #3bb54a;
-    color: #256d35;
+    background-color: var(--color-plomo);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
 }
 
 /* ERROR */
 .alert-error {
-    background-color: #fdeaea;
-    border: 1px solid #e63946;
-    color: #a4161a;
+    background-color: var(--color-plomo);
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
 }
 
 /* ÍCONO OPCIONAL (si usas fontawesome) */

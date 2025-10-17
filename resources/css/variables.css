@@ -14,6 +14,9 @@
     --color-plomo: #F8F8FA;/**/
     --color-gris: #E3E3E3;/**/
     --color-celeste: #009bdb;/**/
+    --color-placeholder: #888787;/**/
+    --color-error: #b81010;/**/
+    --color-success: #3bb54a;/**/
 
     --sombra: 0 6px 20px rgba(0, 0, 0, 0.15);/**/
     --sombra-secundario-izquierda: 2px 0 5px -2px rgba(0, 0, 0, 0.2);

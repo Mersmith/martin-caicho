@@ -5,6 +5,7 @@ use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\{
     HomeController,
+    NosotrosController,
     PaginaController,
     NoticiaController,
     MensajeController
@@ -12,6 +13,8 @@ use App\Http\Controllers\{
 
 // 🏠 Página principal
 Route::get('/', [HomeController::class, 'index'])->name('home');//pagina personalizada
+
+Route::get('/nosotros', [NosotrosController::class, 'index'])->name('nosotros.index');//pagina personalizada
 
 // 📰 Noticias
 Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.index');//pagina personalizada

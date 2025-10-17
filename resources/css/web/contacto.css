@@ -59,7 +59,7 @@
 
 .contacto_grid .contacto_formulario input::placeholder,
 .contacto_grid .contacto_formulario textarea::placeholder {
-    color: #999;
+    color: var(--color-placeholder);
     font-size: 0.95rem;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .contacto_grid .contacto_formulario .error {
-    color: red;
+    color: var(--color-error);
     font-size: 13px;
     margin-top: -6px;
     text-align: start;
