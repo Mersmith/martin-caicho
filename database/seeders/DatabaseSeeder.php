@@ -51,13 +51,13 @@ class DatabaseSeeder extends Seeder
 
         // Slider
         Slider::factory()->create([
-            'imagen_computadora' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e95e4fb_sliders-computadora-1.jpg',
-            'imagen_movil' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e975476_sliders-movil.jpg',
+            'imagen_computadora' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg',
+            'imagen_movil' => 'http://127.0.0.1:8000/assets/imagen/sliders-movil-1.jpg',
         ]);
 
         Slider::factory()->create([
-            'imagen_computadora' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e93cb15_sliders-computadora%20-%202.jpg',
-            'imagen_movil' => 'https://storage.googleapis.com/votaxmi-imagenes/images/689c37e98823e_sliders-movil-2.jpg',
+            'imagen_computadora' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-2.jpg',
+            'imagen_movil' => 'http://127.0.0.1:8000/assets/imagen/sliders-movil-2.jpg',
         ]);
 
         // Mensajes de prueba

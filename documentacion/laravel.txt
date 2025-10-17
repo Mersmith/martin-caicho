@@ -16,3 +16,7 @@ php artisan make:controller NoticiaController
 php artisan make:controller SliderController
 php artisan make:controller MensajeController
 php artisan make:controller ImagenController
+
+php artisan migrate:fresh --seed
+
+php artisan storage:link

@@ -16,7 +16,9 @@ class HomeController extends Controller
 
         $noticias = $this->getNoticias();
 
-        return view('web.home', compact('candidato', 'sliders', 'noticias'));
+        $imagenes = $this->getImagenes();
+
+        return view('web.home', compact('candidato', 'sliders', 'noticias', 'imagenes'));
     }
 
     public function getWebSlidersPrincipal()
@@ -43,6 +45,37 @@ class HomeController extends Controller
             'id' => $consulta_id,
             'titulo' => $titulo,
             'posts' => $data,
+        ];
+    }
+
+    public function getImagenes()
+    {
+        $consulta_id = 1;
+
+        $titulo = 'Imagenes';
+
+        $data = [
+            [
+                'id' => 1,
+                'titulo' => 'Imagen 1',
+                'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+            ],
+            [
+                'id' => 2,
+                'titulo' => 'Imagen 2',
+                'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+            ],
+            [
+                'id' => 3,
+                'titulo' => 'Imagen 3',
+                'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+            ],
+        ];
+
+        return [
+            'id' => $consulta_id,
+            'titulo' => $titulo,
+            'imagenes' => $data,
         ];
     }
 }
