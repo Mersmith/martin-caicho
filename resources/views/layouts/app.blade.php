@@ -30,10 +30,13 @@
     @include('components.header')
 
     <main>
+        @include('partials.back-to-top')
         @yield('contenido')
     </main>
 
     @include('components.footer')
+
+    @livewireScripts
 </body>
 
 </html>

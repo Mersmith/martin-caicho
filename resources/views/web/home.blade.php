@@ -12,19 +12,37 @@
                 @include('partials.encabezado', [
                     'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
                     'descripcion' => 'Protege tu hogar, empresa o industria con nuestros servicios especializados.
-                                                                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
-                                                                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
+                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
+                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
                 ])
 
-                @include('partials.bloque-1')
+                @include('partials.bloque-1', [
+                    'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                    'alt' => 'Servicio de Fumigación',
+                    'titulo' => 'Soluciones <span>profesionales</span> para tu tranquilidad',
+                    'descripcion' =>
+                        'Ofrecemos servicios especializados en fumigación, limpieza y desinfección para hogares y empresas.',
+                    'items' => [
+                        ['icono' => 'fa-solid fa-bug', 'texto' => 'Control de plagas y fumigación garantizada'],
+                        [
+                            'icono' => 'fa-solid fa-shield-virus',
+                            'texto' => 'Desinfección de ambientes y superficies',
+                        ],
+                        ['icono' => 'fa-solid fa-broom', 'texto' => 'Limpieza profunda para hogares y empresas'],
+                        ['icono' => 'fa-solid fa-pump-soap', 'texto' => 'Sanitización con productos certificados'],
+                    ],
+                    'boton_link' => 'https://wa.me/51924218321',
+                    'boton_texto' => 'Solicita tu servicio ahora',
+                ])
+
             </div>
 
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
                     'titulo' => 'Fumigación, Desinfección, Limpieza y Sanitización',
                     'descripcion' => 'Te ofrecemos soluciones al alcance de tus manos: fumigación efectiva e integral, servicios preventivos,
-                                                                                      limpieza y desinfección industrial. Con la calidad y confianza que nos caracteriza, también te brindamos el
-                                                                                      mejor catálogo en productos nacionales e importados.',
+                                      limpieza y desinfección industrial. Con la calidad y confianza que nos caracteriza, también te brindamos el
+                                      mejor catálogo en productos nacionales e importados.',
                 ])
 
                 @include('partials.bloque-2', ['p_elemento' => $imagenes])

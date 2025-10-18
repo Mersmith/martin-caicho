@@ -7,6 +7,7 @@
 @import './web/code.css';
 @import './web/components/header.css';
 @import './web/components/footer.css';
+@import './web/partials/back-to-top.css';
 @import './web/partials/titulo-encabezado.css';
 @import './web/partials/slider-principal.css';
 @import './web/partials/slider-post.css';
