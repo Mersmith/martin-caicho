@@ -9,14 +9,37 @@
     <div class="g_centrar_pagina">
         <div class="g_pading_pagina g_gap_pagina g_margin_top_40">
 
+            @include('partials.encabezado', [
+                'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
+                'descripcion' => 'Protege tu hogar, empresa o industria con nuestros servicios especializados.
+                                              Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
+                                              seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
+            ])
+
             @include('partials.bloque-1')
+
+            @include('partials.encabezado', [
+                'titulo' => 'Fumigación, Desinfección, Limpieza y Sanitización',
+                'descripcion' => 'Te ofrecemos soluciones al alcance de tus manos: fumigación efectiva e integral, servicios preventivos,
+                                              limpieza y desinfección industrial. Con la calidad y confianza que nos caracteriza, también te brindamos el
+                                              mejor catálogo en productos nacionales e importados.',
+            ])
 
             @include('partials.bloque-2', ['p_elemento' => $imagenes])
 
         </div>
     </div>
 
-    @include('partials.call-to-action')
+    @include('partials.call-to-action', [
+        'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
+        'titulo' => 'Protege tu hogar y tu negocio',
+        'subtitulo' =>
+            'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
+        'negrita' => '¡Confía en expertos certificados!',
+        'link' => '/contacto',
+        'boton' => '¡Cotiza Ahora!',
+    ])
+
 
     <div class="g_centrar_pagina">
         <div class="g_pading_pagina g_gap_pagina g_margin_top_40">
