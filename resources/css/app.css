@@ -15,5 +15,6 @@
 @import './web/partials/banner.css';
 @import './web/partials/call-to-action.css';
 @import './web/paginas/nosotros.css';
-@import './web/paginas/post.css';
 @import './web/paginas/contacto.css';
+@import './web/paginas/post.css';
+@import './web/paginas/noticias.css';

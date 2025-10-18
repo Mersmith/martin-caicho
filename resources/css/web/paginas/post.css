@@ -93,10 +93,11 @@
     background-color: var(--color-blanco);
     overflow: hidden;
     box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contenedor_lista_post .post_imagen_contenedor:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .contenedor_lista_post .post_imagen_contenedor img {

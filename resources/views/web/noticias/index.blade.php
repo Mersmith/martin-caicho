@@ -3,20 +3,32 @@
 @section('titulo', 'Noticias')
 
 @section('contenido')
-    <h1 class="text-3xl font-bold mb-6">Noticias</h1>
+    <div class="g_centrar_pagina">
+        <div class="g_pading_pagina g_gap_pagina">
 
-    <div class="grid md:grid-cols-3 gap-4">
-        @foreach($noticias as $noticia)
-            <div class="bg-white p-4 rounded shadow">
-                <img src="{{ $noticia->imagen }}" alt="" class="rounded mb-2">
-                <h3 class="font-semibold text-lg">{{ $noticia->titulo }}</h3>
-                <p class="text-sm text-gray-600">{{ Str::limit(strip_tags($noticia->contenido), 100) }}</p>
-                <a href="{{ route('noticias.show', $noticia->slug) }}" class="text-blue-600 text-sm">Leer más</a>
+            <div class="g_contenedor_columna">
+                @include('partials.encabezado', [
+                    'titulo' => 'Noticias',
+                ])
+
+                <div class="partials_contenedor_grid_post">
+                    <div class="grid_noticias">
+                        @foreach ($noticias as $noticia)
+                            <a href="{{ route('noticias.show', $noticia->slug) }}" class="post_imagen_contenedor">
+                                <img src="{{ $noticia->imagen }}" alt="{{ $noticia->titulo }}">
+                                <p class="titulo">{{ $noticia->titulo }}</p>
+                                <p class="descripcion">{{ Str::limit(strip_tags($noticia->contenido), 100) }}</p>
+                                <p class="fecha">{{ $noticia->created_at->format('d M Y') }}</p>
+                            </a>
+                        @endforeach
+                    </div>
+
+                    <div class="paginacion">
+                        {{ $noticias->links() }}
+                    </div>
+                </div>
             </div>
-        @endforeach
-    </div>
 
-    <div class="mt-6">
-        {{ $noticias->links() }}
+        </div>
     </div>
 @endsection

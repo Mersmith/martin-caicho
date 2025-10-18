@@ -81,7 +81,6 @@
                     <div class="grid_2">
                         @if ($otrosPosts->count())
                             <div class="contenedor_lista_post">
-
                                 @foreach ($otrosPosts as $post)
                                     <div class="post_imagen_contenedor">
                                         <a href="{{ route('noticias.show', $post->slug) }}">
@@ -92,11 +91,11 @@
                                         </a>
                                     </div>
                                 @endforeach
+                            </div>
 
-                                <!-- links de paginación -->
-                                <div class="paginacion">
-                                    {{ $otrosPosts->links() }}
-                                </div>
+                            <!-- links de paginación -->
+                            <div class="paginacion">
+                                {{ $otrosPosts->links() }}
                             </div>
                         @endif
                     </div>
