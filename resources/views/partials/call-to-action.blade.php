@@ -2,7 +2,7 @@
     <img class="imagen" src="{{ asset($imagen) }}" alt="{{ $titulo }}">
 
     <div class="cuerpo">
-        <div class="g_container">
+        <div class="g_centrar_pagina">
             <h2>{{ $titulo }}</h2>
             <p>{{ $subtitulo }}</p>
             @if (!empty($negrita))

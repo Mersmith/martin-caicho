@@ -4,34 +4,26 @@
 
 @section('contenido')
 
-    @include('partials.banner', ['imagenUrl' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg', 'titulo' => 'Nosotros'])
+    @include('partials.banner', [
+        'imagenUrl' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg',
+        'titulo' => 'Nosotros',
+    ])
 
     <div class="g_centrar_pagina">
-        <div class="g_pading_pagina g_gap_pagina g_margin_top_40">
-
-
+        <div class="g_pading_pagina g_gap_pagina">
             <div class="g_contenedor_columna">
-                <!-- Introducción -->
-                <div class="g_encabezado">
-                    <h2>Líderes en control de plagas y <span>seguridad ambiental</span> en el Perú</h2>
-                    <p>
-                        Más de 20 años <strong> protegiendo hogares, empresas e industrias</strong> con servicios de
-                        fumigación,
-                        desinfección y
-                        control integral. Contamos con <strong>especialistas certificados</strong>, equipos de última
-                        tecnología
-                        y soluciones
-                        efectivas para garantizar ambientes seguros y saludables.
-                    </p>
-                </div>
+                @include('partials.encabezado', [
+                    'titulo' => 'Líderes en control de plagas y <span>seguridad ambiental</span> en el Perú',
+                    'descripcion' => ' Más de 20 años <strong> protegiendo hogares, empresas e industrias</strong> con servicios de
+                                        fumigación,
+                                        desinfección y
+                                        control integral. Contamos con <strong>especialistas certificados</strong>, equipos de última
+                                        tecnología
+                                        y soluciones
+                                        efectivas para garantizar ambientes seguros y saludables.',
+                ])
 
-                <!-- Razones para elegirnos -->
                 <div class="razones_section">
-                    <div class="g_encabezado">
-                        <h2>¿Por qué elegirnos?</h2>
-                    </div>
-
-                    <!-- Grid de columnas alternadas -->
                     <div class="grid-columna invertir_movil">
                         <div class="imagen">
                             <img src="http://127.0.0.1:8000/assets/imagen/default.jpg" alt="Especialistas">
@@ -94,22 +86,20 @@
                 </div>
 
                 @include('partials.bloque-3')
-
             </div>
-
-
-
         </div>
     </div>
 
-    @include('partials.call-to-action', [
-        'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-        'titulo' => 'Protege tu hogar y tu negocio',
-        'subtitulo' =>
-            'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
-        'negrita' => '¡Confía en expertos certificados!',
-        'link' => '/contacto',
-        'boton' => '¡Cotiza Ahora!',
-    ])
-
+    <div class="g_margin_top_70">
+        @include('partials.call-to-action', [
+            'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
+            'titulo' => 'Protege tu hogar y tu negocio',
+            'subtitulo' =>
+                'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
+            'negrita' => '¡Confía en expertos certificados!',
+            'link' => '/contacto',
+            'boton' => '¡Cotiza Ahora!',
+        ])
+    </div>
+    
 @endsection

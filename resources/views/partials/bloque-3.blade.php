@@ -1,4 +1,4 @@
-<div class="contenedor_3">
+<div class="bloque_3">
     <div class="card">
         <i class="fa-solid fa-bullseye"></i>
         <h2>Misión</h2>
