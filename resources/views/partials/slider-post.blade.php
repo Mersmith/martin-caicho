@@ -23,7 +23,7 @@
     <script>
         var swiper = new Swiper('.SwiperSliderPost-{{ $p_elemento['id'] }}', {
             slidesPerView: 3.5, // 👈 muestra 3 completos + un poco del siguiente
-            spaceBetween: 10, // espacio entre slides
+            spaceBetween: 20, // espacio entre slides
             autoplay: {
                 delay: 3500,
                 disableOnInteraction: false,
@@ -34,15 +34,15 @@
             breakpoints: {
                 1024: {
                     slidesPerView: 3.5,
-                    spaceBetween: 15,
+                    spaceBetween: 20,
                 },
                 768: {
                     slidesPerView: 2.5,
-                    spaceBetween: 10,
+                    spaceBetween: 20,
                 },
                 0: {
                     slidesPerView: 1.2,
-                    spaceBetween: 5,
+                    spaceBetween: 20,
                 }
             }
         });

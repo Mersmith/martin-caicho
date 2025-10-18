@@ -15,12 +15,12 @@
                 @include('partials.encabezado', [
                     'titulo' => 'Líderes en control de plagas y <span>seguridad ambiental</span> en el Perú',
                     'descripcion' => ' Más de 20 años <strong> protegiendo hogares, empresas e industrias</strong> con servicios de
-                                        fumigación,
-                                        desinfección y
-                                        control integral. Contamos con <strong>especialistas certificados</strong>, equipos de última
-                                        tecnología
-                                        y soluciones
-                                        efectivas para garantizar ambientes seguros y saludables.',
+                                       fumigación,
+                                       desinfección y
+                                       control integral. Contamos con <strong>especialistas certificados</strong>, equipos de última
+                                       tecnología
+                                       y soluciones
+                                       efectivas para garantizar ambientes seguros y saludables.',
                 ])
 
                 <div class="razones_section">
@@ -85,7 +85,29 @@
                     </div>
                 </div>
 
-                @include('partials.bloque-3')
+                @include('partials.bloque-3', [
+                    'cards' => [
+                        [
+                            'icono' => 'fa-solid fa-bullseye',
+                            'titulo' => 'Misión',
+                            'descripcion' =>
+                                'Nuestra misión principal es brindar soluciones integrales de cuidado del medio ambiente y generar una cultura de seguridad y salud ocupacional.',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-eye',
+                            'titulo' => 'Visión',
+                            'descripcion' =>
+                                'Ser líderes en servicios integrales de fumigación, desinfección y limpieza profesional, destacando por calidad y confianza.',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-handshake',
+                            'titulo' => 'Valores',
+                            'descripcion' =>
+                                'Compromiso, responsabilidad, excelencia y confianza como pilares en cada servicio que ofrecemos.',
+                        ],
+                    ],
+                ])
+
             </div>
         </div>
     </div>
@@ -101,5 +123,5 @@
             'boton' => '¡Cotiza Ahora!',
         ])
     </div>
-    
+
 @endsection
