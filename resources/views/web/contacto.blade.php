@@ -4,13 +4,13 @@
 
 @section('contenido')
     <div class="g_centrar_pagina">
-        <div class="g_pading_pagina g_gap_pagina g_margin_top_40">
+        <div class="g_pading_pagina g_gap_pagina">
 
             <div class="g_contenedor_columna">
-                <div class="g_encabezado">
-                    <h2>Contácte y <span>trabajemos</span> juntos!</h2>
-                </div>
-
+                @include('partials.encabezado', [
+                    'titulo' => 'Contácte y <span>trabajemos</span> juntos!',
+                ])
+              
                 <div class="contacto_grid">
                     <!-- INFORMACIÓN -->
                     <div class="contacto_info">

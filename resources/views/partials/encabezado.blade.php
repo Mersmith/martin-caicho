@@ -1,4 +1,9 @@
 <div class="partials_contenedor_encabezado">
-    <h2>{!! $titulo !!}</h2>
-    <p>{!! $descripcion !!}</p>
+    @if (!empty($titulo))
+        <h2>{!! $titulo !!}</h2>
+    @endif
+
+    @if (!empty($descripcion))
+        <p>{!! $descripcion !!}</p>
+    @endif
 </div>
