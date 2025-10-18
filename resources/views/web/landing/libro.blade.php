@@ -12,8 +12,8 @@
                 @include('partials.encabezado', [
                     'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
                     'descripcion' => 'Protege tu hogar, empresa o industria con nuestros servicios especializados.
-                                                                                                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
-                                                                                                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
+                                                                                                                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
+                                                                                                                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
                 ])
 
                 @include('partials.bloque-1', [
@@ -121,6 +121,41 @@
                         </div>
                     </div>
                 </div>
+
+                @include('partials.encabezado', [
+                    'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
+                ])
+
+                @include('partials.slider-testimonios', [
+                    'testimonios' => [
+                        [
+                            'nombre' => 'Juan Pérez',
+                            'cargo' => 'Gerente de Ventas',
+                            'comentario' => 'Excelente servicio, muy profesionales y puntuales.',
+                            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                        ],
+                        [
+                            'nombre' => 'María López',
+                            'cargo' => 'Propietaria de Restaurante',
+                            'comentario' => 'Mi local quedó impecable. Los recomiendo totalmente.',
+                            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                        ],
+                        [
+                            'nombre' => 'Juan Pérez',
+                            'cargo' => 'Gerente de Ventas',
+                            'comentario' => 'Excelente servicio, muy profesionales y puntuales.',
+                            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                        ],
+                        [
+                            'nombre' => 'María López',
+                            'cargo' => 'Propietaria de Restaurante',
+                            'comentario' => 'Mi local quedó impecable. Los recomiendo totalmente.',
+                            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                        ],
+                    ],
+                    'id' => 1,
+                ])
+
             </div>
         </div>
     </div>
