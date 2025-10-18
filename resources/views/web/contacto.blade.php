@@ -10,7 +10,7 @@
                 @include('partials.encabezado', [
                     'titulo' => 'Contácte y <span>trabajemos</span> juntos!',
                 ])
-              
+
                 <div class="contacto_grid">
                     <!-- INFORMACIÓN -->
                     <div class="contacto_info">
@@ -50,7 +50,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('contacto.enviar') }}" method="POST">
+                        <form action="{{ route('contacto.enviar') }}" method="POST" class="g_formulario">
                             @csrf
 
                             <div class="form_grupo">
