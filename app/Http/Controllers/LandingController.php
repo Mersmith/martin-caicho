@@ -19,29 +19,31 @@ class LandingController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
             'email' => 'required|email',
-            'mensaje' => 'required|string|min:5',
             'telefono' => 'nullable|regex:/^[0-9]{9}$/',
-            'asunto' => 'nullable|string|max:255',
         ], [
             'nombre.required' => 'El campo nombre es obligatorio.',
             'nombre.string' => 'El nombre debe contener solo texto válido.',
             'nombre.max' => 'El nombre no puede superar los 255 caracteres.',
 
+            'apellido.required' => 'El campo apellido es obligatorio.',
+            'apellido.string' => 'El apellido debe contener solo texto válido.',
+            'apellido.max' => 'El apellido no puede superar los 255 caracteres.',
+
             'email.required' => 'El campo correo es obligatorio.',
             'email.email' => 'Debes ingresar un correo electrónico válido.',
 
-            'mensaje.required' => 'El campo mensaje es obligatorio.',
-            'mensaje.string' => 'El mensaje debe ser un texto válido.',
-            'mensaje.min' => 'El mensaje debe tener al menos 5 caracteres.',
-
             'telefono.regex' => 'El número de teléfono debe tener exactamente 9 dígitos numéricos.',
-
-            'asunto.string' => 'El asunto debe ser un texto válido.',
-            'asunto.max' => 'El asunto no puede superar los 255 caracteres.',
         ]);
 
-        Mensaje::create($request->all());
+        Mensaje::create([
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'email' => $request->email,
+            'telefono' => $request->telefono,
+            'tipo_mensaje_id' => 2,
+        ]);
 
         return back()->with('success', 'Gracias por tu mensaje. ¡Te contactaremos pronto!');
     }

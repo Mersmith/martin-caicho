@@ -11,7 +11,7 @@ class Mensaje extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'apellido', 'email', 'telefono', 'asunto', 'mensaje', 'leido',
+        'tipo_mensaje_id', 'nombre', 'apellido', 'email', 'telefono', 'asunto', 'mensaje', 'leido',
     ];
 
     public function tipo()

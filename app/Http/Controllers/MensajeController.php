@@ -38,7 +38,14 @@ class MensajeController extends Controller
             'asunto.max' => 'El asunto no puede superar los 255 caracteres.',
         ]);
 
-        Mensaje::create($request->all());
+        Mensaje::create([
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'telefono' => $request->telefono,
+            'asunto' => $request->asunto,
+            'mensaje' => $request->mensaje,
+            'tipo_mensaje_id' => 1,
+        ]);
 
         return back()->with('success', 'Gracias por tu mensaje. ¡Te contactaremos pronto!');
     }
