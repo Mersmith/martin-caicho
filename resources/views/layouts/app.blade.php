@@ -27,13 +27,13 @@
 
 <body class="layout-web">
 
-    @include('partials.header')
+    @include('components.header')
 
     <main>
         @yield('contenido')
     </main>
 
-    @include('partials.footer')
+    @include('components.footer')
 </body>
 
 </html>

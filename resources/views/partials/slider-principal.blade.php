@@ -1,23 +1,21 @@
 @if (!empty($p_elemento))
-    <div class="g_centrar_contenedor">
-        <div class="partials_contenedor_slider_principal">
-            <!-- Swiper -->
-            <div class="swiper SwiperSliderPrincipal-{{ $p_elemento['id'] }}">
-                <div class="swiper-wrapper">
-                    @foreach ($p_elemento['imagenes'] as $index => $slide)
-                        <div class="swiper-slide">
-                            <a href="{{ $slide->enlace }}">
-                                <img src="{{ $slide->imagen_computadora }}" alt="" class="imagen_computadora" />
-                                <img src="{{ $slide->imagen_movil }}" alt="" class="imagen_movil" />
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+    <div class="partials_contenedor_slider_principal">
+        <!-- Swiper -->
+        <div class="swiper SwiperSliderPrincipal-{{ $p_elemento['id'] }}">
+            <div class="swiper-wrapper">
+                @foreach ($p_elemento['imagenes'] as $index => $slide)
+                    <div class="swiper-slide">
+                        <a href="{{ $slide->enlace }}">
+                            <img src="{{ $slide->imagen_computadora }}" alt="" class="imagen_computadora" />
+                            <img src="{{ $slide->imagen_movil }}" alt="" class="imagen_movil" />
+                        </a>
+                    </div>
+                @endforeach
             </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 

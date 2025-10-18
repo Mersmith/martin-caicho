@@ -102,7 +102,14 @@
         </div>
     </div>
 
-    @include('partials.call-to-action')
-
+    @include('partials.call-to-action', [
+        'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
+        'titulo' => 'Protege tu hogar y tu negocio',
+        'subtitulo' =>
+            'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
+        'negrita' => '¡Confía en expertos certificados!',
+        'link' => '/contacto',
+        'boton' => '¡Cotiza Ahora!',
+    ])
 
 @endsection

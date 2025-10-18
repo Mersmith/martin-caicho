@@ -2,7 +2,7 @@
     background: var(--color-plomo);
     color: var(--color-negro);
     text-align: center;
-    padding: 50px 20px 20px;
+    padding: 70px 20px 20px;
 }
 
 .web_footer .footer_contacto h3 {
@@ -79,6 +79,10 @@
 }
 
 @media (max-width: 768px) {
+
+    .web_footer {
+        padding: 40px 20px 20px;
+    }
 
     .web_footer .footer_info h2 {
         font-size: 1.3rem;

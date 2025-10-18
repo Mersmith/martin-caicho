@@ -1,10 +1,5 @@
 @if (!empty($p_elemento) && $p_elemento['posts']->isNotEmpty())
 
-    @include('partials.titulo', [
-        'p_contenido' => $p_elemento['titulo'],
-        'p_alineacion' => 'left',
-    ])
-
     <div class="partials_contenedor_slider_post">
         <!-- Swiper -->
         <div class="swiper SwiperSliderPost-{{ $p_elemento['id'] }}">

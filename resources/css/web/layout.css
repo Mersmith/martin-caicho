@@ -10,7 +10,6 @@
 
 .g_pading_pagina {/**/
     padding: 10px;
-    background-color: red;
 }
 
 .g_gap_pagina {/**/
@@ -19,50 +18,17 @@
     gap: 40px;
 }
 
-.g_margin_top_40 {/**/
-    margin-top: 40px;
+.g_margin_top_70 {/**/
+    margin-top: 70px;
 }
 
 .g_contenedor_columna {
-    margin: 70px 0px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     gap: 70px;
 }
 
-.g_encabezado {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.g_encabezado h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: var(--color-negro);
-}
-
-.g_encabezado h2 span {
-    color: var(--color-verde);
-}
-
-.g_encabezado p {
-    font-size: 18px;
-    color: var(--color-negro);
-    line-height: 1.6;
-}
-
-@media (max-width: 1024px) {  
-
-    .g_contenedor_columna {
-        margin: 40px 0px;
-        gap: 40px;
-    }
-
-    .g_encabezado h2 {
-        line-height: 35px;
-    }
-}
 
 @media (max-width: 700px) {
 
@@ -70,8 +36,8 @@
         gap: 20px;
     }
 
-    .g_margin_top_40 {
-        margin-top: 20px;
+    .g_margin_top_70 {
+        margin-top: 40px;
     }
 
 }
