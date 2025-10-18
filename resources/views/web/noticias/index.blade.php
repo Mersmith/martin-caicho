@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="paginacion">
-                        {{ $noticias->links() }}
+                        {{ $noticias->links('vendor.pagination.default') }}
                     </div>
                 </div>
             </div>

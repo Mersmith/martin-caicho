@@ -95,7 +95,7 @@
 
                             <!-- links de paginación -->
                             <div class="paginacion">
-                                {{ $otrosPosts->links() }}
+                                {{ $otrosPosts->links('vendor.pagination.default') }}
                             </div>
                         @endif
                     </div>
