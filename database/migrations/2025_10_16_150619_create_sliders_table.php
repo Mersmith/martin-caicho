@@ -14,13 +14,9 @@ return new class extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
 
-            $table->string('titulo')->nullable();
-            $table->string('subtitulo')->nullable();
-            $table->string('imagen_computadora')->nullable();
-            $table->string('imagen_movil')->nullable();
-            $table->string('enlace')->nullable();
-            $table->integer('orden')->default(0);
-            $table->boolean('estado')->default(true);
+            $table->string('nombre')->unique();
+            $table->json('imagenes');
+            $table->boolean('activo')->default(false)->comment('1 ACTIVADO, 0 DESACTIVADO');
             
             $table->timestamps();
         });

@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $candidato = Candidato::first();
 
-        $sliders = $this->getWebSlidersPrincipal();
+        $sliders = $this->getWebSlidersPrincipal(1);
 
         $noticias = $this->getNoticias();
 
@@ -21,16 +21,18 @@ class HomeController extends Controller
         return view('web.home', compact('candidato', 'sliders', 'noticias', 'imagenes'));
     }
 
-    public function getWebSlidersPrincipal()
+    public function getWebSlidersPrincipal($id)
     {
-        $consulta_id = 1;
+        $sliders = Slider::where('id', $id)
+            ->where('activo', true)
+            ->first();
+        if ($sliders) {
+            $sliders->imagenes = json_decode($sliders->imagenes, true);
+        } else {
+            $sliders = null;
+        }
 
-        $data = Slider::where('estado', true)->orderBy('orden')->get();
-
-        return [
-            'id' => $consulta_id,
-            'imagenes' => $data,
-        ];
+        return $sliders;
     }
 
     public function getNoticias()
