@@ -71,11 +71,6 @@
 @media (max-width: 1024px) {
     .bloque_1 {
         grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .bloque_1 .bloque_cuerpo ul li {
-        justify-content: center;
-    }
+    }  
 
 }
