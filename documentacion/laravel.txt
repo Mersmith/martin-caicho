@@ -5,6 +5,7 @@ php artisan make:model Pagina -mfsc
 php artisan make:model Menu -mfsc
 php artisan make:model Noticia -mfsc
 php artisan make:model Slider -mfsc
+php artisan make:model TipoMensaje -mfsc
 php artisan make:model Mensaje -mfsc
 php artisan make:model Imagen -mfsc
 

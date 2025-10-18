@@ -11,6 +11,11 @@ class Mensaje extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'email', 'telefono', 'asunto', 'mensaje', 'leido'
+        'nombre', 'apellido', 'email', 'telefono', 'asunto', 'mensaje', 'leido',
     ];
+
+    public function tipo()
+    {
+        return $this->belongsTo(TipoMensaje::class, 'tipo_mensaje_id');
+    }
 }

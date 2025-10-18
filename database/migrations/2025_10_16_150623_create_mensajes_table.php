@@ -14,13 +14,16 @@ return new class extends Migration
         Schema::create('mensajes', function (Blueprint $table) {
             $table->id();
 
+            $table->foreignId('tipo_mensaje_id')->constrained('tipo_mensajes')->onDelete('cascade');
+
             $table->string('nombre');
-            $table->string('email');
+            $table->string('apellido')->nullable();
+            $table->string('email')->nullable();
             $table->string('telefono')->nullable();
             $table->string('asunto')->nullable();
-            $table->text('mensaje');
+            $table->text('mensaje')->nullable();
             $table->boolean('leido')->default(false);
-            
+
             $table->timestamps();
         });
     }

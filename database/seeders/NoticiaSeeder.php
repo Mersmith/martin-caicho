@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Candidato;
+use App\Models\Noticia;
 use Illuminate\Database\Seeder;
 
 class NoticiaSeeder extends Seeder
@@ -12,6 +13,7 @@ class NoticiaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $candidato = Candidato::first();
+        Noticia::factory(15)->create(['candidato_id' => $candidato->id]);
     }
 }
