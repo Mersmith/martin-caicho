@@ -10,39 +10,49 @@
         <div class="g_pading_pagina g_gap_pagina">
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
-                    'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
-                    'descripcion' => 'Protege tu hogar, empresa o industria con nuestros servicios especializados.
-                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
-                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
+                    'titulo' => 'Soy Martín Caicho <span>Autor y Emprendedor Peruano</span>',
+                    'descripcion' => 'Desde El Agustino para el Perú. Empresario, comunicador y apasionado por el desarrollo social. 
+                                                                                     Autor del libro <span>“Perú, Tierra de Incautos”</span>, una mirada crítica y reflexiva sobre nuestra realidad nacional,
+                                                                                     con el deseo de inspirar un cambio verdadero basado en valores, trabajo y esperanza.',
                 ])
+
 
                 @include('partials.bloque-1', [
                     'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-                    'alt' => 'Servicio de Fumigación',
-                    'titulo' => 'Soluciones <span>profesionales</span> para tu tranquilidad',
-                    'descripcion' =>
-                        'Ofrecemos servicios especializados en fumigación, limpieza y desinfección para hogares y empresas.',
+                    'alt' => 'Martín Caicho Autor Peruano',
+                    'titulo' => 'Soy un <span>pensador</span> comprometido con el futuro del Perú',
+                    'descripcion' => 'Combino mi experiencia como empresario y en gestión pública con mi vocación por el periodismo y la reflexión social. 
+                                                      A través de mi obra, busco despertar conciencia, promover la participación ciudadana y contribuir al cambio que nuestro país necesita.',
                     'items' => [
-                        ['icono' => 'fa-solid fa-bug', 'texto' => 'Control de plagas y fumigación garantizada'],
                         [
-                            'icono' => 'fa-solid fa-shield-virus',
-                            'texto' => 'Desinfección de ambientes y superficies',
+                            'icono' => 'fa-solid fa-book-open',
+                            'texto' => 'Autor de mi libro “Perú, Tierra de Incautos”',
                         ],
-                        ['icono' => 'fa-solid fa-broom', 'texto' => 'Limpieza profunda para hogares y empresas'],
-                        ['icono' => 'fa-solid fa-pump-soap', 'texto' => 'Sanitización con productos certificados'],
+                        [
+                            'icono' => 'fa-solid fa-lightbulb',
+                            'texto' => 'Comparto ideas que inspiran el cambio social y político',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-briefcase',
+                            'texto' => 'Cuento con experiencia en el sector empresarial y gestión pública',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-microphone',
+                            'texto' => 'Expreso mi voz crítica y analítica desde el periodismo independiente',
+                        ],
                     ],
-                    'boton_link' => 'https://wa.me/51924218321',
-                    'boton_texto' => 'Solicita tu servicio ahora',
+                    'boton_icono' => 'fa-solid fa-book',
+                    'boton_link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
+                    'boton_texto' => 'Conoce más sobre mi libro',
                 ])
 
             </div>
 
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
-                    'titulo' => 'Fumigación, Desinfección, Limpieza y Sanitización',
-                    'descripcion' => 'Te ofrecemos soluciones al alcance de tus manos: fumigación efectiva e integral, servicios preventivos,
-                                      limpieza y desinfección industrial. Con la calidad y confianza que nos caracteriza, también te brindamos el
-                                      mejor catálogo en productos nacionales e importados.',
+                    'titulo' => 'También <span>soy:</span>',
+                    'descripcion' => 'Soy un vecino del Agustino que combina la experiencia empresarial con una profunda pasión por la comunicación y el desarrollo social. 
+                                      En mi libro, invito a reflexionar sobre nuestra realidad nacional y a construir, desde la acción y la conciencia, un Perú más justo y con oportunidades para todos.',
                 ])
 
                 @include('partials.bloque-2', ['p_elemento' => $imagenes])
@@ -53,12 +63,10 @@
     <div class="g_margin_top_70">
         @include('partials.call-to-action', [
             'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-            'titulo' => 'Protege tu hogar y tu negocio',
-            'subtitulo' =>
-                'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
-            'negrita' => '¡Confía en expertos certificados!',
-            'link' => '/contacto',
-            'boton' => '¡Cotiza Ahora!',
+            'titulo' => 'Descarga mi libro que todo peruano debe leer',
+            'subtitulo' => '“Perú, Tierra de Incautos”, una mirada crítica y constructiva.',
+            'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
+            'boton' => 'Registrate y descarga',
         ])
     </div>
 

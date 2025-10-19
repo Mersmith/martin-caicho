@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home'); //pagina personalizada
 
-Route::get('/nosotros', [NosotrosController::class, 'index'])->name('nosotros.index'); //pagina personalizada
+Route::get('/martin-caicho', [NosotrosController::class, 'index'])->name('nosotros.index'); //pagina personalizada
 
 Route::get('/peru-tierra-de-incautos', [LandingController::class, 'libro'])->name('landing.libro'); //pagina personalizada
 Route::post('/peru-tierra-de-incautos/enviar', [LandingController::class, 'enviarLibro'])->name('landing.libro.enviar');

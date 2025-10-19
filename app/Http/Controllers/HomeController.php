@@ -59,17 +59,17 @@ class HomeController extends Controller
         $data = [
             [
                 'id' => 1,
-                'titulo' => 'Imagen 1',
+                'titulo' => 'Empresario',
                 'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
             ],
             [
                 'id' => 2,
-                'titulo' => 'Imagen 2',
+                'titulo' => 'Escritor',
                 'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
             ],
             [
                 'id' => 3,
-                'titulo' => 'Imagen 3',
+                'titulo' => 'Líder',
                 'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
             ],
         ];

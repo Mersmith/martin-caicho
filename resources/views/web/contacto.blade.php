@@ -18,10 +18,10 @@
                         <p>
                             <i class="fa-solid fa-envelope"></i>
                             <strong>Email:</strong><br>
-                            informes@fumisolucionesac.com<br>
-                            ventas@fumisolucionesac.com
+                            libro@martin.com<br>
+                            sumate@martin.com
                         </p>
-                        <p><i class="fa-solid fa-location-dot"></i> <strong>Dirección:</strong><br> San Juan de Lurigancho
+                        <p><i class="fa-solid fa-location-dot"></i> <strong>Dirección del Local:</strong><br> El Agustino
                         </p>
 
                         <div class="contacto_mapa">

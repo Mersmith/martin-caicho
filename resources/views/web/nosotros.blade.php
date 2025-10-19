@@ -1,27 +1,23 @@
 @extends('layouts.app')
 
-@section('titulo', 'Nosotros')
+@section('titulo', 'Martin Caicho')
 
 @section('contenido')
 
     @include('partials.banner', [
         'imagenUrl' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg',
-        'titulo' => 'Nosotros',
+        'titulo' => '¿Quién soy y que pienso?',
     ])
 
     <div class="g_centrar_pagina">
         <div class="g_pading_pagina g_gap_pagina">
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
-                    'titulo' => 'Líderes en control de plagas y <span>seguridad ambiental</span> en el Perú',
-                    'descripcion' => ' Más de 20 años <strong> protegiendo hogares, empresas e industrias</strong> con servicios de
-                                       fumigación,
-                                       desinfección y
-                                       control integral. Contamos con <strong>especialistas certificados</strong>, equipos de última
-                                       tecnología
-                                       y soluciones
-                                       efectivas para garantizar ambientes seguros y saludables.',
+                    'titulo' => 'La <span>Solución</span> para un Perú con futuro',
+                    'descripcion' => 'Propongo una visión renovadora basada en tres ejes: desarrollo económico inclusivo, fortalecimiento de los valores ciudadanos y modernización de la gestión pública. 
+                                                                                                                         Desde mi experiencia en el sector privado y la función pública, impulso ideas que buscan unirnos como peruanos para construir un país más justo, productivo y solidario.',
                 ])
+
 
                 <div class="razones_section">
                     <div class="grid-columna invertir_movil">
@@ -29,27 +25,44 @@
                             <img src="http://127.0.0.1:8000/assets/imagen/default.jpg" alt="Especialistas">
                         </div>
                         <div class="texto">
-                            <h3>Expertos en seguridad y saneamiento integral</h3>
-                            <p>Ofrecemos <strong> soluciones completas para proteger tu hogar, negocio e industria:</strong>
-                                instalación de
-                                cámaras de seguridad, sistemas contra incendios, venta y recarga de extintores, además de
-                                servicios especializados en fumigación, limpieza y saneamiento ambiental. Todo con la
-                                confianza
-                                de un equipo certificado y comprometido con tu tranquilidad
-                            </p>
+                            <h3>Desarrollo económico con rostro humano</h3>
+                            <p>Promuevo un modelo económico que prioriza al emprendedor, al trabajador y a las familias
+                                peruanas.
+                                Mi propuesta busca generar empleo digno, impulsar la innovación y fortalecer la producción
+                                nacional con justicia social.</p>
+                            <ul>
+                                <li><i class="fa-solid fa-hand-holding-dollar"></i> Apoyo a los emprendedores y pequeñas
+                                    empresas</li>
+                                <li><i class="fa-solid fa-chart-line"></i> Promoción de la economía regional</li>
+                                <li><i class="fa-solid fa-industry"></i> Fomento de la producción nacional</li>
+                                <li><i class="fa-solid fa-graduation-cap"></i> Capacitación técnica y laboral</li>
+                                <li><i class="fa-solid fa-briefcase"></i> Impulso a la formalización y al empleo digno</li>
+                            </ul>
+
                         </div>
+
                     </div>
 
                     <div class="grid-columna invertir_movil">
                         <div class="texto">
-                            <h3>Sinergia en protección y bienestar</h3>
-                            <p>Integramos seguridad electrónica, sistemas contra incendios, venta de extintores y servicios
-                                de
-                                saneamiento ambiental en un solo equipo multidisciplinario. <strong>Una combinación
-                                    estratégica
-                                    que
-                                    garantiza ambientes seguros, saludables y protegidos.</strong></p>
+                            <h3>Gestión pública moderna y transparente</h3>
+                            <p>Desde mi experiencia en el sector público, defiendo una administración eficiente,
+                                meritocrática y enfocada en resultados.
+                                Busco eliminar la corrupción, digitalizar los procesos del Estado y acercar la gestión a los
+                                ciudadanos.</p>
+                            <ul>
+                                <li><i class="fa-solid fa-handshake"></i> Promuevo la transparencia en el uso de los
+                                    recursos públicos</li>
+                                <li><i class="fa-solid fa-laptop-code"></i> Impulso la digitalización y el gobierno
+                                    electrónico</li>
+                                <li><i class="fa-solid fa-city"></i> Fortalezco la gestión de los gobiernos locales</li>
+                                <li><i class="fa-solid fa-chalkboard-user"></i> Apoyo la capacitación constante de los
+                                    servidores públicos</li>
+                                <li><i class="fa-solid fa-scale-balanced"></i> Combato la corrupción con firmeza y
+                                    compromiso</li>
+                            </ul>
                         </div>
+
                         <div class="imagen">
                             <img src="http://127.0.0.1:8000/assets/imagen/default.jpg" alt="Especialidades">
                         </div>
@@ -60,54 +73,52 @@
                             <img src="http://127.0.0.1:8000/assets/imagen/default.jpg" alt="Productos">
                         </div>
                         <div class="texto">
-                            <h3>Seguridad, limpieza y confianza</h3>
-                            <p>Implementamos <strong>tecnología certificada y productos de calidad</strong> para garantizar
-                                protección,
-                                prevención y ambientes seguros.</p>
+                            <h3>Valores y educación cívica para un nuevo Perú</h3>
+                            <p>Estoy convencido de que el cambio real comienza en cada persona. Por eso, promuevo la
+                                educación en valores,
+                                la participación ciudadana y la formación de líderes comprometidos con el bien común y el
+                                respeto mutuo.</p>
                             <ul>
-                                <li><i class="fa-solid fa-video"></i> Instalación de Cámaras de Seguridad</li>
-                                <li><i class="fa-solid fa-bell"></i> Sistemas de Detectores de Alarma contra Incendio</li>
-                                <li><i class="fa-solid fa-fire-extinguisher"></i> Sistemas de Red Contra Incendio</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> Venta y Recarga de Extintores</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> Capacitación de Uso y Manejo de Extintores
+                                <li><i class="fa-solid fa-graduation-cap"></i> Fomento la educación cívica y moral en todos
+                                    los niveles</li>
+                                <li><i class="fa-solid fa-user-group"></i> Impulso programas de liderazgo juvenil</li>
+                                <li><i class="fa-solid fa-heart"></i> Promuevo una cultura basada en el respeto y la empatía
                                 </li>
-                                <li><i class="fa-solid fa-shield-halved"></i> Capacitación de Primeros Auxilios y Evacuación
-                                </li>
-                                <li><i class="fa-solid fa-leaf"></i> Saneamiento Ambiental</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> Fumigación y Limpieza</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> Limpieza Gruesa, Fina y Semi fina</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> Limpieza de Oficinas</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> Lavado de lfombras</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> Lavado de Muebles y Colchones</li>
+                                <li><i class="fa-solid fa-first-aid"></i> Apoyo la formación en primeros auxilios y
+                                    convivencia ciudadana</li>
+                                <li><i class="fa-solid fa-flag"></i> Refuerzo la unidad y el orgullo de ser peruanos</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
+
+                @include('partials.encabezado', [
+                    'titulo' => 'Estoy <span>comprometido</span> con mi Perú',
+                    'descripcion' => 'Conóceme un poco más.',
+                ])
 
                 @include('partials.bloque-3', [
                     'cards' => [
                         [
                             'icono' => 'fa-solid fa-bullseye',
                             'titulo' => 'Misión',
-                            'descripcion' =>
-                                'Nuestra misión principal es brindar soluciones integrales de cuidado del medio ambiente y generar una cultura de seguridad y salud ocupacional.',
+                            'descripcion' => 'Mi misión es inspirar a los peruanos a creer en el cambio a través de la educación, la ética y la acción. 
+                                                                              Busco promover un liderazgo ciudadano que transforme nuestra realidad desde los valores y el compromiso social.',
                         ],
                         [
                             'icono' => 'fa-solid fa-eye',
                             'titulo' => 'Visión',
                             'descripcion' =>
-                                'Ser líderes en servicios integrales de fumigación, desinfección y limpieza profesional, destacando por calidad y confianza.',
+                                'Sueño con un Perú unido, próspero y transparente, donde el esfuerzo, la innovación y la honestidad sean las bases de nuestro desarrollo.',
                         ],
                         [
                             'icono' => 'fa-solid fa-handshake',
                             'titulo' => 'Valores',
-                            'descripcion' =>
-                                'Compromiso, responsabilidad, excelencia y confianza como pilares en cada servicio que ofrecemos.',
+                            'descripcion' => 'Me guío por la honestidad, el trabajo, la justicia social, la empatía y la responsabilidad. 
+                                                                              Estos principios inspiran cada propuesta y cada acción que realizo por el bienestar de nuestro país.',
                         ],
                     ],
                 ])
-
             </div>
         </div>
     </div>
@@ -115,13 +126,14 @@
     <div class="g_margin_top_70">
         @include('partials.call-to-action', [
             'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-            'titulo' => 'Protege tu hogar y tu negocio',
+            'titulo' => 'Mis propuestas para transformar el Perú',
             'subtitulo' =>
-                'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
-            'negrita' => '¡Confía en expertos certificados!',
-            'link' => '/contacto',
-            'boton' => '¡Cotiza Ahora!',
+                'En mi libro “Perú, Tierra de Incautos”, comparto mi visión sobre cómo construir un país.',
+            'negrita' => 'Más justo, productivo y solidario. ',
+            'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
+            'boton' => 'Descargar mi Libro',
         ])
+
     </div>
 
 @endsection

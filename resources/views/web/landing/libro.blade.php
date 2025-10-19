@@ -10,42 +10,56 @@
         <div class="g_pading_pagina g_gap_pagina">
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
-                    'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
-                    'descripcion' => 'Protege tu hogar, empresa o industria con nuestros servicios especializados.
-                                                                                                                                      Ofrecemos fumigación efectiva, <span>desinfección certificada</span> y limpieza integral con productos
-                                                                                                                                      seguros y de alta calidad. Tu tranquilidad es nuestra prioridad.',
+                    'titulo' => 'Descubre <span>“Perú, Tierra de Incautos”</span>',
+                    'descripcion' =>
+                        'Un libro que revela la realidad del Perú, analiza los problemas que nos afectan y propone soluciones concretas para construir un país más justo, productivo y solidario. Sumérgete en una lectura que despierta conciencia y acción.',
                 ])
 
                 @include('partials.bloque-1', [
                     'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-                    'alt' => 'Servicio de Fumigación',
-                    'titulo' => 'Soluciones <span>profesionales</span> para tu tranquilidad',
+                    'alt' => 'Libro Perú, Tierra de Incautos',
+                    'titulo' => 'Una obra que <span>inspira y transforma</span>',
                     'descripcion' =>
-                        'Ofrecemos servicios especializados en fumigación, limpieza y desinfección para hogares y empresas.',
+                        'Martín Caicho combina su experiencia como empresario, comunicador y líder social para ofrecer una mirada crítica, profunda y esperanzadora sobre el Perú. Este libro no solo denuncia, sino que propone soluciones claras y prácticas.',
                     'items' => [
-                        ['icono' => 'fa-solid fa-bug', 'texto' => 'Control de plagas y fumigación garantizada'],
                         [
-                            'icono' => 'fa-solid fa-shield-virus',
-                            'texto' => 'Desinfección de ambientes y superficies',
+                            'icono' => 'fa-solid fa-book-open',
+                            'texto' => 'Autor: Martín Caicho, empresario y comunicador',
                         ],
-                        ['icono' => 'fa-solid fa-broom', 'texto' => 'Limpieza profunda para hogares y empresas'],
-                        ['icono' => 'fa-solid fa-pump-soap', 'texto' => 'Sanitización con productos certificados'],
+                        [
+                            'icono' => 'fa-solid fa-lightbulb',
+                            'texto' => 'Ideas claras para reflexionar y actuar por un Perú mejor',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-people-roof',
+                            'texto' => 'Analiza la realidad social, política y económica de nuestro país',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-flag',
+                            'texto' => 'Propone soluciones concretas para generar empleo, educación y desarrollo',
+                        ],
                     ],
+                    'boton_icono' => 'fa-solid fa-download',
+                    'boton_link' => '/descargar-libro',
+                    'boton_texto' => 'Descarga el libro ahora',
                 ])
             </div>
         </div>
     </div>
 
+
     <div class="g_margin_top_70">
         @include('partials.call-to-action', [
             'align' => 'center',
             'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-            'titulo' => 'Protege tu hogar y tu negocio',
-            'subtitulo' =>
-                'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
-            'negrita' => '¡Confía en expertos certificados!',
+            'titulo' => 'Descubre cómo cambiar el Perú',
+            'subtitulo' => 'Lee “Perú, Tierra de Incautos” y conoce soluciones reales para nuestro país.',
+            'negrita' => '¡Descarga tu ejemplar ahora!',
+            'link' => '#formulario-libro',
+            'boton' => 'Descargar Libro',
         ])
     </div>
+
 
     <div class="g_centrar_pagina">
         <div class="g_pading_pagina g_gap_pagina">
@@ -58,11 +72,11 @@
                     </div>
 
                     <!-- FORMULARIO -->
-                    <div class="contacto_formulario">
+                    <div class="contacto_formulario" id="formulario-libro">
                         <div class="g_contenedor_columna">
                             @include('partials.encabezado', [
-                                'titulo' => 'Fumigación  <span>Profesional</span>',
-                                'descripcion' => 'Protege tu hogar, empresa o industria .',
+                                'titulo' => 'Regístrate y <span>recibe tu libro</span>',
+                                'descripcion' => 'Completa tus datos correctamente y te enviaremos.',
                             ])
 
                             @if (session('success'))
@@ -123,33 +137,37 @@
                 </div>
 
                 @include('partials.encabezado', [
-                    'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
+                    'titulo' => 'Lo que dicen sobre <span>“Perú, Tierra de Incautos”</span>',
                 ])
 
                 @include('partials.slider-testimonios', [
                     'testimonios' => [
                         [
-                            'nombre' => 'Juan Pérez',
-                            'cargo' => 'Gerente de Ventas',
-                            'comentario' => 'Excelente servicio, muy profesionales y puntuales.',
+                            'nombre' => 'Ana Torres',
+                            'cargo' => 'Docente Universitaria',
+                            'comentario' =>
+                                '“Perú, Tierra de Incautos” me abrió los ojos sobre los desafíos del país y propone soluciones claras. Una lectura imprescindible.',
                             'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
                         ],
                         [
-                            'nombre' => 'María López',
-                            'cargo' => 'Propietaria de Restaurante',
-                            'comentario' => 'Mi local quedó impecable. Los recomiendo totalmente.',
+                            'nombre' => 'Carlos Méndez',
+                            'cargo' => 'Emprendedor',
+                            'comentario' =>
+                                'Las ideas de Martín Caicho me inspiraron a actuar y pensar en cómo podemos mejorar nuestra economía y sociedad.',
                             'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
                         ],
                         [
-                            'nombre' => 'Juan Pérez',
-                            'cargo' => 'Gerente de Ventas',
-                            'comentario' => 'Excelente servicio, muy profesionales y puntuales.',
+                            'nombre' => 'Lucía Rojas',
+                            'cargo' => 'Periodista',
+                            'comentario' =>
+                                'Un libro profundo y crítico que invita a la reflexión. Excelente para quienes quieren entender la realidad del Perú.',
                             'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
                         ],
                         [
-                            'nombre' => 'María López',
-                            'cargo' => 'Propietaria de Restaurante',
-                            'comentario' => 'Mi local quedó impecable. Los recomiendo totalmente.',
+                            'nombre' => 'Jorge Salazar',
+                            'cargo' => 'Estudiante Universitario',
+                            'comentario' =>
+                                'Inspirador y educativo. Me ayudó a comprender mejor los problemas del país y pensar en soluciones prácticas.',
                             'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
                         ],
                     ],
@@ -164,23 +182,29 @@
         <div class="g_pading_pagina g_gap_pagina">
             <div class="g_contenedor_columna">
                 @include('partials.encabezado', [
-                    'titulo' => 'Fumigación, Desinfección y Limpieza <span>Profesional</span>',
+                    'titulo' => 'Martín Caicho <span>Autor y Emprendedor Peruano</span>',
                 ])
 
                 @include('partials.bloque-1', [
                     'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-                    'alt' => 'Servicio de Fumigación',
-                    'titulo' => 'Soluciones <span>profesionales</span> para tu tranquilidad',
+                    'alt' => 'Martín Caicho, autor peruano',
+                    'titulo' => 'Un pensador comprometido con el Perú',
                     'descripcion' =>
-                        'Ofrecemos servicios especializados en fumigación, limpieza y desinfección para hogares y empresas.',
+                        'Desde El Agustino, Martín Caicho combina su experiencia empresarial, su trayectoria en gestión pública y su pasión por el periodismo para inspirar cambios reales en nuestro país. Autor de <span>“Perú, Tierra de Incautos”</span>, propone soluciones concretas y reflexiones profundas sobre la realidad peruana.',
                     'items' => [
-                        ['icono' => 'fa-solid fa-bug', 'texto' => 'Control de plagas y fumigación garantizada'],
+                        ['icono' => 'fa-solid fa-book-open', 'texto' => 'Autor de “Perú, Tierra de Incautos”'],
                         [
-                            'icono' => 'fa-solid fa-shield-virus',
-                            'texto' => 'Desinfección de ambientes y superficies',
+                            'icono' => 'fa-solid fa-lightbulb',
+                            'texto' => 'Ideas que inspiran acción y cambio social',
                         ],
-                        ['icono' => 'fa-solid fa-broom', 'texto' => 'Limpieza profunda para hogares y empresas'],
-                        ['icono' => 'fa-solid fa-pump-soap', 'texto' => 'Sanitización con productos certificados'],
+                        [
+                            'icono' => 'fa-solid fa-briefcase',
+                            'texto' => 'Experiencia en empresas y gestión pública',
+                        ],
+                        [
+                            'icono' => 'fa-solid fa-microphone',
+                            'texto' => 'Voz crítica desde el periodismo y la comunicación',
+                        ],
                     ],
                 ])
             </div>
@@ -191,10 +215,12 @@
         @include('partials.call-to-action', [
             'align' => 'center',
             'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-            'titulo' => 'Protege tu hogar y tu negocio',
+            'titulo' => 'Descubre cómo transformar el Perú',
             'subtitulo' =>
-                'Elimina plagas y asegura un ambiente limpio y saludable con nuestros servicios profesionales.',
-            'negrita' => '¡Confía en expertos certificados!',
+                'Te comparto ideas y soluciones concretas para un país más justo y próspero.',
+            'negrita' => '¡Regístrate y descarga tu ejemplar ahora!',
+            'link' => '#formulario-libro',
+            'boton' => 'Descargar Libro',
         ])
     </div>
 @endsection

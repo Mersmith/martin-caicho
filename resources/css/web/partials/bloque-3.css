@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin: 40px auto 0;
+    margin: 0px auto 0;
 }
 
 .bloque_3 .card {

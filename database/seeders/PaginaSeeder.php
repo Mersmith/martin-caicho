@@ -12,6 +12,6 @@ class PaginaSeeder extends Seeder
      */
     public function run(): void
     {
-        Pagina::factory()->create(['titulo' => 'Nosotros', 'slug' => 'nosotros']);
+        //Pagina::factory()->create(['titulo' => 'Nosotros', 'slug' => 'nosotros']);
     }
 }
