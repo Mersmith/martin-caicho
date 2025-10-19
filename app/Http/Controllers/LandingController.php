@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mensaje;
 use App\Models\Slider;
+use App\Services\WhatsAppService;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -15,7 +16,7 @@ class LandingController extends Controller
         return view('web.landing.libro', compact('sliders'));
     }
 
-    public function enviarLibro(Request $request)
+    public function enviarLibro(Request $request, WhatsAppService $whatsapp)
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
@@ -37,7 +38,7 @@ class LandingController extends Controller
             'telefono.regex' => 'El número de teléfono debe tener exactamente 9 dígitos numéricos.',
         ]);
 
-        Mensaje::create([
+        $contacto = Mensaje::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
             'email' => $request->email,
@@ -45,7 +46,21 @@ class LandingController extends Controller
             'tipo_mensaje_id' => 2,
         ]);
 
-        return back()->with('success', 'Gracias por tu mensaje. ¡Te contactaremos pronto!');
+        $telefono = preg_replace('/[^0-9]/', '', $contacto->telefono);
+        if (substr($telefono, 0, 2) !== '51') {
+            $telefono = '51' . $telefono;
+        }
+
+        $response = $whatsapp->sendTemplateLibro($telefono, $template = 'registro_enviar_link');
+
+        if (isset($response['messages']) && count($response['messages']) > 0) {
+            $mensaje = 'Gracias, te hemos enviado el libro a tu WhatsApp 📘.';
+        } else {
+            $mensaje = 'Te registraste, pero no hemos validado tu WhatsApp. ¡Intente de nuevo!';
+            \Log::warning('Error al enviar WhatsApp', ['response' => $response]);
+        }
+
+        return back()->with('success', $mensaje);
     }
 
     public function getLandingSliderLibro($id)
