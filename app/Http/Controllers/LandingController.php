@@ -51,7 +51,7 @@ class LandingController extends Controller
             $telefono = '51' . $telefono;
         }
 
-        $response = $whatsapp->sendTemplateLibro($telefono, $template = 'registro_enviar_link');
+        $response = $whatsapp->sendTemplateLibro($telefono);
 
         if (isset($response['messages']) && count($response['messages']) > 0) {
             $mensaje = 'Gracias, te hemos enviado el libro a tu WhatsApp 📘.';

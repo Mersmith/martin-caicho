@@ -51,7 +51,7 @@ class WhatsAppService
         return $response->json();
     }
 
-    public function sendTemplateLibro($to, $template)
+    public function sendTemplateLibro($to)
     {
         $url = "https://graph.facebook.com/v22.0/{$this->phoneId}/messages";
 
@@ -61,7 +61,7 @@ class WhatsAppService
                 'to' => $to,
                 'type' => 'template',
                 'template' => [
-                    'name' => $template,
+                    'name' => 'registro_enviar_link',
                     'language' => ['code' => 'es_PE'],
                     'components' => [
                         [
@@ -73,6 +73,32 @@ class WhatsAppService
                                         'link' => 'https://www.fumisolucionesac.com/assets/img/logo.png',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ]);
+
+        return $response->json();
+    }
+
+    public function sendTemplateRegistro($to, $nombreCliente = null)
+    {
+        $url = "https://graph.facebook.com/v22.0/{$this->phoneId}/messages";
+
+        $response = Http::withToken($this->token)
+            ->post($url, [
+                'messaging_product' => 'whatsapp',
+                'to' => $to,
+                'type' => 'template',
+                'template' => [
+                    'name' => 'registro_confirmacion',
+                    'language' => ['code' => 'en'],
+                    'components' => [
+                        [
+                            'type' => 'body',
+                            'parameters' => [
+                                ['type' => 'text', 'text' => $nombreCliente ?? 'Cliente'],
                             ],
                         ],
                     ],
