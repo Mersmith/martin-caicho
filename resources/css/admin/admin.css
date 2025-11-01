@@ -10,9 +10,9 @@
 @import "./components/header.css";
 @import "./components/menu-principal.css";
 @import "./components/pagina-cabecera.css";
-@import "./tabla.css";
-@import "./tabla-cabecera.css";
-@import "./dropzone.css";
-@import "./formulario.css";
-@import "./modal.css";
-@import "./sorteable.css";
+@import "./components/tabla.css";
+@import "./components/tabla-cabecera.css";
+@import "./components/dropzone.css";
+@import "./components/formulario.css";
+@import "./components/modal.css";
+@import "./components/sorteable.css";
