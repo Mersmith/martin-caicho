@@ -9,7 +9,6 @@
 /*CONTENEDOR LAYOUT PAGINA*/
 .contenedor_layout_pagina {
     margin-left: 80px;
-    background-color: green;
     transition: margin-left .4s ease-in-out;
     width: 100%;
 }
@@ -21,8 +20,9 @@
     margin-right: calc(30px / 2);
     margin-bottom: 30px;
     border-radius: 20px;
-    background: rgb(224, 224, 224);
+    background: var(--color-blanco);
     min-height: calc(100% - 102px);
+    box-shadow: var(--sombra);
 }
 
 .centrar_pagina {

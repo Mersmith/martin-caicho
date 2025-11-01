@@ -19,8 +19,10 @@
     height: 100vh;
     z-index: 99;
     position: relative;
-    background: #f4f7fb;
+    background: var(--color-blanco);
     width: 80px;
+    box-shadow: var(--sombra);
+
 }
 
 .contenedor_nav_iconos .contenedor_menu_hamburguesa {

@@ -1,17 +1,18 @@
 .contenedor_dropzone {
-    border: 2px dashed #635BFF;
+    border: 2px dashed var(--color-verde);
     border-radius: 5px;
     padding: 20px;
     text-align: center;
     cursor: pointer;
+    background-color: var(--color-plomo);
     transition: background-color 0.3s;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .contenedor_dropzone:hover {
-    background-color: #f1f1f1;
+    background-color: var(--color-blanco);
 }
 
 .dropzone_item {
