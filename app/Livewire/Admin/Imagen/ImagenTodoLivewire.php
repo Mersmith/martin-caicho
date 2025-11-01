@@ -64,8 +64,8 @@ class ImagenTodoLivewire extends Component
         }
 
         foreach ($this->imagenes_final as $imagen) {
-            // Guardar en storage/app/public/images
-            $ruta = $imagen->store('images', 'public');
+            // Guardar en storage/app/public/imagenes
+            $ruta = $imagen->store('imagenes', 'public');
 
             // URL pública
             $url = Storage::url($ruta);
@@ -107,7 +107,7 @@ class ImagenTodoLivewire extends Component
             }
 
             // Subir la nueva imagen
-            $ruta = $this->imagen_edit->store('images', 'public');
+            $ruta = $this->imagen_edit->store('imagenes', 'public');
             $url = Storage::url($ruta);
 
             $imagen->path = $ruta;
