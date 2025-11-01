@@ -27,30 +27,27 @@
     @livewireStyles
 </head>
 
-<body>
+<body x-data="xDataLayout()" x-init="initLayout" x-cloak class="contenedor_layout_general">
 
-    <div x-data="xDataLayout()" x-init="initLayout" x-cloak class="contenedor_layout_general">
+    <!--MENU PRINCIPAL-->
+    @include('layouts.admin.menu.menu-principal')
 
-        <!--MENU PRINCIPAL-->
-        @include('layouts.admin.menu.menu-principal')
+    <!--CONTENEDOR LAYOUT PAGINA-->
+    <div class="contenedor_layout_pagina" :class="{ 'estilo_contenedor_layout_pagina': estadoNavAbierto }">
+        <!--HEADER LAYOUT PAGINA-->
+        @livewire('admin.header.componente-header-livewire')
 
-        <!--CONTENEDOR LAYOUT PAGINA-->
-        <div class="contenedor_layout_pagina" :class="{ 'estilo_contenedor_layout_pagina': estadoNavAbierto }">
-            <!--HEADER LAYOUT PAGINA-->
-            @livewire('admin.header.componente-header-livewire')
-
-            <!--CONTENIDO LAYOUT PAGINA-->
-            <div class="contenido_layout_pagina">
-                <div class="centrar_pagina" @hasSection('anchoPantalla')
-                    style="max-width: @yield('anchoPantalla')"
-                    @endif">
-                    <main class="g_contenido_pagina">
-                        @yield('content')
-                        @if (isset($slot))
-                            {{ $slot }}
-                        @endif
-                    </main>
-                </div>
+        <!--CONTENIDO LAYOUT PAGINA-->
+        <div class="contenido_layout_pagina">
+            <div class="centrar_pagina" @hasSection('anchoPantalla')
+                style="max-width: @yield('anchoPantalla')"
+                @endif">
+                <main class="g_contenido_pagina">
+                    @yield('content')
+                    @if (isset($slot))
+                        {{ $slot }}
+                    @endif
+                </main>
             </div>
         </div>
     </div>

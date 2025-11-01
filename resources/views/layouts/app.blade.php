@@ -29,7 +29,7 @@
 
     @include('components.header')
 
-    <main>
+    <main class="layout-contenido">
         @include('partials.back-to-top')
         @yield('contenido')
     </main>
