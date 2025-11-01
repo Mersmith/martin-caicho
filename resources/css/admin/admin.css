@@ -1,0 +1,18 @@
+@import '../generales/reset.css';
+@import '../generales/variables.css';
+@import '../generales/alertas.css';
+@import '../generales/paginacion.css';
+@import '../generales/formulario.css';
+@import '../generales/code.css';
+
+@import "./layout.css";
+@import "./layout-header.css";
+@import "./components/header.css";
+@import "./components/menu-principal.css";
+@import "./components/pagina-cabecera.css";
+@import "./tabla.css";
+@import "./tabla-cabecera.css";
+@import "./dropzone.css";
+@import "./formulario.css";
+@import "./modal.css";
+@import "./sorteable.css";
