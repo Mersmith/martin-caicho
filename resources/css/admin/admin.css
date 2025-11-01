@@ -6,7 +6,6 @@
 @import '../generales/code.css';
 
 @import "./layout.css";
-@import "./layout-header.css";
 @import "./components/header.css";
 @import "./components/menu-principal.css";
 @import "./components/pagina-cabecera.css";

@@ -27,7 +27,7 @@ class HomeController extends Controller
             ->where('activo', true)
             ->first();
         if ($sliders) {
-            $sliders->imagenes = json_decode($sliders->imagenes, true);
+            $sliders->imagenes = $sliders->imagenes;
         } else {
             $sliders = null;
         }
