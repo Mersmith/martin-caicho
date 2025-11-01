@@ -175,7 +175,7 @@
             </div>
             @if ($imagenes->hasPages())
                 <div>
-                    {{ $imagenes->onEachSide(1)->links() }}
+                    {{ $imagenes->links('vendor.pagination.default') }}
                 </div>
             @endif
         @else
