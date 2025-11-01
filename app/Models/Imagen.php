@@ -10,12 +10,6 @@ class Imagen extends Model
     /** @use HasFactory<\Database\Factories\ImagenFactory> */
     use HasFactory;
 
-    protected $fillable = [
-        'url', 'titulo', 'descripcion', 'imagenable_id', 'imagenable_type'
-    ];
+    protected $fillable = ['path', 'url', 'titulo', 'descripcion', 'extension'];
 
-    public function imagenable()
-    {
-        return $this->morphTo();
-    }
 }

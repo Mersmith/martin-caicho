@@ -13,11 +13,6 @@ class ImagenSeeder extends Seeder
      */
     public function run(): void
     {
-        $candidato = Candidato::first();
-
-        Imagen::factory()->create([
-            'imagenable_id' => $candidato->id,
-            'imagenable_type' => Candidato::class,
-        ]);
+        
     }
 }

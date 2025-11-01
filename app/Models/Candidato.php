@@ -20,8 +20,4 @@ class Candidato extends Model
         return $this->hasMany(Noticia::class);
     }
 
-    public function imagenes()
-    {
-        return $this->morphMany(Imagen::class, 'imagenable');
-    }
 }
