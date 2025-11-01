@@ -1,8 +1,8 @@
 /*CONTENEDOR ASIDE*/
 .contenedor_aside {
     position: fixed;
-    left: -320px;
-    width: 80px;
+    left: calc(-1 * var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu));
+    width: var(--ancho-sidebar-admin-item);
     height: 100%;
     background: white;
     top: 0;
@@ -20,9 +20,7 @@
     z-index: 99;
     position: relative;
     background: var(--color-blanco);
-    width: 80px;
     box-shadow: var(--sombra);
-
 }
 
 .contenedor_nav_iconos .contenedor_menu_hamburguesa {
@@ -31,7 +29,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    height: 70px;
+    height: var(--alto-header-admin);
 }
 
 .contenedor_nav_iconos .contenedor_menu_hamburguesa i {
@@ -49,7 +47,7 @@
     scrollbar-width: none;
     overflow: hidden scroll;
     padding: 10px 20px;
-    height: calc(100% - 70px);
+    height: calc(100% - var(--alto-header-admin));
 }
 
 .contenedor_nav_iconos ul .nav_icono_seleccionado {
@@ -81,8 +79,8 @@
 /*CONTENEDOR NAV LINKS*/
 .contenedor_nav_links {
     position: absolute;
-    width: 240px;
-    left: -240px;
+    width: var(--ancho-sidebar-admin-menu);
+    left: calc(-1 * var(--ancho-sidebar-admin-menu));
     background: white;
     top: 0;
     transition: left .4s ease-in-out;
@@ -158,9 +156,10 @@
     padding: 8px 15px;
     gap: 5px;
     align-items: flex-start;
-    justify-content: space-between;}
+    justify-content: space-between;
+}
 
-.sidebar_nav li .contenedor_a a{
+.sidebar_nav li .contenedor_a a {
     display: flex;
     align-items: center;
     gap: 5px;
