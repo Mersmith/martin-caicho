@@ -28,6 +28,9 @@ php artisan storage:link
 php artisan vendor:publish --tag=laravel-pagination
 
 php artisan make:livewire Admin/Imagen/ImagenTodoLivewire
+php artisan make:livewire Admin/Imagen/ImagenFormularioLivewire
+php artisan make:livewire Admin/Imagen/ImagenListaLivewire
+php artisan make:livewire Admin/Imagen/ImagenEditarLivewire
 
 php artisan make:livewire Admin/Slider/SliderTodoLivewire
 php artisan make:livewire Admin/Slider/SliderCrearLivewire
