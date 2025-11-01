@@ -12,4 +12,8 @@ class Slider extends Model
 
     protected $fillable = ['nombre', 'imagenes', 'activo'];
 
+    protected $casts = [
+        'imagenes' => 'array',
+    ];
+
 }

@@ -40,8 +40,19 @@
                                 <tr>
                                     <td> {{ $index + 1 }} </td>
                                     <td class="g_resaltar">{{ $item->nombre }}</td>
-                                    <td> <img src="{{ $item->imagen_computadora }}" alt="{{ $item->nombre }}"></td>
-                                    <td> <img src="{{ $item->imagen_movil }}" alt="{{ $item->nombre }}"> </td>
+                                    <td>
+                                        @if (!empty($item->imagenes) && isset($item->imagenes[0]['imagen_computadora']))
+                                            <img src="{{ $item->imagenes[0]['imagen_computadora'] }}"
+                                                alt="{{ $item->nombre }}">
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (!empty($item->imagenes) && isset($item->imagenes[0]['imagen_movil']))
+                                            <img src="{{ $item->imagenes[0]['imagen_movil'] }}"
+                                                alt="{{ $item->nombre }}">
+                                        @endif
+                                    </td>
+
                                     <td>{{ $item->link }}</td>
                                     <td class="centrar_iconos">
                                         <a href="{{ route('admin.slider.vista.editar', $item) }}"
