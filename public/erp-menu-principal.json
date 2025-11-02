@@ -4,26 +4,556 @@
         "nombre": "1",
         "ruta": "#",
         "url": "#",
-        "icono": "fa-solid fa-users-viewfinder",
+        "icono": "fa-solid fa-city",
         "nivel": 1,
         "submenus": [
             {
-                "id": 12,
-                "nombre": "Imagen",
-                "ruta": "admin.imagen.vista.todo",
-                "url": "/admin/imagen",
-                "icono": "fa-solid fa-check-to-slot",
+                "id": 11,
+                "nombre": "Empresa",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-tree-city",
                 "nivel": 2,
-                "submenus": []
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Sede",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 1111,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 1112,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.crear",
+                                "url": "/admin/slider/crear",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Almacen",
+                        "ruta": "#",
+                        "url": "#",
+                        "icono": "fa-solid fa-comment",
+                        "nivel": 2,
+                        "submenus": [
+                            {
+                                "id": 1121,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 3,
+                                "submenus": []
+                            },
+                            {
+                                "id": 1122,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 3,
+                                "submenus": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
-                "id": 11,
-                "nombre": "Slider",
+                "id": 12,
+                "nombre": "Documento",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-file-lines",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 121,
+                        "nombre": "Tipo documento",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 1211,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 1212,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 122,
+                        "nombre": "Serie",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 1221,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 1222,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "2",
+        "ruta": "#",
+        "url": "#",
+        "icono": "fa-solid fa-shirt",
+        "nivel": 1,
+        "submenus": [
+            {
+                "id": 212,
+                "nombre": "Categoria",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-gifts",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 2121,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 2122,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 215,
+                "nombre": "Subcategoria",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-gift",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 2151,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 2152,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 211,
+                "nombre": "Marca",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-spell-check",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 1111,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 1112,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 213,
+                "nombre": "Talla",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-up-right-and-down-left-from-center",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 2131,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 2132,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 214,
+                "nombre": "Color",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-palette",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 2141,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 2142,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 216,
+                "nombre": "Producto",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-person-booth",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 2161,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    },
+                    {
+                        "id": 2162,
+                        "nombre": "Crear",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 4,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "nombre": "Precio",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 211,
+                        "nombre": "Lista precio",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 1111,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 1112,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 212,
+                        "nombre": "Producto lista precio",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 23,
+                "nombre": "Descuento",
                 "ruta": "admin.slider.vista.todo",
-                "url": "/admin/slider",
-                "icono": "fa-solid fa-check-to-slot",
+                "url": "/admin.slider",
+                "icono": "fa-solid fa-comment",
                 "nivel": 2,
                 "submenus": []
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "5",
+        "ruta": "#",
+        "url": "#",
+        "icono": "fa-solid fa-photo-film",
+        "nivel": 1,
+        "submenus": [
+            {
+                "id": 41,
+                "nombre": "Imagen",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-regular fa-image",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.imagen.vista.todo",
+                        "url": "/admin.imagen",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "3",
+        "ruta": "#",
+        "url": "#",
+        "icono": "fa-solid fa-cart-flatbed",
+        "nivel": 1,
+        "submenus": [
+            {
+                "id": 32,
+                "nombre": "Inventario",
+                "ruta": "admin.slider.vista.todo",
+                "url": "/admin.slider",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 321,
+                        "nombre": "Todo",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 322,
+                        "nombre": "Inventario Lista Precio",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
+            },
+            {
+                "id": 33,
+                "nombre": "Movimientos",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 331,
+                        "nombre": "Guia entrada directo",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 3311,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 3312,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 332,
+                        "nombre": "Guia salida directo",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 3321,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 3322,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 333,
+                        "nombre": "Transferencia almacen",
+                        "ruta": "#",
+                        "url": "#",
+                        "nivel": 3,
+                        "submenus": [
+                            {
+                                "id": 3331,
+                                "nombre": "Todo",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            },
+                            {
+                                "id": 3332,
+                                "nombre": "Crear",
+                                "ruta": "admin.slider.vista.todo",
+                                "url": "/admin.slider",
+                                "nivel": 4,
+                                "submenus": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "4",
+        "ruta": "#",
+        "url": "#",
+        "icono": "fa-solid fa-file-pen",
+        "nivel": 1,
+        "submenus": [
+            {
+                "id": 41,
+                "nombre": "Plantilla",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Footer",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Slider",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 113,
+                        "nombre": "Banner",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 114,
+                        "nombre": "Mostrador",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 115,
+                        "nombre": "Grid",
+                        "ruta": "admin.slider.vista.todo",
+                        "url": "/admin.slider",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

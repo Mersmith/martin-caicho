@@ -15,14 +15,8 @@
 
 /*CONTENIDO LAYOUT PAGINA*/
 .contenido_layout_pagina {
-    margin-top: 72px;
-    margin-left: calc(30px / 2);
-    margin-right: calc(30px / 2);
-    margin-bottom: 30px;
-    border-radius: 20px;
-    background: var(--color-blanco);
-    min-height: calc(100% - 102px);
-    box-shadow: var(--sombra);
+    margin-top: var(--alto-header-admin);
+    min-height: calc(100% - var(--alto-header-admin));
 }
 
 .centrar_pagina {
@@ -39,7 +33,7 @@
 
     /*CONTENEDOR LAYOUT PAGINA*/
     .contenedor_layout_pagina.estilo_contenedor_layout_pagina {
-        margin-left: calc(80px + 240px);
+        margin-left: calc(var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu));
     }
 
 }

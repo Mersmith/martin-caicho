@@ -1,13 +1,14 @@
 /*CONTENEDOR ASIDE*/
 .contenedor_aside {
     position: fixed;
-    left: calc(-1 * var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu));
+    left: calc(-1 * (var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu)));
     width: var(--ancho-sidebar-admin-item);
     height: 100%;
     background: white;
     top: 0;
     z-index: 99;
     transition: all .4s ease-in-out;
+    border-right: var(--borde-card);
 }
 
 .contenedor_aside a {
@@ -85,10 +86,11 @@
     top: 0;
     transition: left .4s ease-in-out;
     height: 100%;
+    border-right: var(--borde-card);
 }
 
 .contenedor_nav_links.estilo_abierto_contenedor_nav_links {
-    left: 80px;
+    left: var(--ancho-sidebar-admin-item);
 }
 
 /*CONTENEDOR LOGO*/
@@ -98,7 +100,7 @@
     top: 0;
     padding: 0 24px;
     transition: left .4s ease-in-out;
-    height: 70px;
+    height: var(--alto-header-admin);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,8 +111,8 @@
 /*SIDEBAR NAV*/
 .sidebar_nav {
     position: absolute;
-    height: calc(100vh - 70px);
-    top: 70px;
+    height: calc(100vh - var(--alto-header-admin));
+    top: var(--alto-header-admin);
     transition: left .4s ease-in-out;
     z-index: 98;
     background-color: white;
@@ -207,7 +209,7 @@
 
     /*CONTENEDOR ASIDE*/
     .contenedor_aside {
-        left: -320px;
+        left: calc(-1 * (var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu)));
     }
 
     .contenedor_aside.estilo_abierto_contenedor_aside {

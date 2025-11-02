@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    border-bottom: var(--borde-card);
 }
 
 .layout_menu_hamburguesa_celular {
