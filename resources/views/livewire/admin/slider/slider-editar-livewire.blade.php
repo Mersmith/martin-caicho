@@ -2,7 +2,7 @@
 
 @section('anchoPantalla', '100%')
 
-<div x-data="dataSlider">
+<div x-data="dataSlider" class="g_gap_pagina">
 
     <!--CABECERA TITULO PAGINA-->
     <div class="g_panel cabecera_titulo_pagina">

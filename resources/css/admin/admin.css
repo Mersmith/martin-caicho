@@ -6,9 +6,9 @@
 @import '../generales/code.css';
 
 @import "./layout.css";
+@import "./components/menu-principal.css";
 @import "./components/header.css";
 @import "./components/panel.css";
-@import "./components/menu-principal.css";
 @import "./components/pagina-cabecera.css";
 @import "./components/tabla.css";
 @import "./components/tabla-cabecera.css";

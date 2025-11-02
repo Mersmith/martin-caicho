@@ -14,15 +14,37 @@
                 Inicio <i class="fa-solid fa-house"></i></a>
 
             <a href="{{ route('admin.slider.vista.crear') }}" class="g_boton g_boton_primary">
-                Crear <i class="fa-solid fa-square-plus"></i></a>                
+                Crear <i class="fa-solid fa-square-plus"></i></a>
         </div>
     </div>
 
     <!--TABLA-->
     <div class="g_panel">
         @if ($sliders->count())
+            <!--TABLA CABECERA-->
+            <div class="tabla_cabecera">
+                <!--TABLA CABECERA BOTONES-->
+                <div class="tabla_cabecera_botones">
+                    <button>
+                        PDF <i class="fa-solid fa-file-pdf"></i>
+                    </button>
+
+                    <button>
+                        EXCEL <i class="fa-regular fa-file-excel"></i>
+                    </button>
+                </div>
+
+                <!--TABLA CABECERA BUSCAR-->
+                <div class="tabla_cabecera_buscar">
+                    <form action="">
+                        <input type="text" id="buscar" name="buscar" placeholder="Buscar...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+            </div>
+
             <!--TABLA CONTENIDO-->
-            <div class="tabla_contenido g_margin_bottom_20">
+            <div class="tabla_contenido">
                 <div class="contenedor_tabla">
                     <table class="tabla">
                         <thead>
