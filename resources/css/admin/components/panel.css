@@ -5,3 +5,10 @@
     border: var(--borde-card);
     border-radius: var(--borde-radius);
 }
+
+.g_panel_titulo {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--color-negro);
+    font-weight: 600;
+}

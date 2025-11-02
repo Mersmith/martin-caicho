@@ -32,8 +32,12 @@
     gap: 20px;
 }
 
-.g_margin_top_70 {
-    margin-top: 70px;
+.g_margin_top_20 {
+    margin-top: 20px;
+}
+
+.g_margin_bottom_20 {
+    margin-bottom: 20px;
 }
 
 .g_contenedor_columna {
@@ -68,8 +72,11 @@
         gap: 10px;
     }
 
-    .g_margin_top_70 {
-        margin-top: 40px;
+    .g_margin_top_20 {
+        margin-top: 10px;
     }
 
+    .g_margin_bottom_20 {
+        margin-bottom: 10px;
+    }
 }

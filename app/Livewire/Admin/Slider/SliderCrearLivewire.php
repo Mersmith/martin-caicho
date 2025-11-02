@@ -4,8 +4,8 @@ namespace App\Livewire\Admin\Slider;
 
 use App\Models\Slider;
 use Livewire\Attributes\Layout;
-use Livewire\Component;
 use Livewire\Attributes\On;
+use Livewire\Component;
 
 #[Layout('layouts.admin.layout-admin')]
 class SliderCrearLivewire extends Component
@@ -14,6 +14,17 @@ class SliderCrearLivewire extends Component
     public $nombre;
     public $imagenes = [];
     public $activo = false;
+
+    protected function rules()
+    {
+        return [
+            'nombre' => 'required|string|max:255',
+            'imagenes.*.id' => 'required|integer',
+            'imagenes.*.imagen_computadora' => 'required|string',
+            'imagenes.*.imagen_movil' => 'required|string',
+            'activo' => 'boolean',
+        ];
+    }
 
     protected $validationAttributes = [
         'nombre' => 'nombre',
@@ -29,7 +40,7 @@ class SliderCrearLivewire extends Component
         'imagenes.*.imagen_movil.required' => 'El :attribute es requerido.',
     ];
 
-    public function addImage()
+    public function agregarItem()
     {
         $maxId = collect($this->imagenes)->max('id');
         $nextId = $maxId ? $maxId + 1 : 1;
@@ -42,20 +53,14 @@ class SliderCrearLivewire extends Component
         ];
     }
 
-    public function removeImage($index)
+    public function eliminarItem($index)
     {
         array_splice($this->imagenes, $index, 1);
     }
 
     public function store()
     {
-        $this->validate([
-            'nombre' => 'required|string|max:255',
-            'imagenes.*.id' => 'required|integer',
-            'imagenes.*.imagen_computadora' => 'required|string',
-            'imagenes.*.imagen_movil' => 'required|string',
-            'activo' => 'boolean',
-        ]);
+        $this->validate();
 
         $this->slider = Slider::create([
             'nombre' => $this->nombre,
@@ -66,8 +71,8 @@ class SliderCrearLivewire extends Component
         $this->dispatch('alertaLivewire', "Creado");
     }
 
-    #[On('handleSliderOn')]
-    public function handleSliderOn($item, $position)
+    #[On('handleSliderCrearOn')]
+    public function handleSliderCrearOn($item, $position)
     {
         $index = array_search($item, array_column($this->imagenes, 'id'));
 

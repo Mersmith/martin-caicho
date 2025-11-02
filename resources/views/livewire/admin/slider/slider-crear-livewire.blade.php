@@ -1,25 +1,33 @@
-@section('tituloPagina', 'Slider')
+@section('tituloPagina', 'Crear slider')
 
 @section('anchoPantalla', '100%')
 
-<div x-data="dataSlider">
+<div x-data="dataSliderCrear" class="g_gap_pagina">
 
     <!--CABECERA TITULO PAGINA-->
     <div class="g_panel cabecera_titulo_pagina">
         <!--TITULO-->
-        <h2>Slider principal</h2>
+        <h2>Crear slider</h2>
+
+        <!--BOTONES-->
+        <div class="cabecera_titulo_botones">
+            <a href="{{ route('admin.slider.vista.todo') }}" class="g_boton g_boton_light">
+                Inicio <i class="fa-solid fa-house"></i></a>
+
+            <a href="{{ route('admin.slider.vista.todo') }}" class="g_boton g_boton_darkt">
+                <i class="fa-solid fa-arrow-left"></i> Regresar</a>
+        </div>
     </div>
 
     <form wire:submit.prevent="store" class="formulario">
-
         <div class="g_fila">
-            <div class="g_columna_8">
+            <div class="g_columna_8 g_gap_pagina">
                 <div class="g_panel">
                     <!--TITULO-->
                     <h4 class="g_panel_titulo">General</h4>
 
                     <!--NOMBRE-->
-                    <div class="g_margin_bottom_20">
+                    <div>
                         <label for="nombre">Nombre <span class="obligatorio"><i
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" name="nombre" wire:model.live="nombre">
@@ -27,7 +35,6 @@
                             <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
-
                 </div>
 
                 <div class="g_panel">
@@ -35,7 +42,7 @@
 
                     <!--BOTON-->
                     <div class="formulario_botones g_margin_bottom_20">
-                        <button type="button" wire:click="addImage()" class="agregar">
+                        <button type="button" wire:click="agregarItem()" class="agregar">
                             <i class="fa-solid fa-plus"></i>
                             Agregar item
                         </button>
@@ -52,7 +59,8 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody x-sort="handleSlider">
+
+                        <tbody x-sort="handleSliderCrear">
                             @foreach ($imagenes as $index => $imagen)
                                 <tr class="sorteable_item" x-sort:item="{{ $imagen['id'] }}"
                                     wire:key="imagen-{{ $index }}">
@@ -88,7 +96,7 @@
                                         @enderror
                                     </td>
                                     <td>
-                                        <button type="button" wire:click="removeImage({{ $index }})"
+                                        <button type="button" wire:click="eliminarItem({{ $index }})"
                                             class="boton_eliminar" wire:key="boton-eliminar-{{ $index }}">
                                             <i class="fa-solid fa-xmark"></i>
                                         </button>
@@ -100,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="g_columna_4">
+            <div class="g_columna_4 g_gap_pagina">
                 <div class="g_panel">
                     <!--TITULO-->
                     <h4 class="g_panel_titulo">Activo</h4>
@@ -117,20 +125,18 @@
             </div>
         </div>
 
-        <div>
+        <div class="g_margin_top_20">
             <div class="formulario_botones">
-                <button type="submit" class="guardar">Guardar</button>
+                <button type="submit" class="guardar">Crear</button>
             </div>
         </div>
     </form>
 
     <script>
-        function dataSlider() {
+        function dataSliderCrear() {
             return {
-                handleSlider(item, position) {
-                    console.log(item, position);
-
-                    Livewire.dispatch('handleSliderOn', {
+                handleSliderCrear(item, position) {
+                    Livewire.dispatch('handleSliderCrearOn', {
                         item: item,
                         position: position,
                     });

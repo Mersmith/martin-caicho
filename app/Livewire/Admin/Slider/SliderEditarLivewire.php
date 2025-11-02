@@ -15,6 +15,17 @@ class SliderEditarLivewire extends Component
     public $imagenes = [];
     public $activo = false;
 
+    protected function rules()
+    {
+        return [
+            'nombre' => 'required|string|max:255',
+            'imagenes.*.id' => 'required|integer',
+            'imagenes.*.imagen_computadora' => 'required|string',
+            'imagenes.*.imagen_movil' => 'required|string',
+            'activo' => 'boolean',
+        ];
+    }
+
     protected $validationAttributes = [
         'nombre' => 'nombre',
         'imagenes.*.id' => 'id',
@@ -28,6 +39,7 @@ class SliderEditarLivewire extends Component
         'imagenes.*.imagen_computadora.required' => 'El :attribute es requerido.',
         'imagenes.*.imagen_movil.required' => 'El :attribute es requerido.',
     ];
+
     public function mount($id)
     {
         $this->slider = Slider::findOrFail($id);
@@ -48,7 +60,7 @@ class SliderEditarLivewire extends Component
         }
     }
 
-    public function addImage()
+    public function agregarItem()
     {
         $maxId = collect($this->imagenes)->max('id');
         $nextId = $maxId ? $maxId + 1 : 1;
@@ -61,20 +73,14 @@ class SliderEditarLivewire extends Component
         ];
     }
 
-    public function removeImage($index)
+    public function eliminarItem($index)
     {
         array_splice($this->imagenes, $index, 1);
     }
 
     public function store()
     {
-        $this->validate([
-            'nombre' => 'required|string|max:255',
-            'imagenes.*.id' => 'required|integer',
-            'imagenes.*.imagen_computadora' => 'required|string',
-            'imagenes.*.imagen_movil' => 'required|string',
-            'activo' => 'boolean',
-        ]);
+        $this->validate();
 
         $this->slider->update([
             'nombre' => $this->nombre,
@@ -82,11 +88,11 @@ class SliderEditarLivewire extends Component
             'activo' => $this->activo,
         ]);
 
-        $this->dispatch('alertaLivewire', "Creado");
+        $this->dispatch('alertaLivewire', "Actualizado");
     }
 
-    #[On('handleSliderOn')]
-    public function handleSliderOn($item, $position)
+    #[On('handleSliderEditarOn')]
+    public function handleSliderEditarOn($item, $position)
     {
         $index = array_search($item, array_column($this->imagenes, 'id'));
 
