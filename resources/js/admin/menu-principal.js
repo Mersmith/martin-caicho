@@ -34,7 +34,7 @@ window.xDataLayout = function () {
         initLayout() {
             let anchoPantalla = window.innerWidth || screen.width;
 
-            if (anchoPantalla < 900) {
+            if (anchoPantalla < 768) {
                 this.estadoAsideAbierto = false;
                 this.estadoNavAbierto = false;
             } else if (this.seleccionadoNivel_1) {
@@ -42,14 +42,14 @@ window.xDataLayout = function () {
             }
 
             window.addEventListener("resize", () => {
-                this.estadoAsideAbierto = document.body.clientWidth >= 900;
+                this.estadoAsideAbierto = document.body.clientWidth >= 768;
             });
         },
 
         toggleContenedorAside() {
             let anchoPantalla = window.innerWidth || screen.width;
 
-            if (anchoPantalla < 900) {
+            if (anchoPantalla < 768) {
                 this.estadoAsideAbierto = true;
                 if (this.seleccionadoNivel_1) this.estadoNavAbierto = true;
             }
@@ -58,9 +58,9 @@ window.xDataLayout = function () {
         toggleContenedorNavLinks() {
             let anchoPantalla = window.innerWidth || screen.width;
 
-            if (anchoPantalla > 900 && this.seleccionadoNivel_1) {
+            if (anchoPantalla > 768 && this.seleccionadoNivel_1) {
                 this.estadoNavAbierto = !this.estadoNavAbierto;
-            } else if (anchoPantalla < 900) {
+            } else if (anchoPantalla < 768) {
                 this.estadoAsideAbierto = false;
             }
         },

@@ -39,10 +39,10 @@
 
         <!--CONTENIDO LAYOUT PAGINA-->
         <div class="contenido_layout_pagina">
-            <div class="centrar_pagina" @hasSection('anchoPantalla')
+            <div class="g_centrar_pagina" @hasSection('anchoPantalla')
                 style="max-width: @yield('anchoPantalla')"
                 @endif">
-                <main class="g_contenido_pagina">
+                <main class="g_pading_pagina">
                     @yield('content')
                     @if (isset($slot))
                         {{ $slot }}
