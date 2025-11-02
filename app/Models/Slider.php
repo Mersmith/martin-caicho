@@ -14,6 +14,7 @@ class Slider extends Model
 
     protected $casts = [
         'imagenes' => 'array',
+        'activo' => 'boolean',
     ];
 
 }

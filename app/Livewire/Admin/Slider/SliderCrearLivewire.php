@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Slider;
 use App\Models\Slider;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 #[Layout('layouts.admin.layout-admin')]
 class SliderCrearLivewire extends Component
@@ -56,11 +57,9 @@ class SliderCrearLivewire extends Component
             'activo' => 'boolean',
         ]);
 
-        $imagenesJson = json_encode($this->imagenes);
-
         $this->slider = Slider::create([
             'nombre' => $this->nombre,
-            'imagenes' => $imagenesJson,
+            'imagenes' => $this->imagenes,
             'activo' => $this->activo,
         ]);
 

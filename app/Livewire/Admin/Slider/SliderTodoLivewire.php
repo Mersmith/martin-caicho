@@ -14,6 +14,8 @@ class SliderTodoLivewire extends Component
         $sliders = Slider::orderBy('created_at', 'desc')
             ->paginate(10);
 
+            //dd( $sliders);
+
         return view('livewire.admin.slider.slider-todo-livewire', [
             'sliders' => $sliders,
         ]);

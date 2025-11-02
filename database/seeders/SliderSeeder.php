@@ -12,11 +12,10 @@ class SliderSeeder extends Seeder
      */
     public function run(): void
     {
-
         $sliders = [
             [
                 'nombre' => 'Slider 1',
-                'imagenes' => json_encode([
+                'imagenes' => [
                     [
                         'id' => 1,
                         'imagen_computadora' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg',
@@ -29,7 +28,7 @@ class SliderSeeder extends Seeder
                         'imagen_movil' => 'http://127.0.0.1:8000/assets/imagen/sliders-movil-2.jpg',
                         'link' => 'https://example.com/link2',
                     ],
-                ]),
+                ],
                 'activo' => true,
             ],
         ];
