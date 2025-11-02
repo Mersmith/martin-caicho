@@ -8,7 +8,7 @@
 /*TITULO*/
 .cabecera_titulo_pagina h2 {
     font-size: 18px;
-    color: #29343d;
+    color: var(--color-negro);
     font-weight: 600;
     display: flex;
     align-items: flex-end;
@@ -17,7 +17,7 @@
 
 .cabecera_titulo_pagina h2 span {
     font-size: 12px;
-    color: #98A4AE;
+    color: var(--color-gris);
     font-weight: normal;
     padding-bottom: 2px;
 }
@@ -31,7 +31,7 @@
     justify-content: flex-end;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
     /*CABECERA TITULO PAGINA*/
     .cabecera_titulo_pagina {

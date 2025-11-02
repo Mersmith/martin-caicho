@@ -1,22 +1,21 @@
-/*CONTENEDOR LAYOUT GENERAL*/
+/*LAYOUT*/
 .contenedor_layout_general {
     display: flex;
     min-height: 100vh;
 }
 
-/*CONTENEDOR LAYOUT PAGINA*/
 .contenedor_layout_pagina {
     margin-left: var(--ancho-sidebar-admin-item);
     transition: margin-left .4s ease-in-out;
     width: 100%;
 }
 
-/*CONTENIDO LAYOUT PAGINA*/
 .contenido_layout_pagina {
     margin-top: var(--alto-header-admin);
     min-height: calc(100% - var(--alto-header-admin));
 }
 
+/*PAGINA*/
 .g_centrar_pagina {
     margin: 0 auto;
     max-width: var(--ancho-centrar-pagina);
@@ -28,14 +27,12 @@
 }
 
 .g_gap_pagina {
-    /**/
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .g_margin_top_70 {
-    /**/
     margin-top: 70px;
 }
 
@@ -48,7 +45,7 @@
 
 @media (min-width: 768px) {
 
-    /*CONTENEDOR LAYOUT PAGINA*/
+    /*LAYOUT*/
     .contenedor_layout_pagina.estilo_contenedor_layout_pagina {
         margin-left: calc(var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu));
     }
@@ -57,17 +54,18 @@
 
 @media (max-width: 768px) {
 
-    /*CONTENEDOR LAYOUT PAGINA*/
+    /*LAYOUT*/
     .contenedor_layout_pagina {
         margin-left: 0px;
     }
 
+    /*PAGINA*/
     .g_pading_pagina {
         padding: 10px;
     }
 
     .g_gap_pagina {
-        gap: 20px;
+        gap: 10px;
     }
 
     .g_margin_top_70 {

@@ -2,7 +2,7 @@
 
 @section('anchoPantalla', '100%')
 
-<div>
+<div class="g_gap_pagina">
     <!--CABECERA TITULO PAGINA-->
     <div class="g_panel cabecera_titulo_pagina">
         <!--TITULO-->
@@ -14,7 +14,7 @@
                 Inicio <i class="fa-solid fa-house"></i></a>
 
             <a href="{{ route('admin.slider.vista.crear') }}" class="g_boton g_boton_primary">
-                Crear <i class="fa-solid fa-square-plus"></i></a>
+                Crear <i class="fa-solid fa-square-plus"></i></a>                
         </div>
     </div>
 
