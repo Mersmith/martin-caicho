@@ -22,8 +22,7 @@
                                 <i class="fa-solid fa-pencil"></i>
                             </button>
 
-                            <button type="button"
-                                class="g_boton g_boton_danger"
+                            <button type="button" class="g_boton g_boton_danger"
                                 wire:click="$dispatch('eliminarImagenAlertaLivewire', { imagenId: {{ $imagen->id }} })">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
