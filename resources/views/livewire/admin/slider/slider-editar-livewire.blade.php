@@ -130,7 +130,12 @@
 
         <div class="g_margin_top_20">
             <div class="formulario_botones">
-                <button type="submit" class="guardar">Actualizar</button>
+                <button type="submit" class="guardar" wire:loading.attr="disabled" wire:target="store">
+                    <span wire:loading.remove wire:target="store">Actualizar</span>
+                    <span wire:loading wire:target="store">Actualizando...</span>
+                </button>
+
+                <a href="{{ route('admin.slider.vista.todo') }}" class="cancelar">Cancelar</a>
             </div>
         </div>
     </form>

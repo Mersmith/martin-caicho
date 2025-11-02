@@ -87,6 +87,8 @@ class SliderEditarLivewire extends Component
             'imagenes' => $this->imagenes,
             'activo' => $this->activo,
         ]);
+        
+        $this->reset(['nombre', 'imagenes', 'activo']);
 
         $this->dispatch('alertaLivewire', "Actualizado");
     }
