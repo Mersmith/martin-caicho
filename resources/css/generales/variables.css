@@ -26,6 +26,7 @@
     --sombra-secundario-derecha: -2px 0 5px -2px rgba(0, 0, 0, 0.2);
 
     --borde-card: 1px solid var(--color-gris);/**/
+    --borde-radius: 14px;
 
     --view-computadora: 1024px;
     --view-tablet: 768px;/**/

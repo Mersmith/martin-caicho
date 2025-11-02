@@ -4,7 +4,7 @@
     left: calc(-1 * (var(--ancho-sidebar-admin-item) + var(--ancho-sidebar-admin-menu)));
     width: var(--ancho-sidebar-admin-item);
     height: 100%;
-    background: white;
+    background: var(--color-blanco);
     top: 0;
     z-index: 99;
     transition: all .4s ease-in-out;
@@ -35,7 +35,7 @@
 
 .contenedor_nav_iconos .contenedor_menu_hamburguesa i {
     font-size: 18px;
-    color: #4b4e50;
+    color: var(--color-negro);
     cursor: pointer;
 }
 
@@ -44,7 +44,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    color: #4b4e50;
+    color: var(--color-negro);
     scrollbar-width: none;
     overflow: hidden scroll;
     padding: 10px 20px;
@@ -52,8 +52,8 @@
 }
 
 .contenedor_nav_iconos ul .nav_icono_seleccionado {
-    background-color: #635BFF;
-    color: white;
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
 }
 
 .nav_icono_seleccionado.no-hover {
@@ -66,7 +66,7 @@
 }
 
 .contenedor_nav_iconos ul li:hover {
-    background-color: #DDDBFF;
+    background-color: var(--color-gris);
 }
 
 .contenedor_nav_iconos ul i {
@@ -82,7 +82,7 @@
     position: absolute;
     width: var(--ancho-sidebar-admin-menu);
     left: calc(-1 * var(--ancho-sidebar-admin-menu));
-    background: white;
+    background: var(--color-blanco);
     top: 0;
     transition: left .4s ease-in-out;
     height: 100%;
@@ -96,7 +96,6 @@
 /*CONTENEDOR LOGO*/
 .contenedor_logo {
     position: absolute;
-    background: white;
     top: 0;
     padding: 0 24px;
     transition: left .4s ease-in-out;
@@ -104,21 +103,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: var(--borde-card);
 }
 
 /*FIN CONTENEDOR LOGO*/
 
 /*SIDEBAR NAV*/
 .sidebar_nav {
+    padding: 20px 0px;
     position: absolute;
     height: calc(100vh - var(--alto-header-admin));
     top: var(--alto-header-admin);
     transition: left .4s ease-in-out;
     z-index: 98;
-    background-color: white;
     width: 100%;
     font-size: 15px;
-    color: #29343D;
+    color: var(--color-negro)
 }
 
 .sidebar_nav .sidebar_scroll {
@@ -172,21 +172,21 @@
 }
 
 .sidebar_nav ul .sidebar_nav_seleccionado {
-    background-color: #635BFF;
-    color: white;
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
     border-radius: 12px;
 }
 
 .sidebar_nav ul .contenedor_a:hover {
-    color: #635BFF;
+    color: var(--color-verde);
 }
 
 .sidebar_nav ul .sidebar_item_seleccionado {
-    color: #635BFF;
+    color: var(--color-verde);
 }
 
 .sidebar_nav_seleccionado.no-hover {
-    color: white !important;
+    color: var(--color-blanco) !important;
 }
 
 .ocultar_nivel {
