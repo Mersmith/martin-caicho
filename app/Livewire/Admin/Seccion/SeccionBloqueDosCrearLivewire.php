@@ -4,55 +4,82 @@ namespace App\Livewire\Admin\Seccion;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use App\Models\Seccion;
 
 #[Layout('layouts.admin.layout-admin')]
 class SeccionBloqueDosCrearLivewire extends Component
 {
     public $nombre;
-    public $imagenes = [];
-    public $activo = false;
+
+    public $titulo;
+    public $titulo_descripcion;
+
+    public $imagen;
+    public $imagen_seo;
+
+    public $subtitulo;
+    public $subtitulo_descripcion;
+
+    public $lista = [];
+
+    public $boton = [
+        'icono' => '',
+        'fondo_color' => '',
+        'texto' => '',
+        'texto_color' => '',
+        'link' => '',
+    ];
+
+    public $activo = 0;
 
     protected function rules()
     {
         return [
             'nombre' => 'required|string|max:255',
-            'imagenes.*.id' => 'required|integer',
-            'imagenes.*.imagen_computadora' => 'required|string',
-            'imagenes.*.imagen_movil' => 'required|string',
+            'titulo' => 'nullable|string|max:255',
+            'titulo_descripcion' => 'nullable|string',
+            'imagen' => 'nullable|string',
+            'imagen_seo' => 'nullable|string',
+            'subtitulo' => 'nullable|string|max:255',
+            'subtitulo_descripcion' => 'nullable|string',
+            'lista.*.id' => 'required|integer',
+            //'lista.*.icono' => 'required|string',
+            //'lista.*.icono_color' => 'required|string',
+            //'lista.*.texto' => 'required|string',
+            //'lista.*.texto_color' => 'required|string',
+            'boton.icono' => 'nullable|string',
+            'boton.fondo_color' => 'nullable|string',
+            'boton.texto' => 'nullable|string',
+            'boton.texto_color' => 'nullable|string',
+            'boton.link' => 'nullable|string',
             'activo' => 'boolean',
         ];
     }
 
-    protected $validationAttributes = [
-        'nombre' => 'nombre',
-        'imagenes.*.id' => 'id',
-        'imagenes.*.imagen_computadora' => 'imagen computadora',
-        'imagenes.*.imagen_movil' => 'imagen móvil',
-    ];
-
     protected $messages = [
-        'nombre.required' => 'El :attribute es requerido.',
-        'imagenes.*.id.required' => 'El :attribute es requerido.',
-        'imagenes.*.imagen_computadora.required' => 'El :attribute es requerido.',
-        'imagenes.*.imagen_movil.required' => 'El :attribute es requerido.',
+        'nombre.required' => 'El nombre es obligatorio.',
+        'lista.*.id.required' => 'El ID del item es obligatorio.',
+        'lista.*.icono.required' => 'El icono es obligatorio.',
+        'lista.*.texto.required' => 'El texto es obligatorio.',
     ];
 
     public function agregarItem()
     {
-        $maxId = collect($this->imagenes)->max('id');
+        $maxId = collect($this->lista)->max('id');
         $nextId = $maxId ? $maxId + 1 : 1;
 
-        $this->imagenes[] = [
+        $this->lista[] = [
             'id' => $nextId,
-            'imagen_computadora' => '',
-            'imagen_movil' => '',
-            'link' => '',
+            'icono' => '',
+            'icono_color' => '',
+            'texto' => '',
+            'texto_color' => '',
         ];
     }
 
     public function eliminarItem($index)
     {
-        array_splice($this->imagenes, $index, 1);
+        array_splice($this->lista, $index, 1);
     }
 
     public function store()
@@ -61,14 +88,21 @@ class SeccionBloqueDosCrearLivewire extends Component
 
         Seccion::create([
             'nombre' => $this->nombre,
-            'tipo' => 'slider',
+            'tipo' => 'bloque_dos',
             'contenido' => [
-                'imagenes' => $this->imagenes,
+                'titulo' => $this->titulo,
+                'titulo_descripcion' => $this->titulo_descripcion,
+                'imagen' => $this->imagen,
+                'imagen_seo' => $this->imagen_seo,
+                'subtitulo' => $this->subtitulo,
+                'subtitulo_descripcion' => $this->subtitulo_descripcion,
+                'lista' => $this->lista,
+                'boton' => $this->boton,
             ],
             'activo' => $this->activo,
         ]);
 
-        $this->reset(['nombre', 'imagenes', 'activo']);
+        $this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'activo']);
 
         $this->dispatch('alertaLivewire', 'Creado');
     }
@@ -76,11 +110,11 @@ class SeccionBloqueDosCrearLivewire extends Component
     #[On('handleSliderCrearOn')]
     public function handleSliderCrearOn($item, $position)
     {
-        $index = array_search($item, array_column($this->imagenes, 'id'));
+        $index = array_search($item, array_column($this->lista, 'id'));
 
         if ($index !== false) {
-            $element = array_splice($this->imagenes, $index, 1)[0];
-            array_splice($this->imagenes, $position, 0, [$element]);
+            $element = array_splice($this->lista, $index, 1)[0];
+            array_splice($this->lista, $position, 0, [$element]);
         }
     }
 
