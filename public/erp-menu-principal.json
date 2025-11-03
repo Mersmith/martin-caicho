@@ -539,6 +539,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 43,
+                "nombre": "Bloque 2",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.seccion.bloque-dos.vista.todo",
+                        "url": "/admin/seccion/bloque-dos",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.seccion.bloque-dos.vista.crear",
+                        "url": "/admin/seccion/bloque-dos/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

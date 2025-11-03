@@ -11,10 +11,10 @@
 
         <!--BOTONES-->
         <div class="cabecera_titulo_botones">
-            <a href="{{ route('admin.seccion.bloque-uno.vista.todo') }}" class="g_boton g_boton_light">
+            <a href="{{ route('admin.seccion.bloque-dos.vista.todo') }}" class="g_boton g_boton_light">
                 Inicio <i class="fa-solid fa-house"></i></a>
 
-            <a href="{{ route('admin.seccion.bloque-uno.vista.todo') }}" class="g_boton g_boton_darkt">
+            <a href="{{ route('admin.seccion.bloque-dos.vista.todo') }}" class="g_boton g_boton_darkt">
                 <i class="fa-solid fa-arrow-left"></i> Regresar</a>
         </div>
     </div>
@@ -132,7 +132,7 @@
                     <span wire:loading wire:target="store">Guardando...</span>
                 </button>
 
-                <a href="{{ route('admin.seccion.bloque-uno.vista.todo') }}" class="cancelar">Cancelar</a>
+                <a href="{{ route('admin.seccion.bloque-dos.vista.todo') }}" class="cancelar">Cancelar</a>
             </div>
         </div>
     </form>

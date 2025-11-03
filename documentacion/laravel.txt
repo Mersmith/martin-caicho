@@ -45,3 +45,7 @@ php artisan make:livewire Admin/Seccion/SeccionTodoLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueUnoTodoLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueUnoCrearLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueUnoEditarLivewire
+
+php artisan make:livewire Admin/Seccion/SeccionBloqueDosTodoLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueDosCrearLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueDosEditarLivewire
