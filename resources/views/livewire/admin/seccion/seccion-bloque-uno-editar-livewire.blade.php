@@ -118,8 +118,8 @@
                     <h4 class="g_panel_titulo">Activo</h4>
 
                     <!--ACTIVO-->
-                    <select id="activo" name="activo" wire:model="activo">
-                        <option value="0" selected>DESACTIVADO</option>
+                    <select id="activo" name="activo" wire:model.live="activo">
+                        <option value="0">DESACTIVADO</option>
                         <option value="1">ACTIVO</option>
                     </select>
                     @error('activo')

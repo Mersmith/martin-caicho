@@ -14,7 +14,7 @@ class ImagenSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
+    {/*
         // 1. Define la ruta de origen donde tienes las imágenes
         $sourcePath = public_path('assets/imagen');
 
@@ -70,5 +70,6 @@ class ImagenSeeder extends Seeder
                 }
             }
         }
+    */
     }
 }

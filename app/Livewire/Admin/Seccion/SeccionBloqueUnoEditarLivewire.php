@@ -48,14 +48,11 @@ class SeccionBloqueUnoEditarLivewire extends Component
         $this->nombre = $this->seccion->nombre;
         $this->activo = $this->seccion->activo;
 
-        // Obtener el contenido decodificado (gracias al cast)
         $contenido = $this->seccion->contenido ?? [];
 
-        // Si el JSON tiene 'imagenes', las asignamos
         if (isset($contenido['imagenes']) && is_array($contenido['imagenes'])) {
             $this->imagenes = $contenido['imagenes'];
         } else {
-            // Si no hay contenido, iniciamos con un item vacío
             $this->imagenes = [
                 [
                     'id' => 1,

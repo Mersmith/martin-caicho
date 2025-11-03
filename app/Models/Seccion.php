@@ -20,6 +20,5 @@ class Seccion extends Model
 
     protected $casts = [
         'contenido' => 'array',
-        'activo' => 'boolean',
     ];
 }

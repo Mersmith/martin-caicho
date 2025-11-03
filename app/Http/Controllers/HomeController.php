@@ -2,37 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Candidato;
 use App\Models\Noticia;
-use App\Models\Slider;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $candidato = Candidato::first();
-
-        $sliders = $this->getWebSlidersPrincipal(1);
+        $seccion_3 = app(SeccionController::class)->getSeccion(3);
 
         $noticias = $this->getNoticias();
 
         $imagenes = $this->getImagenes();
 
-        return view('web.home', compact('candidato', 'sliders', 'noticias', 'imagenes'));
-    }
-
-    public function getWebSlidersPrincipal($id)
-    {
-        $sliders = Slider::where('id', $id)
-            ->where('activo', true)
-            ->first();
-        if ($sliders) {
-            $sliders->imagenes = $sliders->imagenes;
-        } else {
-            $sliders = null;
-        }
-
-        return $sliders;
+        return view('web.home', compact('seccion_3', 'noticias', 'imagenes'));
     }
 
     public function getNoticias()
