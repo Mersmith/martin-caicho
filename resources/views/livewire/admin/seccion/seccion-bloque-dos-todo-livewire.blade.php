@@ -62,7 +62,7 @@
                                     <td class="g_resaltar">{{ $item->nombre }}</td>
                                     <td>{{ $item->tipo }}</td>
                                     <td class="centrar_iconos">
-                                        <a href="{{ route('admin.seccion.bloque-uno.vista.editar', $item) }}"
+                                        <a href="{{ route('admin.seccion.bloque-dos.vista.editar', $item) }}"
                                             class="g_accion_editar">
                                             <span><i class="fa-solid fa-pencil"></i></span>
                                         </a>

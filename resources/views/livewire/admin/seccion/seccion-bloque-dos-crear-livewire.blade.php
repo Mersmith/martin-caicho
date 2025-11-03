@@ -1,7 +1,7 @@
 @section('tituloPagina', 'Crear bloque 2')
 @section('anchoPantalla', '100%')
 
-<div x-data="dataSliderCrear" class="g_gap_pagina">
+<div x-data="dataBloque2Crear" class="g_gap_pagina">
 
     <!-- CABECERA -->
     <div class="g_panel cabecera_titulo_pagina">
@@ -95,7 +95,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody x-sort="handleSliderCrear">
+                        <tbody x-sort="handleBloque2Crear">
                             @foreach ($lista as $index => $item)
                                 <tr class="sorteable_item" x-sort:item="{{ $item['id'] }}"
                                     wire:key="item-{{ $index }}">
@@ -195,10 +195,10 @@
     </form>
 
     <script>
-        function dataSliderCrear() {
+        function dataBloque2Crear() {
             return {
-                handleSliderCrear(item, position) {
-                    Livewire.dispatch('handleSliderCrearOn', {
+                handleBloque2Crear(item, position) {
+                    Livewire.dispatch('handleBloque2CrearOn', {
                         item,
                         position
                     });

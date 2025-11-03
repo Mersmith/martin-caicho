@@ -102,8 +102,8 @@ class SeccionBloqueUnoEditarLivewire extends Component
         $this->dispatch('alertaLivewire', "Actualizado");
     }
 
-    #[On('handleSliderEditarOn')]
-    public function handleSliderEditarOn($item, $position)
+    #[On('handleBloque1EditarOn')]
+    public function handleBloque1EditarOn($item, $position)
     {
         $index = array_search($item, array_column($this->imagenes, 'id'));
 

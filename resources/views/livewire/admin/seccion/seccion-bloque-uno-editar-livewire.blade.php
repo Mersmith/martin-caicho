@@ -2,7 +2,7 @@
 
 @section('anchoPantalla', '100%')
 
-<div x-data="dataSliderEditar" class="g_gap_pagina">
+<div x-data="dataBloque1Editar" class="g_gap_pagina">
 
     <!--CABECERA TITULO PAGINA-->
     <div class="g_panel cabecera_titulo_pagina">
@@ -63,7 +63,7 @@
                             </tr>
                         </thead>
 
-                        <tbody x-sort="handleSliderEditar">
+                        <tbody x-sort="handleBloque1Editar">
                             @foreach ($imagenes as $index => $imagen)
                                 <tr class="sorteable_item" x-sort:item="{{ $imagen['id'] }}"
                                     wire:key="imagen-{{ $index }}">
@@ -141,10 +141,10 @@
     </form>
 
     <script>
-        function dataSliderEditar() {
+        function dataBloque1Editar() {
             return {
-                handleSliderEditar(item, position) {
-                    Livewire.dispatch('handleSliderEditarOn', {
+                handleBloque1Editar(item, position) {
+                    Livewire.dispatch('handleBloque1EditarOn', {
                         item: item,
                         position: position,
                     });

@@ -75,8 +75,8 @@ class SeccionBloqueUnoCrearLivewire extends Component
         $this->dispatch('alertaLivewire', 'Creado');
     }
 
-    #[On('handleSliderCrearOn')]
-    public function handleSliderCrearOn($item, $position)
+    #[On('handleBloque1CrearOn')]
+    public function handleBloque1CrearOn($item, $position)
     {
         $index = array_search($item, array_column($this->imagenes, 'id'));
 
