@@ -38,3 +38,10 @@ php artisan make:livewire Admin/Slider/SliderEditarLivewire
 
 php artisan make:livewire Admin/Header/ComponenteHeaderLivewire
 
+
+php artisan make:model Seccion -mfsc
+
+php artisan make:livewire Admin/Seccion/SeccionTodoLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueUnoTodoLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueUnoCrearLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueUnoEditarLivewire

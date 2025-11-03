@@ -368,7 +368,7 @@
                         "id": 111,
                         "nombre": "Todo",
                         "ruta": "admin.imagen.vista.todo",
-                        "url": "/admin.imagen",
+                        "url": "/admin/imagen",
                         "nivel": 3,
                         "submenus": []
                     }
@@ -507,7 +507,16 @@
         "submenus": [
             {
                 "id": 41,
-                "nombre": "Plantilla",
+                "nombre": "Sección",
+                "ruta": "admin.seccion.vista.todo",
+                "url": "/admin/seccion",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": []
+            },
+            {
+                "id": 42,
+                "nombre": "Bloque 1",
                 "ruta": "#",
                 "url": "#",
                 "icono": "fa-solid fa-comment",
@@ -515,41 +524,17 @@
                 "submenus": [
                     {
                         "id": 111,
-                        "nombre": "Footer",
-                        "ruta": "admin.slider.vista.todo",
-                        "url": "/admin.slider",
+                        "nombre": "Todo",
+                        "ruta": "admin.seccion.bloque-uno.vista.todo",
+                        "url": "/admin/seccion/bloque-uno",
                         "nivel": 3,
                         "submenus": []
                     },
                     {
                         "id": 112,
-                        "nombre": "Slider",
-                        "ruta": "admin.slider.vista.todo",
-                        "url": "/admin.slider",
-                        "nivel": 3,
-                        "submenus": []
-                    },
-                    {
-                        "id": 113,
-                        "nombre": "Banner",
-                        "ruta": "admin.slider.vista.todo",
-                        "url": "/admin.slider",
-                        "nivel": 3,
-                        "submenus": []
-                    },
-                    {
-                        "id": 114,
-                        "nombre": "Mostrador",
-                        "ruta": "admin.slider.vista.todo",
-                        "url": "/admin.slider",
-                        "nivel": 3,
-                        "submenus": []
-                    },
-                    {
-                        "id": 115,
-                        "nombre": "Grid",
-                        "ruta": "admin.slider.vista.todo",
-                        "url": "/admin.slider",
+                        "nombre": "Crear",
+                        "ruta": "admin.seccion.bloque-uno.vista.crear",
+                        "url": "/admin/seccion/bloque-uno/crear",
                         "nivel": 3,
                         "submenus": []
                     }
