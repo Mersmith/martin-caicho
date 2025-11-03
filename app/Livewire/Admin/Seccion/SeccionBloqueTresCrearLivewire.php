@@ -86,8 +86,8 @@ class SeccionBloqueTresCrearLivewire extends Component
         $this->dispatch('alertaLivewire', 'Creado');
     }
 
-    #[On('handleBloque2CrearOn')]
-    public function handleBloque2CrearOn($item, $position)
+    #[On('handleBloque3CrearOn')]
+    public function handleBloque3CrearOn($item, $position)
     {
         $index = array_search($item, array_column($this->lista, 'id'));
 

@@ -32,18 +32,18 @@
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" wire:model.live="nombre">
                         @error('nombre')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
 
                 <!-- TITULO -->
                 <div class="g_panel">
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="titulo">Título</label>
                         <input type="text" id="titulo" wire:model.live="titulo">
                         @error('titulo')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -51,26 +51,27 @@
                         <label for="titulo_descripcion">Descripción</label>
                         <textarea id="titulo_descripcion" wire:model.live="titulo_descripcion" rows="3"></textarea>
                         @error('titulo_descripcion')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
 
                 <!-- SUBTITULO -->
                 <div class="g_panel">
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="subtitulo">Subtítulo</label>
                         <input type="text" id="subtitulo" wire:model.live="subtitulo">
                         @error('subtitulo')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div>
                         <label for="subtitulo_descripcion">Descripción</label>
-                        <textarea id="subtitulo_descripcion" wire:model.live="subtitulo_descripcion" rows="3"></textarea>
+                        <textarea id="subtitulo_descripcion" wire:model.live="subtitulo_descripcion"
+                            rows="3"></textarea>
                         @error('subtitulo_descripcion')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -79,7 +80,7 @@
                 <div class="g_panel">
                     <h4 class="g_panel_titulo">Lista</h4>
 
-                    <div class="formulario_botones g_margin_bottom_20">
+                    <div class="formulario_botones g_margin_bottom_10">
                         <button type="button" wire:click="agregarItem" class="agregar">
                             <i class="fa-solid fa-plus"></i> Agregar item
                         </button>
@@ -97,29 +98,28 @@
                         </thead>
                         <tbody x-sort="handleBloque2Crear">
                             @foreach ($lista as $index => $item)
-                                <tr class="sorteable_item" x-sort:item="{{ $item['id'] }}"
-                                    wire:key="item-{{ $index }}">
-                                    <td><i class="fa-solid fa-up-down-left-right"></i></td>
-                                    <td><input type="number" wire:model="lista.{{ $index }}.id" readonly></td>
-                                    <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.icono"
-                                            wire:key="icono-{{ $index }}">
-                                        <input type="color" wire:model="lista.{{ $index }}.icono_color"
-                                            wire:key="icono_color-{{ $index }}">
-                                    </td>
-                                    <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.texto"
-                                            wire:key="texto-{{ $index }}">
-                                        <input type="color" wire:model="lista.{{ $index }}.texto_color"
-                                            wire:key="texto_color-{{ $index }}">
-                                    </td>
-                                    <td>
-                                        <button type="button" wire:click="eliminarItem({{ $index }})"
-                                            class="boton_eliminar" wire:key="boton-eliminar-{{ $index }}">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                            <tr class="sorteable_item" x-sort:item="{{ $item['id'] }}" wire:key="item-{{ $index }}">
+                                <td><i class="fa-solid fa-up-down-left-right"></i></td>
+                                <td><input type="number" wire:model="lista.{{ $index }}.id" readonly></td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.icono"
+                                        wire:key="icono-{{ $index }}">
+                                    <input type="color" wire:model="lista.{{ $index }}.icono_color"
+                                        wire:key="icono_color-{{ $index }}">
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.texto"
+                                        wire:key="texto-{{ $index }}">
+                                    <input type="color" wire:model="lista.{{ $index }}.texto_color"
+                                        wire:key="texto_color-{{ $index }}">
+                                </td>
+                                <td>
+                                    <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
+                                        wire:key="boton-eliminar-{{ $index }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -139,7 +139,7 @@
 
                 <!-- IMAGEN -->
                 <div class="g_panel">
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="imagen">Imagen</label>
                         <input type="text" id="imagen" wire:model.live="imagen">
                     </div>
@@ -147,6 +147,7 @@
                     <div>
                         <label for="imagen_seo">Descripción SEO</label>
                         <textarea id="imagen_seo" wire:model.live="imagen_seo" rows="3"></textarea>
+                        <p class="leyenda">Se mostrará en el SEO.</p>
                     </div>
                 </div>
 
@@ -154,24 +155,26 @@
                 <div class="g_panel">
                     <h4 class="g_panel_titulo">Botón</h4>
 
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="boton.icono">Icono</label>
                         <input type="text" id="boton.icono" name="boton.icono" wire:model.live="boton.icono">
                     </div>
 
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="boton.fondo_color">Fondo</label>
-                        <input type="color" id="boton.fondo_color" name="boton.fondo_color" wire:model.live="boton.fondo_color">
+                        <input type="color" id="boton.fondo_color" name="boton.fondo_color"
+                            wire:model.live="boton.fondo_color">
                     </div>
 
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="boton.texto">Texto</label>
                         <input type="text" id="boton.texto" name="boton.texto" wire:model.live="boton.texto">
                     </div>
 
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="boton.texto_color">Color texto</label>
-                        <input type="color" id="boton.texto_color" name="boton.texto_color" wire:model.live="boton.texto_color">
+                        <input type="color" id="boton.texto_color" name="boton.texto_color"
+                            wire:model.live="boton.texto_color">
                     </div>
 
                     <div>

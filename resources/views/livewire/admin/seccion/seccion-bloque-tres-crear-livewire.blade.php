@@ -35,8 +35,7 @@
 
                 <!-- TÍTULO -->
                 <div class="g_panel">
-                    <h4 class="g_panel_titulo">Título y descripción</h4>
-                    <div class="g_margin_bottom_20">
+                    <div class="g_margin_bottom_10">
                         <label for="titulo">Título</label>
                         <input type="text" id="titulo" wire:model.live="titulo">
                     </div>
@@ -58,15 +57,15 @@
                     </h4>
 
                     <!-- BOTÓN AGREGAR ITEM -->
-                    <div class="formulario_botones g_margin_bottom_20">
+                    <div class="formulario_botones g_margin_bottom_10">
                         <button type="button" wire:click="agregarItem" class="agregar">
                             <i class="fa-solid fa-plus"></i> Agregar item
                         </button>
                     </div>
 
                     <!-- ITEMS -->
-                    <div x-sort="handleBloque3Crear">
-                        @forelse ($lista as $index => $item)
+                    <div x-sort="handleBloque3Crear" class="g_gap_pagina">
+                        @foreach ($lista as $index => $item)
                         <div class="g_panel tabla_caja" x-sort:item="{{ $item['id'] }}">
                             <div class="cabecera">
                                 <span><i class="fa-solid fa-up-down-left-right"></i></span>
@@ -79,32 +78,32 @@
                                 </button>
                             </div>
 
-                            <h4 class="g_panel_titulo">ID: {{ $item['id'] }} - Index: {{ $index }}</h4>
+                            <h4 class="g_panel_titulo">ID: {{ $item['id'] }}</h4>
 
                             <div x-show="itemsVisibility[{{ $index }}]" x-transition>
-                                <div class="g_margin_bottom_10">
-                                    <label>ID</label>
-                                    <input type="number" wire:model="lista.{{ $index }}.id" readonly>
+                                <div class="g_fila">
+                                    <div class="g_margin_bottom_10">
+                                        <label>Título</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.titulo">
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <label>Descripción</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.descripcion">
+                                    </div>
                                 </div>
 
-                                <div class="g_margin_bottom_10">
-                                    <label>Título</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.titulo">
-                                </div>
+                                <div class="g_fila">
+                                    <div class="g_margin_bottom_10">
+                                        <label>Imagen</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.imagen">
+                                    </div>
 
-                                <div class="g_margin_bottom_10">
-                                    <label>Descripción</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.descripcion">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Imagen</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.imagen">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>SEO Imagen</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.imagen_seo">
+                                    <div class="g_margin_bottom_10">
+                                        <label>SEO Imagen</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.imagen_seo">
+                                        <p class="leyenda">Se mostrará en el SEO.</p>
+                                    </div>
                                 </div>
 
                                 <div class="g_margin_bottom_10">
@@ -112,33 +111,36 @@
                                     <input type="text" wire:model="lista.{{ $index }}.subtitulo">
                                 </div>
 
-                                <div class="g_margin_bottom_10">
-                                    <label>Icono del botón</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.boton.icono">
+                                <div class="g_fila">
+                                    <div class="g_margin_bottom_10">
+                                        <label>Icono del botón</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.boton.icono">
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <label>Color botón</label>
+                                        <input type="color" wire:model="lista.{{ $index }}.boton.fondo_color">
+                                    </div>
+                                </div>
+
+                                <div class="g_fila">
+                                    <div class="g_margin_bottom_10">
+                                        <label>Texto del botón</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.boton.texto">
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <label>Color texto</label>
+                                        <input type="color" wire:model="lista.{{ $index }}.boton.texto_color">
+                                    </div>
                                 </div>
 
                                 <div class="g_margin_bottom_10">
-                                    <label>Color fondo del botón</label>
-                                    <input type="color" wire:model="lista.{{ $index }}.boton.fondo_color">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Texto del botón</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.boton.texto">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Color del texto</label>
-                                    <input type="color" wire:model="lista.{{ $index }}.boton.texto_color">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Enlace</label>
+                                    <label>Enlace del botón</label>
                                     <input type="text" wire:model="lista.{{ $index }}.boton.link">
                                 </div>
 
-                                <!-- ELIMINAR -->
-                                <div class="g_margin_top_10">
+                                <div class="g_margin_bottom_10">
                                     <button type="button" wire:click="eliminarItem({{ $index }})"
                                         class="boton_eliminar">
                                         <i class="fa-solid fa-xmark"></i> Eliminar
@@ -146,9 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                        @empty
-                        <p class="g_texto_centrado g_margin_top_20">No hay items agregados.</p>
-                        @endforelse
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -176,6 +176,7 @@
                 <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="cancelar">Cancelar</a>
             </div>
         </div>
+
     </form>
 
     <script>
@@ -187,7 +188,6 @@
                 init() {
                     Livewire.on('lista-updated', count => {
                         this.itemsVisibility = Array(count).fill(this.globalVisible);
-                        console.log('🟢 ItemsVisibility actualizado:', this.itemsVisibility);
                     });
                 },
 
@@ -197,7 +197,7 @@
                 },
 
                 handleBloque3Crear(item, position) {
-                    Livewire.dispatch('handleBloque2CrearOn', { item, position });
+                    Livewire.dispatch('handleBloque3CrearOn', { item, position });
                 }
             }
         }

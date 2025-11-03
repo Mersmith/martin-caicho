@@ -14,21 +14,21 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #333;
-    font-size: .9rem;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1;
 }
 
 .formulario input[type="checkbox"] {
     /*background-color: rgb(245, 245, 245);*/
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: #635BFF;
-    font-size: .9rem;
-    line-height: 1.5;
+    color: #635bff;
+    font-size: 15px;
+    line-height: 1;
 }
 
-.formulario input[type=checkbox]:checked {
-    background-color: #635BFF;
+.formulario input[type="checkbox"]:checked {
+    background-color: #635bff;
 }
 
 .formulario *:disabled {
@@ -52,7 +52,7 @@
 .formulario textarea:active {
     outline: none;
     box-shadow: none;
-    border-color: #635BFF;
+    border-color: #635bff;
     box-sizing: border-box;
     transition: border-color 0.3s;
 }
@@ -60,24 +60,24 @@
 /*LABEL*/
 .formulario label {
     display: flex;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
     color: #29343d;
     font-size: 14px;
 }
 
 .formulario .obligatorio {
-    color: #FF6692;
+    color: #ff6692;
     font-size: 8px;
 }
 
 .formulario .leyenda {
-    color: #98A4AE;
+    color: #98a4ae;
     font-size: 12px;
 }
 
 .formulario .mensaje_error {
-    color: #FF6692;
+    color: #ff6692;
     font-size: 12px;
     font-style: italic;
 }
@@ -106,18 +106,18 @@
 
 .formulario_botones .guardar {
     cursor: pointer;
-    background-color: #635BFF;
+    background-color: #635bff;
     color: white;
 }
 
 .formulario_botones .cancelar {
-    background-color: #FFCCDB;
-    color: #FF6692;
+    background-color: #ffccdb;
+    color: #ff6692;
 }
 
 .formulario_botones .agregar {
     background-color: #dddbff;
-    color: #635BFF;
+    color: #635bff;
 }
 
 .boton_checkbox {
@@ -142,7 +142,7 @@
 }
 
 /*IMAGENES*/
-.formulario_grid_imagenes{
+.formulario_grid_imagenes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     grid-gap: 8px;
