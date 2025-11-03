@@ -8,28 +8,14 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 
 #[Layout('layouts.admin.layout-admin')]
-class SeccionBloqueDosCrearLivewire extends Component
+class SeccionBloqueTresCrearLivewire extends Component
 {
     public $nombre;
 
     public $titulo;
     public $titulo_descripcion;
 
-    public $imagen;
-    public $imagen_seo;
-
-    public $subtitulo;
-    public $subtitulo_descripcion;
-
     public $lista = [];
-
-    public $boton = [
-        'icono' => '',
-        'fondo_color' => '#000000',
-        'texto' => '',
-        'texto_color' => '#000000',
-        'link' => '',
-    ];
 
     public $activo = 0;
 
@@ -39,25 +25,14 @@ class SeccionBloqueDosCrearLivewire extends Component
             'nombre' => 'required|string|max:255',
             'titulo' => 'nullable|string|max:255',
             'titulo_descripcion' => 'nullable|string',
-            'imagen' => 'nullable|string',
-            'imagen_seo' => 'nullable|string',
-            'subtitulo' => 'nullable|string|max:255',
-            'subtitulo_descripcion' => 'nullable|string',
             'lista.*.id' => 'required|integer',
-            'boton.icono' => 'nullable|string',
-            'boton.fondo_color' => 'nullable|string',
-            'boton.texto' => 'nullable|string',
-            'boton.texto_color' => 'nullable|string',
-            'boton.link' => 'nullable|string',
             'activo' => 'boolean',
         ];
     }
 
     protected $messages = [
         'nombre.required' => 'El nombre es obligatorio.',
-        'lista.*.id.required' => 'El ID del item es obligatorio.',
-        'lista.*.icono.required' => 'El icono es obligatorio.',
-        'lista.*.texto.required' => 'El texto es obligatorio.',
+        'lista.*.id.required' => 'El ID del item es obligatorio.'
     ];
 
     public function agregarItem()
@@ -67,16 +42,28 @@ class SeccionBloqueDosCrearLivewire extends Component
 
         $this->lista[] = [
             'id' => $nextId,
-            'icono' => '',
-            'icono_color' => '#000000',
-            'texto' => '',
-            'texto_color' => '#000000',
+            'titulo' => '',
+            'descripcion' => '',
+            'imagen' => '',
+            'imagen_seo' => '',
+            'subtitulo' => '',
+            'boton' => [
+                'icono' => '',
+                'fondo_color' => '#000000',
+                'texto' => '',
+                'texto_color' => '#000000',
+                'link' => '',
+            ]
         ];
+
+        $this->dispatch('lista-updated', count($this->lista));
     }
 
     public function eliminarItem($index)
     {
         array_splice($this->lista, $index, 1);
+
+        $this->dispatch('lista-updated', count($this->lista));
     }
 
     public function store()
@@ -85,21 +72,16 @@ class SeccionBloqueDosCrearLivewire extends Component
 
         Seccion::create([
             'nombre' => $this->nombre,
-            'tipo' => 'bloque_2',
+            'tipo' => 'bloque_3',
             'contenido' => [
                 'titulo' => $this->titulo,
                 'titulo_descripcion' => $this->titulo_descripcion,
-                'imagen' => $this->imagen,
-                'imagen_seo' => $this->imagen_seo,
-                'subtitulo' => $this->subtitulo,
-                'subtitulo_descripcion' => $this->subtitulo_descripcion,
                 'lista' => $this->lista,
-                'boton' => $this->boton,
             ],
             'activo' => $this->activo,
         ]);
 
-        $this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'activo']);
+        $this->reset(['nombre', 'titulo', 'titulo_descripcion',  'lista', 'activo']);
 
         $this->dispatch('alertaLivewire', 'Creado');
     }
@@ -117,6 +99,6 @@ class SeccionBloqueDosCrearLivewire extends Component
 
     public function render()
     {
-        return view('livewire.admin.seccion.seccion-bloque-dos-crear-livewire');
+        return view('livewire.admin.seccion.seccion-bloque-tres-crear-livewire');
     }
 }

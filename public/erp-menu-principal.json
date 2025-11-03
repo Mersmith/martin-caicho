@@ -565,6 +565,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 44,
+                "nombre": "Bloque 3",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.seccion.bloque-tres.vista.todo",
+                        "url": "/admin/seccion/bloque-tres",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.seccion.bloque-tres.vista.crear",
+                        "url": "/admin/seccion/bloque-tres/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

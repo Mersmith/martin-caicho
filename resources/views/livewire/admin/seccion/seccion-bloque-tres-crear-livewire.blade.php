@@ -1,0 +1,206 @@
+<div x-data="dataBloque3Crear()" class="g_gap_pagina">
+
+    <!-- CABECERA -->
+    <div class="g_panel cabecera_titulo_pagina">
+        <h2>Crear bloque 3</h2>
+
+        <div class="cabecera_titulo_botones">
+            <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="g_boton g_boton_light">
+                Inicio <i class="fa-solid fa-house"></i>
+            </a>
+
+            <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="g_boton g_boton_darkt">
+                <i class="fa-solid fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <form wire:submit.prevent="store" class="formulario">
+
+        <div class="g_fila">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="g_columna_8 g_gap_pagina">
+
+                <!-- GENERAL -->
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">General</h4>
+                    <div>
+                        <label for="nombre">Nombre <span class="obligatorio"><i
+                                    class="fa-solid fa-asterisk"></i></span></label>
+                        <input type="text" id="nombre" wire:model.live="nombre">
+                        @error('nombre') <p class="mensaje_error">{{ $message }}</p> @enderror
+                    </div>
+                </div>
+
+                <!-- TÍTULO -->
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">Título y descripción</h4>
+                    <div class="g_margin_bottom_20">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" wire:model.live="titulo">
+                    </div>
+
+                    <div>
+                        <label for="titulo_descripcion">Descripción</label>
+                        <textarea id="titulo_descripcion" wire:model.live="titulo_descripcion" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- LISTA -->
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">
+                        Items
+                        <button type="button" @click="toggleAll()">
+                            <span x-show="globalVisible"><i class="fa-solid fa-angle-up"></i></span>
+                            <span x-show="!globalVisible"><i class="fa-solid fa-angle-down"></i></span>
+                        </button>
+                    </h4>
+
+                    <!-- BOTÓN AGREGAR ITEM -->
+                    <div class="formulario_botones g_margin_bottom_20">
+                        <button type="button" wire:click="agregarItem" class="agregar">
+                            <i class="fa-solid fa-plus"></i> Agregar item
+                        </button>
+                    </div>
+
+                    <!-- ITEMS -->
+                    <div x-sort="handleBloque3Crear">
+                        @forelse ($lista as $index => $item)
+                        <div class="g_panel tabla_caja" x-sort:item="{{ $item['id'] }}">
+                            <div class="cabecera">
+                                <span><i class="fa-solid fa-up-down-left-right"></i></span>
+                                <button type="button"
+                                    @click="itemsVisibility[{{ $index }}] = !itemsVisibility[{{ $index }}]">
+                                    <span x-show="itemsVisibility[{{ $index }}]"><i
+                                            class="fa-solid fa-angle-up"></i></span>
+                                    <span x-show="!itemsVisibility[{{ $index }}]"><i
+                                            class="fa-solid fa-angle-down"></i></span>
+                                </button>
+                            </div>
+
+                            <h4 class="g_panel_titulo">ID: {{ $item['id'] }} - Index: {{ $index }}</h4>
+
+                            <div x-show="itemsVisibility[{{ $index }}]" x-transition>
+                                <div class="g_margin_bottom_10">
+                                    <label>ID</label>
+                                    <input type="number" wire:model="lista.{{ $index }}.id" readonly>
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Título</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.titulo">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Descripción</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.descripcion">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Imagen</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>SEO Imagen</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen_seo">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Subtítulo</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.subtitulo">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Icono del botón</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.boton.icono">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Color fondo del botón</label>
+                                    <input type="color" wire:model="lista.{{ $index }}.boton.fondo_color">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Texto del botón</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.boton.texto">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Color del texto</label>
+                                    <input type="color" wire:model="lista.{{ $index }}.boton.texto_color">
+                                </div>
+
+                                <div class="g_margin_bottom_10">
+                                    <label>Enlace</label>
+                                    <input type="text" wire:model="lista.{{ $index }}.boton.link">
+                                </div>
+
+                                <!-- ELIMINAR -->
+                                <div class="g_margin_top_10">
+                                    <button type="button" wire:click="eliminarItem({{ $index }})"
+                                        class="boton_eliminar">
+                                        <i class="fa-solid fa-xmark"></i> Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        @empty
+                        <p class="g_texto_centrado g_margin_top_20">No hay items agregados.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="g_columna_4 g_gap_pagina g_columna_invertir">
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">Activo</h4>
+                    <select wire:model="activo">
+                        <option value="0">DESACTIVADO</option>
+                        <option value="1">ACTIVO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="g_margin_top_20">
+            <div class="formulario_botones">
+                <button type="submit" class="guardar" wire:loading.attr="disabled" wire:target="store">
+                    <span wire:loading.remove wire:target="store">Crear</span>
+                    <span wire:loading wire:target="store">Guardando...</span>
+                </button>
+
+                <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="cancelar">Cancelar</a>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function dataBloque3Crear() {
+            return {
+                globalVisible: true,
+                itemsVisibility: Array(@js(count($lista))).fill(true),
+
+                init() {
+                    Livewire.on('lista-updated', count => {
+                        this.itemsVisibility = Array(count).fill(this.globalVisible);
+                        console.log('🟢 ItemsVisibility actualizado:', this.itemsVisibility);
+                    });
+                },
+
+                toggleAll() {
+                    this.globalVisible = !this.globalVisible;
+                    this.itemsVisibility = Array(this.itemsVisibility.length).fill(this.globalVisible);
+                },
+
+                handleBloque3Crear(item, position) {
+                    Livewire.dispatch('handleBloque2CrearOn', { item, position });
+                }
+            }
+        }
+    </script>
+
+</div>
