@@ -23,6 +23,7 @@ class SeccionBloqueUnoEditarLivewire extends Component
             'imagenes.*.id' => 'required|integer',
             'imagenes.*.imagen_computadora' => 'required|string',
             'imagenes.*.imagen_movil' => 'required|string',
+            'imagenes.*.link' => 'nullable|url',
             'activo' => 'boolean',
         ];
     }
@@ -32,6 +33,7 @@ class SeccionBloqueUnoEditarLivewire extends Component
         'imagenes.*.id' => 'id',
         'imagenes.*.imagen_computadora' => 'imagen computadora',
         'imagenes.*.imagen_movil' => 'imagen móvil',
+        'imagenes.*.link' => 'link',
     ];
 
     protected $messages = [
@@ -39,6 +41,7 @@ class SeccionBloqueUnoEditarLivewire extends Component
         'imagenes.*.id.required' => 'El :attribute es requerido.',
         'imagenes.*.imagen_computadora.required' => 'El :attribute es requerido.',
         'imagenes.*.imagen_movil.required' => 'El :attribute es requerido.',
+        'imagenes.*.link.url' => 'El :attribute debe ser válido.',
     ];
 
     public function mount($id)

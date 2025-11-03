@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="g_panel">
-                    <h4 class="g_panel_titulo">Sliders</h4>
+                    <h4 class="g_panel_titulo">Lista</h4>
 
                     <!--BOTON-->
                     <div class="formulario_botones g_margin_bottom_20">
@@ -69,39 +69,46 @@
 
                         <tbody x-sort="handleBloque1Editar">
                             @foreach ($imagenes as $index => $imagen)
-                            <tr class="sorteable_item" x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
-                                <td><i class="fa-solid fa-up-down-left-right"></i></td>
+                            <tr x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
                                 <td>
-                                    <input type="number" wire:model="imagenes.{{ $index }}.id" class="form-control"
-                                        value="{{ $imagen['id'] }}" readonly wire:key="id-{{ $index }}">
-                                    @error("imagenes.$index.id")
-                                    <p class="mensaje_error">{{ $message }}</p>
-                                    @enderror
+                                    <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
+                                        style="touch-action: none; cursor: grab;">
+                                        <i class="fa-solid fa-up-down-left-right"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" wire:model="imagenes.{{ $index }}.id" readonly
+                                        wire:key="id-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
+                                        draggable="false">
                                 </td>
                                 <td>
                                     <input type="text" wire:model="imagenes.{{ $index }}.imagen_computadora"
-                                        class="form-control" wire:key="imagen_computadora-{{ $index }}">
+                                        wire:key="imagen_computadora-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
                                     @error("imagenes.$index.imagen_computadora")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>
                                 <td>
                                     <input type="text" wire:model="imagenes.{{ $index }}.imagen_movil"
-                                        class="form-control" wire:key="imagen_movil-{{ $index }}">
+                                        wire:key="imagen_movil-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
                                     @error("imagenes.$index.imagen_movil")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>
                                 <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.link" class="form-control"
-                                        wire:key="link-{{ $index }}">
+                                    <input type="text" wire:model="imagenes.{{ $index }}.link"
+                                        wire:key="link-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
+                                        draggable="false">
                                     @error("imagenes.$index.link")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>
                                 <td>
                                     <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
-                                        wire:key="boton-eliminar-{{ $index }}">
+                                        wire:key="boton-eliminar-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </td>
