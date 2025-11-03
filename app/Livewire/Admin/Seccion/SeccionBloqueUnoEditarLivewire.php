@@ -44,13 +44,13 @@ class SeccionBloqueUnoEditarLivewire extends Component
     public function mount($id)
     {
         $this->seccion = Seccion::findOrFail($id);
-    
+
         $this->nombre = $this->seccion->nombre;
         $this->activo = $this->seccion->activo;
-    
+
         // Obtener el contenido decodificado (gracias al cast)
         $contenido = $this->seccion->contenido ?? [];
-    
+
         // Si el JSON tiene 'imagenes', las asignamos
         if (isset($contenido['imagenes']) && is_array($contenido['imagenes'])) {
             $this->imagenes = $contenido['imagenes'];
@@ -65,7 +65,7 @@ class SeccionBloqueUnoEditarLivewire extends Component
                 ],
             ];
         }
-    }    
+    }
 
     public function agregarItem()
     {
@@ -110,6 +110,16 @@ class SeccionBloqueUnoEditarLivewire extends Component
         if ($index !== false) {
             $element = array_splice($this->imagenes, $index, 1)[0];
             array_splice($this->imagenes, $position, 0, [$element]);
+        }
+    }
+
+    #[On('eliminarSeccion1On')]
+    public function eliminarSeccion1On()
+    {
+        if ($this->seccion) {
+            $this->seccion->delete();
+
+            return redirect()->route('admin.seccion.bloque-uno.vista.todo');
         }
     }
 

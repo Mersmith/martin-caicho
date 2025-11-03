@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('tipo');
             $table->json('contenido')->nullable();
             $table->boolean('activo')->default(false);
-            
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

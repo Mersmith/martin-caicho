@@ -84,7 +84,6 @@
 
 /*FORMULARIO BOTONES*/
 .formulario_botones {
-    cursor: pointer;
     display: flex;
     gap: 10px;
 }
@@ -116,6 +115,7 @@
 }
 
 .formulario_botones .agregar {
+    cursor: pointer;
     background-color: #dddbff;
     color: #635bff;
 }

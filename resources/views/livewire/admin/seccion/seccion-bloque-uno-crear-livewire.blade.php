@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="g_panel">
-                    <h4 class="g_panel_titulo">Sliders</h4>
+                    <h4 class="g_panel_titulo">Lista</h4>
 
                     <!--BOTON-->
                     <div class="formulario_botones g_margin_bottom_20">
