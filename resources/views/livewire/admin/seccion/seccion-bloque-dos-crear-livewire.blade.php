@@ -102,12 +102,16 @@
                                     <td><i class="fa-solid fa-up-down-left-right"></i></td>
                                     <td><input type="number" wire:model="lista.{{ $index }}.id" readonly></td>
                                     <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.icono" wire:key="icono-{{ $index }}">
-                                        <input type="color" wire:model="lista.{{ $index }}.icono_color" wire:key="icono_color-{{ $index }}">
+                                        <input type="text" wire:model="lista.{{ $index }}.icono"
+                                            wire:key="icono-{{ $index }}">
+                                        <input type="color" wire:model="lista.{{ $index }}.icono_color"
+                                            wire:key="icono_color-{{ $index }}">
                                     </td>
                                     <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.texto" wire:key="texto-{{ $index }}">
-                                        <input type="color" wire:model="lista.{{ $index }}.texto_color" wire:key="texto_color-{{ $index }}">
+                                        <input type="text" wire:model="lista.{{ $index }}.texto"
+                                            wire:key="texto-{{ $index }}">
+                                        <input type="color" wire:model="lista.{{ $index }}.texto_color"
+                                            wire:key="texto_color-{{ $index }}">
                                     </td>
                                     <td>
                                         <button type="button" wire:click="eliminarItem({{ $index }})"
@@ -151,28 +155,28 @@
                     <h4 class="g_panel_titulo">Botón</h4>
 
                     <div class="g_margin_bottom_20">
-                        <label>Icono</label>
-                        <input type="text" wire:model.live="boton.icono">
+                        <label for="boton.icono">Icono</label>
+                        <input type="text" id="boton.icono" name="boton.icono" wire:model.live="boton.icono">
                     </div>
 
                     <div class="g_margin_bottom_20">
-                        <label>Fondo</label>
-                        <input type="color" wire:model.live="boton.fondo_color">
+                        <label for="boton.fondo_color">Fondo</label>
+                        <input type="color" id="boton.fondo_color" name="boton.fondo_color" wire:model.live="boton.fondo_color">
                     </div>
 
                     <div class="g_margin_bottom_20">
-                        <label>Texto</label>
-                        <input type="text" wire:model.live="boton.texto">
+                        <label for="boton.texto">Texto</label>
+                        <input type="text" id="boton.texto" name="boton.texto" wire:model.live="boton.texto">
                     </div>
 
                     <div class="g_margin_bottom_20">
-                        <label>Color texto</label>
-                        <input type="color" wire:model.live="boton.texto_color">
+                        <label for="boton.texto_color">Color texto</label>
+                        <input type="color" id="boton.texto_color" name="boton.texto_color" wire:model.live="boton.texto_color">
                     </div>
 
                     <div>
-                        <label>Link</label>
-                        <input type="text" wire:model.live="boton.link">
+                        <label for="boton.link">Link</label>
+                        <input type="text" id="boton.link" name="boton.link" wire:model.live="boton.link">
                     </div>
                 </div>
             </div>

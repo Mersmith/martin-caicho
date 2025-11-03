@@ -24,9 +24,9 @@ class SeccionBloqueDosCrearLivewire extends Component
 
     public $boton = [
         'icono' => '',
-        'fondo_color' => '',
+        'fondo_color' => '#000000',
         'texto' => '',
-        'texto_color' => '',
+        'texto_color' => '#000000',
         'link' => '',
     ];
 
@@ -43,10 +43,6 @@ class SeccionBloqueDosCrearLivewire extends Component
             'subtitulo' => 'nullable|string|max:255',
             'subtitulo_descripcion' => 'nullable|string',
             'lista.*.id' => 'required|integer',
-            //'lista.*.icono' => 'required|string',
-            //'lista.*.icono_color' => 'required|string',
-            //'lista.*.texto' => 'required|string',
-            //'lista.*.texto_color' => 'required|string',
             'boton.icono' => 'nullable|string',
             'boton.fondo_color' => 'nullable|string',
             'boton.texto' => 'nullable|string',
@@ -71,9 +67,9 @@ class SeccionBloqueDosCrearLivewire extends Component
         $this->lista[] = [
             'id' => $nextId,
             'icono' => '',
-            'icono_color' => '',
+            'icono_color' => '#000000',
             'texto' => '',
-            'texto_color' => '',
+            'texto_color' => '#000000',
         ];
     }
 
