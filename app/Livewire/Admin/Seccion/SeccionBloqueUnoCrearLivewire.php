@@ -73,6 +73,8 @@ class SeccionBloqueUnoCrearLivewire extends Component
         $this->reset(['nombre', 'imagenes', 'activo']);
 
         $this->dispatch('alertaLivewire', 'Creado');
+
+        return redirect()->route('admin.seccion.bloque-uno.vista.todo');
     }
 
     #[On('handleBloque1CrearOn')]
