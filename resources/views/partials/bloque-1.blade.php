@@ -38,7 +38,7 @@
             @endif
 
             @if (!empty($subtitulo_descripcion))
-                <h3>{!! $subtitulo_descripcion !!}</h3>
+                <p>{!! $subtitulo_descripcion !!}</p>
             @endif
 
             @if (!empty($lista) && is_array($lista))

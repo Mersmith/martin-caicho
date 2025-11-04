@@ -13,15 +13,7 @@
         </div>
 
         <div class="g_contenedor_columna">
-            @include('partials.encabezado', [
-            'titulo' => 'También <span>soy:</span>',
-            'descripcion' => 'Soy un vecino del Agustino que combina la experiencia empresarial con una profunda pasión
-            por la comunicación y el desarrollo social.
-            En mi libro, invito a reflexionar sobre nuestra realidad nacional y a construir, desde la acción y la
-            conciencia, un Perú más justo y con oportunidades para todos.',
-            ])
-
-            @include('partials.bloque-2', ['p_elemento' => $imagenes])
+            @include('partials.bloque-2', ['p_elemento' => $bloque3_1])
         </div>
     </div>
 </div>

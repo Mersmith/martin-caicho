@@ -1,13 +1,57 @@
-<section class="bloque_2">
-    @foreach ($p_elemento['imagenes'] as $item)
-        <div class="card">
-            <h3>{{ $item['titulo'] }}</h3>
+@if (!empty($p_elemento) && !empty($p_elemento->contenido))
 
-            <img src="{{ $item['imagen'] }}">
+    @php
+        $p = $p_elemento->contenido;
 
-            <!--<div class="contenido">
-                    <p>ga</p>
-                </div>-->
-        </div>
-    @endforeach
-</section>
+        $titulo = $p['titulo'] ?? '';
+        $titulo_descripcion = $p['titulo_descripcion'] ?? '';
+        $lista = $p['lista'] ?? [];
+    @endphp
+
+    @include('partials.encabezado', [
+        'titulo' => $titulo,
+        'descripcion' => $titulo_descripcion,
+    ])
+
+    @if (!empty($lista) && is_array($lista))
+        <section class="bloque_2">
+            @foreach ($lista as $item)
+                <div class="card">
+
+                    @if (!empty($item['titulo']))
+                        <h3>{!! $item['titulo'] !!}</h3>
+                    @endif
+
+                    @if (!empty($item['descripcion']))
+                        <p>{!! $item['descripcion'] !!}</p>
+                    @endif
+
+                    @if (!empty($item['imagen']))
+                        <img src="{{ $item['imagen'] }}" alt="{{ $item['imagen_seo'] ?? '' }}">
+                    @endif
+
+                    @if (!empty($item['subtitulo']))
+                        <div class="contenido">
+                            <p>{!! $item['subtitulo'] !!}</p>
+                        </div>
+                    @endif
+
+                    @php
+                        $boton = $item['boton'] ?? null;
+                    @endphp
+
+                    @if (!empty($boton) && !empty($boton['texto']))
+                        <a href="{{ $boton['link'] ?? '#' }}" target="_blank" class="btn-whatsapp"
+                            style="background-color: {{ $boton['fondo_color'] ?? '#000' }}; color: {{ $boton['texto_color'] ?? '#fff' }}">
+                            @if (!empty($boton['icono']))
+                                <i class="{{ $boton['icono'] }}"></i>
+                            @endif
+                            {{ $boton['texto'] }}
+                        </a>
+                    @endif
+
+                </div>
+            @endforeach
+        </section>
+    @endif
+@endif
