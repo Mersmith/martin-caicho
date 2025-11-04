@@ -10,7 +10,6 @@ class HomeController extends Controller
     {
         $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_1');
         $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(3, 'bloque_2');
-        //dd($bloque2_1);
 
         $noticias = $this->getNoticias();
 

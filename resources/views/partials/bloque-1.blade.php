@@ -1,30 +1,55 @@
+@php
+    $p = $p_elemento->contenido; // ya viene como array por el cast
+
+    $titulo = $p['titulo'] ?? null;
+    $titulo_descripcion = $p['titulo_descripcion'] ?? null;
+
+    $imagen = asset($p['imagen'] ?? 'assets/imagen/default.jpg');
+    $imagen_seo = $p['imagen_seo'] ?? 'Imagen del bloque';
+    $subtitulo = $p['subtitulo'] ?? '';
+    $subtitulo_descripcion = $p['subtitulo_descripcion'] ?? '';
+    $lista = $p['lista'] ?? [];
+    $boton = $p['boton'] ?? [];
+
+    $boton_icono = $boton['icono'] ?? 'fa-solid fa-link';
+    $boton_link = $boton['link'] ?? '#';
+    $boton_texto = $boton['texto'] ?? 'Leer más';
+    $boton_color = $boton['fondo_color'] ?? '#007bff';
+@endphp
+
+@include('partials.encabezado', [
+    'titulo' => $titulo,
+    'descripcion' => $titulo_descripcion,
+])
+
 <section class="bloque_1">
-    <!-- Imagen -->
     <div class="bloque_imagen">
-        <img src="{{ $imagen ?? asset('assets/imagen/default.jpg') }}" alt="{{ $alt ?? 'Imagen' }}">
+        <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
     </div>
 
-    <!-- Contenido -->
     <div class="bloque_cuerpo">
-        <h3>{!! $titulo ?? 'Título por defecto' !!}</h3>
-        <p>{!! $descripcion ?? 'Texto descriptivo del bloque.' !!}</p>
+        <h3>{!! $subtitulo ?: 'Título por defecto' !!}</h3>
+        <p>{!! $subtitulo_descripcion ?: 'Texto descriptivo del bloque.' !!}</p>
 
-        @if (!empty($items) && is_array($items))
+        @if (!empty($lista) && is_array($lista))
             <ul>
-                @foreach ($items as $item)
+                @foreach ($lista as $item)
                     <li>
                         @if (!empty($item['icono']))
-                            <i class="{{ $item['icono'] }}"></i>
+                            <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] ?? '#000' }}"></i>
                         @endif
-                        {{ $item['texto'] ?? '' }}
+                        <span style="color: {{ $item['texto_color'] ?? '#000' }}">
+                            {{ $item['texto'] ?? '' }}
+                        </span>
                     </li>
                 @endforeach
             </ul>
         @endif
 
         @if (!empty($boton_link) && !empty($boton_texto))
-            <a href="{{ $boton_link }}" target="_blank" class="btn-whatsapp">
-                <i class="{{ $boton_icono ?? 'fa-brands fa-whatsapp' }}"></i> {{ $boton_texto }}
+            <a href="{{ $boton_link }}" target="_blank" class="btn-whatsapp"
+               style="background-color: {{ $boton_color }};">
+                <i class="{{ $boton_icono }}"></i> {{ $boton_texto }}
             </a>
         @endif
     </div>
