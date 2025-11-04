@@ -41,25 +41,37 @@ class SeccionBloqueDosEditarLivewire extends Component
             'nombre' => 'required|string|max:255',
             'titulo' => 'nullable|string|max:255',
             'titulo_descripcion' => 'nullable|string',
-            'imagen' => 'nullable|string',
-            'imagen_seo' => 'nullable|string',
+            'imagen' => 'required|string',
+            'imagen_seo' => 'required|string',
             'subtitulo' => 'nullable|string|max:255',
             'subtitulo_descripcion' => 'nullable|string',
             'lista.*.id' => 'required|integer',
+            'lista.*.texto' => 'required|string',
             'boton.icono' => 'nullable|string',
             'boton.fondo_color' => 'nullable|string',
             'boton.texto' => 'nullable|string',
             'boton.texto_color' => 'nullable|string',
-            'boton.link' => 'nullable|string',
+            'boton.link' => 'nullable|url',
             'activo' => 'boolean',
         ];
     }
 
+    protected $validationAttributes = [
+        'nombre' => 'nombre',
+        'imagen' => 'imagen',
+        'imagen_seo' => 'seo imagen',
+        'lista.*.id' => 'id',
+        'lista.*.texto' => 'texto',
+        'boton.link' => 'link',
+    ];
+
     protected $messages = [
-        'nombre.required' => 'El nombre es obligatorio.',
-        'lista.*.id.required' => 'El ID del item es obligatorio.',
-        'lista.*.icono.required' => 'El icono es obligatorio.',
-        'lista.*.texto.required' => 'El texto es obligatorio.',
+        'nombre.required' => 'El :attribute es obligatorio.',
+        'imagen.required' => 'El :attribute es obligatorio.',
+        'imagen_seo.required' => 'El :attribute es obligatorio.',
+        'lista.*.id.required' => 'El :attribute del item es obligatorio.',
+        'lista.*.texto.required' => 'El :attribute es obligatorio.',
+        'boton.link.url' => 'El :attribute debe ser válido.',
     ];
 
     public function mount($id)
@@ -139,7 +151,7 @@ class SeccionBloqueDosEditarLivewire extends Component
             'activo' => $this->activo,
         ]);
 
-        $this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'activo']);
+        //$this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'activo']);
 
         $this->dispatch('alertaLivewire', "Actualizado");
     }
@@ -152,6 +164,16 @@ class SeccionBloqueDosEditarLivewire extends Component
         if ($index !== false) {
             $element = array_splice($this->lista, $index, 1)[0];
             array_splice($this->lista, $position, 0, [$element]);
+        }
+    }
+
+    #[On('eliminarSeccion2On')]
+    public function eliminarSeccion2On()
+    {
+        if ($this->seccion) {
+            $this->seccion->delete();
+
+            return redirect()->route('admin.seccion.bloque-dos.vista.todo');
         }
     }
 

@@ -32,7 +32,7 @@
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" name="nombre" wire:model.live="nombre">
                         @error('nombre')
-                        <p class="mensaje_error">{{ $message }}</p>
+                            <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -51,7 +51,6 @@
                     <table class="tabla_eliminar">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>ID</th>
                                 <th>Imagen Computadora</th>
                                 <th>Imagen Móvil</th>
@@ -62,50 +61,47 @@
 
                         <tbody x-sort="handleBloque1Crear">
                             @foreach ($imagenes as $index => $imagen)
-                            <tr x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
-                                <td>
-                                    <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
-                                        style="touch-action: none; cursor: grab;">
-                                        <i class="fa-solid fa-up-down-left-right"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <input type="number" wire:model="imagenes.{{ $index }}.id" readonly
-                                        wire:key="id-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
-                                        draggable="false">
-                                </td>
-                                <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.imagen_computadora"
-                                        wire:key="imagen_computadora-{{ $index }}" @pointerdown.stop @mousedown.stop
-                                        @touchstart.stop draggable="false">
-                                    @error("imagenes.$index.imagen_computadora")
-                                    <p class="mensaje_error">{{ $message }}</p>
-                                    @enderror
-                                </td>
-                                <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.imagen_movil"
-                                        wire:key="imagen_movil-{{ $index }}" @pointerdown.stop @mousedown.stop
-                                        @touchstart.stop draggable="false">
-                                    @error("imagenes.$index.imagen_movil")
-                                    <p class="mensaje_error">{{ $message }}</p>
-                                    @enderror
-                                </td>
-                                <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.link"
-                                        wire:key="link-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
-                                        draggable="false">
-                                    @error("imagenes.$index.link")
-                                    <p class="mensaje_error">{{ $message }}</p>
-                                    @enderror
-                                </td>
-                                <td>
-                                    <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
-                                        wire:key="boton-eliminar-{{ $index }}" @pointerdown.stop @mousedown.stop
-                                        @touchstart.stop draggable="false">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                                <tr x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
+                                    <td>
+                                        <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
+                                            style="touch-action: none; cursor: grab;">
+                                            <i class="fa-solid fa-up-down-left-right"></i>
+                                            {{ $imagen['id'] }}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                            wire:model="imagenes.{{ $index }}.imagen_computadora"
+                                            wire:key="imagen_computadora-{{ $index }}" @pointerdown.stop
+                                            @mousedown.stop @touchstart.stop draggable="false">
+                                        @error("imagenes.$index.imagen_computadora")
+                                            <p class="mensaje_error">{{ $message }}</p>
+                                        @enderror
+                                    </td>
+                                    <td>
+                                        <input type="text" wire:model="imagenes.{{ $index }}.imagen_movil"
+                                            wire:key="imagen_movil-{{ $index }}" @pointerdown.stop
+                                            @mousedown.stop @touchstart.stop draggable="false">
+                                        @error("imagenes.$index.imagen_movil")
+                                            <p class="mensaje_error">{{ $message }}</p>
+                                        @enderror
+                                    </td>
+                                    <td>
+                                        <input type="text" wire:model="imagenes.{{ $index }}.link"
+                                            wire:key="link-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                            @touchstart.stop draggable="false">
+                                        @error("imagenes.$index.link")
+                                            <p class="mensaje_error">{{ $message }}</p>
+                                        @enderror
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="eliminarItem({{ $index }})"
+                                            class="boton_eliminar" wire:key="boton-eliminar-{{ $index }}"
+                                            @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

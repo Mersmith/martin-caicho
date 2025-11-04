@@ -58,7 +58,6 @@
                     <table class="tabla_eliminar">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>ID</th>
                                 <th>Imagen Computadora</th>
                                 <th>Imagen Móvil</th>
@@ -74,13 +73,9 @@
                                     <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
                                         style="touch-action: none; cursor: grab;">
                                         <i class="fa-solid fa-up-down-left-right"></i>
+                                        {{ $imagen['id'] }}
                                     </div>
-                                </td>
-                                <td>
-                                    <input type="number" wire:model="imagenes.{{ $index }}.id" readonly
-                                        wire:key="id-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
-                                        draggable="false">
-                                </td>
+                                </td>                              
                                 <td>
                                     <input type="text" wire:model="imagenes.{{ $index }}.imagen_computadora"
                                         wire:key="imagen_computadora-{{ $index }}" @pointerdown.stop @mousedown.stop

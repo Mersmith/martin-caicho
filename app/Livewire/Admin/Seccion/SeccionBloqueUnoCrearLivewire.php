@@ -73,7 +73,7 @@ class SeccionBloqueUnoCrearLivewire extends Component
             'activo' => $this->activo,
         ]);
 
-        $this->reset(['nombre', 'imagenes', 'activo']);
+        //$this->reset(['nombre', 'imagenes', 'activo']);
 
         $this->dispatch('alertaLivewire', 'Creado');
 
