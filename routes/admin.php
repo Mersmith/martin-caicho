@@ -2,42 +2,55 @@
 
 use App\Livewire\Admin\Imagen\ImagenTodoLivewire;
 
-use App\Livewire\Admin\Slider\SliderTodoLivewire;
-use App\Livewire\Admin\Slider\SliderCrearLivewire;
-use App\Livewire\Admin\Slider\SliderEditarLivewire;
+use App\Livewire\Admin\Slider\{
+    SliderTodoLivewire,
+    SliderCrearLivewire,
+    SliderEditarLivewire
+};
 
-use App\Livewire\Admin\Seccion\SeccionTodoLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueUnoTodoLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueUnoCrearLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueUnoEditarLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueDosTodoLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueDosCrearLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueDosEditarLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueTresTodoLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueTresCrearLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueTresEditarLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueCuatroTodoLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueCuatroCrearLivewire;
-use App\Livewire\Admin\Seccion\SeccionBloqueCuatroEditarLivewire;
-
+use App\Livewire\Admin\Seccion\{
+    SeccionTodoLivewire,
+    SeccionBloqueUnoTodoLivewire,
+    SeccionBloqueUnoCrearLivewire,
+    SeccionBloqueUnoEditarLivewire,
+    SeccionBloqueDosTodoLivewire,
+    SeccionBloqueDosCrearLivewire,
+    SeccionBloqueDosEditarLivewire,
+    SeccionBloqueTresTodoLivewire,
+    SeccionBloqueTresCrearLivewire,
+    SeccionBloqueTresEditarLivewire,
+    SeccionBloqueCuatroTodoLivewire,
+    SeccionBloqueCuatroCrearLivewire,
+    SeccionBloqueCuatroEditarLivewire,
+    SeccionBloqueCincoTodoLivewire,
+    SeccionBloqueCincoCrearLivewire,
+    SeccionBloqueCincoEditarLivewire,
+};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/imagen', ImagenTodoLivewire::class)->name('imagen.vista.todo');
 
-Route::get('/slider', SliderTodoLivewire::class)->name('slider.vista.todo');
-Route::get('/slider/crear', SliderCrearLivewire::class)->name('slider.vista.crear');
-Route::get('/slider/editar/{id}', SliderEditarLivewire::class)->name('slider.vista.editar');
+Route::prefix('slider')->name('slider.vista.')->group(function () {
+    Route::get('/', SliderTodoLivewire::class)->name('todo');
+    Route::get('/crear', SliderCrearLivewire::class)->name('crear');
+    Route::get('/editar/{id}', SliderEditarLivewire::class)->name('editar');
+});
 
-Route::get('/seccion', SeccionTodoLivewire::class)->name('seccion.vista.todo');
-Route::get('/seccion/bloque-uno', SeccionBloqueUnoTodoLivewire::class)->name('seccion.bloque-uno.vista.todo');
-Route::get('/seccion/bloque-uno/crear', SeccionBloqueUnoCrearLivewire::class)->name('seccion.bloque-uno.vista.crear');
-Route::get('/seccion/bloque-uno/editar/{id}', SeccionBloqueUnoEditarLivewire::class)->name('seccion.bloque-uno.vista.editar');
-Route::get('/seccion/bloque-dos', SeccionBloqueDosTodoLivewire::class)->name('seccion.bloque-dos.vista.todo');
-Route::get('/seccion/bloque-dos/crear', SeccionBloqueDosCrearLivewire::class)->name('seccion.bloque-dos.vista.crear');
-Route::get('/seccion/bloque-dos/editar/{id}', SeccionBloqueDosEditarLivewire::class)->name('seccion.bloque-dos.vista.editar');
-Route::get('/seccion/bloque-tres', SeccionBloqueTresTodoLivewire::class)->name('seccion.bloque-tres.vista.todo');
-Route::get('/seccion/bloque-tres/crear', SeccionBloqueTresCrearLivewire::class)->name('seccion.bloque-tres.vista.crear');
-Route::get('/seccion/bloque-tres/editar/{id}', SeccionBloqueTresEditarLivewire::class)->name('seccion.bloque-tres.vista.editar');
-Route::get('/seccion/bloque-cuatro', SeccionBloqueCuatroTodoLivewire::class)->name('seccion.bloque-cuatro.vista.todo');
-Route::get('/seccion/bloque-cuatro/crear', SeccionBloqueCuatroCrearLivewire::class)->name('seccion.bloque-cuatro.vista.crear');
-Route::get('/seccion/bloque-cuatro/editar/{id}', SeccionBloqueCuatroEditarLivewire::class)->name('seccion.bloque-cuatro.vista.editar');
+Route::prefix('seccion')->name('seccion.')->group(function () {
+    Route::get('/', SeccionTodoLivewire::class)->name('vista.todo');
+    Route::get('/bloque-uno', SeccionBloqueUnoTodoLivewire::class)->name('bloque-uno.vista.todo');
+    Route::get('/bloque-uno/crear', SeccionBloqueUnoCrearLivewire::class)->name('bloque-uno.vista.crear');
+    Route::get('/bloque-uno/editar/{id}', SeccionBloqueUnoEditarLivewire::class)->name('bloque-uno.vista.editar');
+    Route::get('/bloque-dos', SeccionBloqueDosTodoLivewire::class)->name('bloque-dos.vista.todo');
+    Route::get('/bloque-dos/crear', SeccionBloqueDosCrearLivewire::class)->name('bloque-dos.vista.crear');
+    Route::get('/bloque-dos/editar/{id}', SeccionBloqueDosEditarLivewire::class)->name('bloque-dos.vista.editar');
+    Route::get('/bloque-tres', SeccionBloqueTresTodoLivewire::class)->name('bloque-tres.vista.todo');
+    Route::get('/bloque-tres/crear', SeccionBloqueTresCrearLivewire::class)->name('bloque-tres.vista.crear');
+    Route::get('/bloque-tres/editar/{id}', SeccionBloqueTresEditarLivewire::class)->name('bloque-tres.vista.editar');
+    Route::get('/bloque-cuatro', SeccionBloqueCuatroTodoLivewire::class)->name('bloque-cuatro.vista.todo');
+    Route::get('/bloque-cuatro/crear', SeccionBloqueCuatroCrearLivewire::class)->name('bloque-cuatro.vista.crear');
+    Route::get('/bloque-cuatro/editar/{id}', SeccionBloqueCuatroEditarLivewire::class)->name('bloque-cuatro.vista.editar');
+    Route::get('/bloque-cinco', SeccionBloqueCincoTodoLivewire::class)->name('bloque-cinco.vista.todo');
+    Route::get('/bloque-cinco/crear', SeccionBloqueCincoCrearLivewire::class)->name('bloque-cinco.vista.crear');
+    Route::get('/bloque-cinco/editar/{id}', SeccionBloqueCincoEditarLivewire::class)->name('bloque-cinco.vista.editar');
+});

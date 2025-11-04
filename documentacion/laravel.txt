@@ -57,3 +57,7 @@ php artisan make:livewire Admin/Seccion/SeccionBloqueTresEditarLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueCuatroTodoLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueCuatroCrearLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueCuatroEditarLivewire
+
+php artisan make:livewire Admin/Seccion/SeccionBloqueCincoTodoLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueCincoCrearLivewire
+php artisan make:livewire Admin/Seccion/SeccionBloqueCincoEditarLivewire

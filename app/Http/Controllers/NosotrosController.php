@@ -8,6 +8,8 @@ class NosotrosController extends Controller
 {
     public function index()
     {
-        return view('web.nosotros');
+        $bloque5_1 = app(SeccionController::class)->getSeccionPorTipo(4, 'bloque_5');
+
+        return view('web.nosotros', compact('bloque5_1'));
     }
 }

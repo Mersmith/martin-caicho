@@ -1,4 +1,21 @@
+@if (!empty($p_elemento) && !empty($p_elemento->contenido))
+
+@php
+$p = $p_elemento->contenido;
+
+$titulo = $p['titulo'];
+
+$imagen = $p['imagen'];
+$imagen_seo = $p['imagen_seo'];
+@endphp
+
 <div class="nosotros-banner">
-    <img src="{{ $imagenUrl }}">
+    @if (!empty($imagen))
+    <img src="{{ asset($imagen) }}" alt="{{ $imagen_seo }}">
+    @endif
+
+    @if (!empty($titulo))
     <h3>{{ $titulo }}</h3>
+    @endif
 </div>
+@endif
