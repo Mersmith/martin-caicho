@@ -33,6 +33,8 @@ class SeccionBloqueDosEditarLivewire extends Component
         'link' => '',
     ];
 
+    public $invertir = false;
+
     public $activo = false;
 
     protected function rules()
@@ -52,6 +54,7 @@ class SeccionBloqueDosEditarLivewire extends Component
             'boton.texto' => 'nullable|string',
             'boton.texto_color' => 'nullable|string',
             'boton.link' => 'nullable|url',
+            'invertir' => 'boolean',
             'activo' => 'boolean',
         ];
     }
@@ -89,6 +92,7 @@ class SeccionBloqueDosEditarLivewire extends Component
         $this->imagen_seo = $this->lista = $contenido['imagen_seo'];
         $this->subtitulo = $this->lista = $contenido['subtitulo'];
         $this->subtitulo_descripcion = $this->lista = $contenido['subtitulo_descripcion'];
+        $this->invertir = $this->lista = $contenido['invertir'];
 
         if (isset($contenido['lista']) && is_array($contenido['lista'])) {
             $this->lista = $contenido['lista'];
@@ -139,6 +143,7 @@ class SeccionBloqueDosEditarLivewire extends Component
         $this->seccion->update([
             'nombre' => $this->nombre,
             'contenido' => [
+                'invertir' => $this->invertir,
                 'titulo' => $this->titulo,
                 'titulo_descripcion' => $this->titulo_descripcion,
                 'imagen' => $this->imagen,
@@ -151,7 +156,7 @@ class SeccionBloqueDosEditarLivewire extends Component
             'activo' => $this->activo,
         ]);
 
-        //$this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'activo']);
+        //$this->reset(['nombre', 'titulo', 'titulo_descripcion', 'imagen', 'imagen_seo', 'subtitulo', 'subtitulo_descripcion', 'lista', 'boton', 'invertir', 'activo']);
 
         $this->dispatch('alertaLivewire', "Actualizado");
     }

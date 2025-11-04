@@ -32,7 +32,7 @@
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" wire:model.live="nombre">
                         @error('nombre')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         <label for="titulo">Título</label>
                         <input type="text" id="titulo" wire:model.live="titulo">
                         @error('titulo')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -51,7 +51,7 @@
                         <label for="titulo_descripcion">Descripción</label>
                         <textarea id="titulo_descripcion" wire:model.live="titulo_descripcion" rows="3"></textarea>
                         @error('titulo_descripcion')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -62,15 +62,16 @@
                         <label for="subtitulo">Subtítulo</label>
                         <input type="text" id="subtitulo" wire:model.live="subtitulo">
                         @error('subtitulo')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div>
                         <label for="subtitulo_descripcion">Descripción</label>
-                        <textarea id="subtitulo_descripcion" wire:model.live="subtitulo_descripcion" rows="3"></textarea>
+                        <textarea id="subtitulo_descripcion" wire:model.live="subtitulo_descripcion"
+                            rows="3"></textarea>
                         @error('subtitulo_descripcion')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -96,40 +97,39 @@
                         </thead>
                         <tbody x-sort="handleBloque2Crear">
                             @foreach ($lista as $index => $item)
-                                <tr class="sorteable_item" x-sort:item="{{ $item['id'] }}"
-                                    wire:key="item-{{ $index }}">
-                                    <td>
-                                        <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
-                                            style="touch-action: none; cursor: grab;">
-                                            <i class="fa-solid fa-up-down-left-right"></i>
-                                            {{ $item['id'] }}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.icono"
-                                            wire:key="icono-{{ $index }}" @pointerdown.stop @mousedown.stop
-                                            @touchstart.stop draggable="false">
-                                        <input type="color" wire:model="lista.{{ $index }}.icono_color"
-                                            wire:key="icono_color-{{ $index }}">
-                                    </td>
-                                    <td>
-                                        <input type="text" wire:model="lista.{{ $index }}.texto"
-                                            wire:key="texto-{{ $index }}" @pointerdown.stop @mousedown.stop
-                                            @touchstart.stop draggable="false">
-                                        <input type="color" wire:model="lista.{{ $index }}.texto_color"
-                                            wire:key="texto_color-{{ $index }}">
-                                        @error("lista.$index.texto")
-                                            <p class="mensaje_error">{{ $message }}</p>
-                                        @enderror
-                                    </td>
-                                    <td>
-                                        <button type="button" wire:click="eliminarItem({{ $index }})"
-                                            class="boton_eliminar" wire:key="boton-eliminar-{{ $index }}"
-                                            @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                            <tr class="sorteable_item" x-sort:item="{{ $item['id'] }}" wire:key="item-{{ $index }}">
+                                <td>
+                                    <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
+                                        style="touch-action: none; cursor: grab;">
+                                        <i class="fa-solid fa-up-down-left-right"></i>
+                                        {{ $item['id'] }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.icono"
+                                        wire:key="icono-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
+                                        draggable="false">
+                                    <input type="color" wire:model="lista.{{ $index }}.icono_color"
+                                        wire:key="icono_color-{{ $index }}">
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.texto"
+                                        wire:key="texto-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
+                                        draggable="false">
+                                    <input type="color" wire:model="lista.{{ $index }}.texto_color"
+                                        wire:key="texto_color-{{ $index }}">
+                                    @error("lista.$index.texto")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
+                                        wire:key="boton-eliminar-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -148,6 +148,16 @@
                     </select>
                 </div>
 
+                <!-- INVERTIR -->
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">Invertir</h4>
+
+                    <select id="activo" name="activo" wire:model.live="invertir">
+                        <option value="0">NO</option>
+                        <option value="1">SI</option>
+                    </select>
+                </div>
+
                 <!-- IMAGEN -->
                 <div class="g_panel">
                     <div class="g_margin_bottom_10">
@@ -155,7 +165,7 @@
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="imagen" wire:model.live="imagen">
                         @error('imagen')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -165,7 +175,7 @@
                         <textarea id="imagen_seo" wire:model.live="imagen_seo" rows="3"></textarea>
                         <p class="leyenda">Se mostrará en el SEO.</p>
                         @error('imagen_seo')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -189,7 +199,7 @@
                         <label for="boton.texto">Texto</label>
                         <input type="text" id="boton.texto" name="boton.texto" wire:model.live="boton.texto">
                         @error('boton.texto')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -203,7 +213,7 @@
                         <label for="boton.link">Link</label>
                         <input type="text" id="boton.link" name="boton.link" wire:model.live="boton.link">
                         @error('boton.link')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>

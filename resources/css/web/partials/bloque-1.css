@@ -6,6 +6,14 @@
     margin: auto;
 }
 
+.bloque_1.invertir .bloque_imagen {
+    order: 2;
+}
+
+.bloque_1.invertir .bloque_cuerpo {
+    order: 1;
+}
+
 .bloque_1 .bloque_imagen img {
     width: 100%;
     border-radius: 12px;
@@ -71,6 +79,10 @@
 @media (max-width: 1024px) {
     .bloque_1 {
         grid-template-columns: 1fr;
-    }  
+    }
 
+    .bloque_1.invertir .bloque_imagen,
+    .bloque_1.invertir .bloque_cuerpo {
+        order: initial;
+    }
 }

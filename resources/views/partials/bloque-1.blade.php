@@ -1,71 +1,72 @@
 @if (!empty($p_elemento) && !empty($p_elemento->contenido))
-    @php
-        $p = $p_elemento->contenido;
+@php
+$p = $p_elemento->contenido;
 
-        $titulo = $p['titulo'];
-        $titulo_descripcion = $p['titulo_descripcion'];
+$invertir = $p['invertir'];
 
-        $imagen = $p['imagen'];
-        $imagen_seo = $p['imagen_seo'];
+$titulo = $p['titulo'];
+$titulo_descripcion = $p['titulo_descripcion'];
 
-        $subtitulo = $p['subtitulo'];
-        $subtitulo_descripcion = $p['subtitulo_descripcion'];
+$imagen = $p['imagen'];
+$imagen_seo = $p['imagen_seo'];
 
-        $lista = $p['lista'] ?? [];
+$subtitulo = $p['subtitulo'];
+$subtitulo_descripcion = $p['subtitulo_descripcion'];
 
-        $boton = $p['boton'] ?? [];
-        $boton_icono = $boton['icono'];
-        $boton_fondo_color = $boton['fondo_color'];
-        $boton_texto = $boton['texto'];
-        $boton_texto_color = $boton['texto_color'];
-        $boton_link = $boton['link'];
-    @endphp
+$lista = $p['lista'] ?? [];
 
-    @include('partials.encabezado', [
-        'titulo' => $titulo,
-        'descripcion' => $titulo_descripcion,
-    ])
+$boton = $p['boton'] ?? [];
+$boton_icono = $boton['icono'];
+$boton_fondo_color = $boton['fondo_color'];
+$boton_texto = $boton['texto'];
+$boton_texto_color = $boton['texto_color'];
+$boton_link = $boton['link'];
+@endphp
 
-    <section class="bloque_1">
-        <div class="bloque_imagen">
-            <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
-        </div>
+@include('partials.encabezado', [
+'titulo' => $titulo,
+'descripcion' => $titulo_descripcion,
+])
 
-        <div class="bloque_cuerpo">
+<section class="bloque_1 {{ $invertir ? 'invertir' : '' }}">
+    <div class="bloque_imagen">
+        <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
+    </div>
 
-            @if (!empty($subtitulo))
-                <h3>{!! $subtitulo !!}</h3>
+    <div class="bloque_cuerpo">
+
+        @if (!empty($subtitulo))
+        <h3>{!! $subtitulo !!}</h3>
+        @endif
+
+        @if (!empty($subtitulo_descripcion))
+        <p>{!! $subtitulo_descripcion !!}</p>
+        @endif
+
+        @if (!empty($lista) && is_array($lista))
+        <ul>
+            @foreach ($lista as $item)
+            <li>
+                @if (!empty($item['icono']))
+                <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] }}"></i>
+                @endif
+                <span style="color: {{ $item['texto_color'] }}">
+                    {{ $item['texto'] }}
+                </span>
+            </li>
+            @endforeach
+        </ul>
+        @endif
+
+        @if (!empty($boton_texto))
+        <a @if (!empty($boton_link)) href="{{ $boton_link }}" @endif target="_blank" class="btn-whatsapp"
+            style="background-color: {{ $boton_fondo_color }}; color: {{ $boton_texto_color }}">
+            @if (!empty($boton_icono))
+            <i class="{{ $boton_icono }}"></i>
             @endif
-
-            @if (!empty($subtitulo_descripcion))
-                <p>{!! $subtitulo_descripcion !!}</p>
-            @endif
-
-            @if (!empty($lista) && is_array($lista))
-                <ul>
-                    @foreach ($lista as $item)
-                        <li>
-                            @if (!empty($item['icono']))
-                                <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] }}"></i>
-                            @endif
-                            <span style="color: {{ $item['texto_color'] }}">
-                                {{ $item['texto'] }}
-                            </span>
-                        </li>
-                    @endforeach
-                </ul>
-            @endif
-
-            @if (!empty($boton_texto))
-                <a @if (!empty($boton_link)) href="{{ $boton_link }}" @endif target="_blank"
-                    class="btn-whatsapp"
-                    style="background-color: {{ $boton_fondo_color }}; color: {{ $boton_texto_color }}">
-                    @if (!empty($boton_icono))
-                        <i class="{{ $boton_icono }}"></i>
-                    @endif
-                    {{ $boton_texto }}
-                </a>
-            @endif
-        </div>
-    </section>
+            {{ $boton_texto }}
+        </a>
+        @endif
+    </div>
+</section>
 @endif
