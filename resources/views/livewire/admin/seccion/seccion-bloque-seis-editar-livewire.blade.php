@@ -8,17 +8,17 @@
         <h2>Editar bloque 5</h2>
 
         <div class="cabecera_titulo_botones">
-            <a href="{{ route('admin.seccion.bloque-cinco.vista.todo') }}" class="g_boton g_boton_light">
+            <a href="{{ route('admin.seccion.bloque-seis.vista.todo') }}" class="g_boton g_boton_light">
                 Inicio <i class="fa-solid fa-house"></i></a>
 
-            <a href="{{ route('admin.seccion.bloque-cinco.vista.crear') }}" class="g_boton g_boton_primary">
+            <a href="{{ route('admin.seccion.bloque-seis.vista.crear') }}" class="g_boton g_boton_primary">
                 Crear <i class="fa-solid fa-square-plus"></i></a>
 
-            <button type="button" class="g_boton g_boton_danger" onclick="alertaEliminarBloque5()">
+            <button type="button" class="g_boton g_boton_danger" onclick="alertaEliminarBloque6()">
                 Eliminar <i class="fa-solid fa-trash-can"></i>
             </button>
 
-            <a href="{{ route('admin.seccion.bloque-cinco.vista.todo') }}" class="g_boton g_boton_darkt">
+            <a href="{{ route('admin.seccion.bloque-seis.vista.todo') }}" class="g_boton g_boton_darkt">
                 <i class="fa-solid fa-arrow-left"></i> Regresar
             </a>
         </div>
@@ -62,28 +62,6 @@
                         @enderror
                     </div>
                 </div>
-
-                <!-- IMAGEN -->
-                <div class="g_panel">
-                    <div class="g_margin_bottom_10">
-                        <label for="imagen">Imagen <span class="obligatorio"><i
-                                    class="fa-solid fa-asterisk"></i></span></label>
-                        <input type="text" id="imagen" wire:model.live="imagen">
-                        @error('imagen')
-                        <p class="mensaje_error">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <label for="imagen_seo">Descripción SEO <span class="obligatorio"><i
-                                    class="fa-solid fa-asterisk"></i></span></label>
-                        <textarea id="imagen_seo" wire:model.live="imagen_seo" rows="3"></textarea>
-                        <p class="leyenda">Se mostrará en el SEO.</p>
-                        @error('imagen_seo')
-                        <p class="mensaje_error">{{ $message }}</p>
-                        @enderror
-                    </div>
-                </div>
             </div>
 
             <!-- COLUMNA DERECHA -->
@@ -97,44 +75,6 @@
                         <option value="1">ACTIVO</option>
                     </select>
                 </div>
-
-                <!-- BOTÓN -->
-                <div class="g_panel">
-                    <h4 class="g_panel_titulo">Botón</h4>
-
-                    <div class="g_margin_bottom_10">
-                        <label for="boton.icono">Icono</label>
-                        <input type="text" id="boton.icono" name="boton.icono" wire:model.live="boton.icono">
-                    </div>
-
-                    <div class="g_margin_bottom_10">
-                        <label for="boton.fondo_color">Fondo</label>
-                        <input type="color" id="boton.fondo_color" name="boton.fondo_color"
-                            wire:model.live="boton.fondo_color">
-                    </div>
-
-                    <div class="g_margin_bottom_10">
-                        <label for="boton.texto">Texto</label>
-                        <input type="text" id="boton.texto" name="boton.texto" wire:model.live="boton.texto">
-                        @error('boton.texto')
-                        <p class="mensaje_error">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="g_margin_bottom_10">
-                        <label for="boton.texto_color">Color texto</label>
-                        <input type="color" id="boton.texto_color" name="boton.texto_color"
-                            wire:model.live="boton.texto_color">
-                    </div>
-
-                    <div>
-                        <label for="boton.link">Link</label>
-                        <input type="text" id="boton.link" name="boton.link" wire:model.live="boton.link">
-                        @error('boton.link')
-                        <p class="mensaje_error">{{ $message }}</p>
-                        @enderror
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -145,13 +85,13 @@
                     <span wire:loading wire:target="store">Actualizando...</span>
                 </button>
 
-                <a href="{{ route('admin.seccion.bloque-cinco.vista.todo') }}" class="cancelar">Cancelar</a>
+                <a href="{{ route('admin.seccion.bloque-seis.vista.todo') }}" class="cancelar">Cancelar</a>
             </div>
         </div>
     </form>
 
     <script>
-        function alertaEliminarBloque5() {
+        function alertaEliminarBloque6() {
             Swal.fire({
                 title: '¿Quieres eliminar?',
                 text: "No podrás recuperarlo.",
@@ -163,7 +103,7 @@
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Livewire.dispatch('eliminarSeccion5On');
+                    Livewire.dispatch('eliminarSeccion6On');
 
                     Swal.fire(
                         '¡Eliminado!',

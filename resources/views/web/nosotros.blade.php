@@ -9,14 +9,7 @@
 <div class="g_centrar_pagina">
     <div class="g_pading_pagina g_gap_pagina">
         <div class="g_contenedor_columna">
-            @include('partials.encabezado', [
-            'titulo' => 'La <span>Solución</span> para un Perú con futuro',
-            'descripcion' => 'Propongo una visión renovadora basada en tres ejes: desarrollo económico inclusivo,
-            fortalecimiento de los valores ciudadanos y modernización de la gestión pública.
-            Desde mi experiencia en el sector privado y la función pública, impulso ideas que buscan unirnos como
-            peruanos para construir un país más justo, productivo y solidario.',
-            ])
-
+            @include('partials.bloque-4', ['p_elemento' => $bloque6_1])
 
             <div class="razones_section">
                 <div class="grid-columna invertir_movil">
