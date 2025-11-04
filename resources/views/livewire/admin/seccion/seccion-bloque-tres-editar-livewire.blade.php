@@ -1,3 +1,6 @@
+@section('tituloPagina', 'Editar bloque 3')
+@section('anchoPantalla', '100%')
+
 <div x-data="dataBloque3Editar()" class="g_gap_pagina">
 
     <!-- CABECERA -->
@@ -8,6 +11,10 @@
             <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="g_boton g_boton_light">
                 Inicio <i class="fa-solid fa-house"></i>
             </a>
+
+            <button type="button" class="g_boton g_boton_danger" onclick="alertaEliminarBloque3()">
+                Eliminar <i class="fa-solid fa-trash-can"></i>
+            </button>
 
             <a href="{{ route('admin.seccion.bloque-tres.vista.todo') }}" class="g_boton g_boton_darkt">
                 <i class="fa-solid fa-arrow-left"></i> Regresar
@@ -29,7 +36,9 @@
                         <label for="nombre">Nombre <span class="obligatorio"><i
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" wire:model.live="nombre">
-                        @error('nombre') <p class="mensaje_error">{{ $message }}</p> @enderror
+                        @error('nombre')
+                            <p class="mensaje_error">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -63,91 +72,106 @@
                         </button>
                     </div>
 
-                    <!-- ITEMS -->
+                    <!-- LISTA -->
                     <div x-sort="handleBloque3Editar" class="g_gap_pagina">
                         @foreach ($lista as $index => $item)
-                        <div class="g_panel tabla_caja" x-sort:item="{{ $item['id'] }}">
-                            <div class="cabecera">
-                                <span><i class="fa-solid fa-up-down-left-right"></i></span>
-                                <button type="button"
-                                    @click="itemsVisibility[{{ $index }}] = !itemsVisibility[{{ $index }}]">
-                                    <span x-show="itemsVisibility[{{ $index }}]"><i
-                                            class="fa-solid fa-angle-up"></i></span>
-                                    <span x-show="!itemsVisibility[{{ $index }}]"><i
-                                            class="fa-solid fa-angle-down"></i></span>
-                                </button>
-                            </div>
-
-                            <h4 class="g_panel_titulo">ID: {{ $item['id'] }}</h4>
-
-                            <div x-show="itemsVisibility[{{ $index }}]" x-transition>
-                                <div class="g_fila">
-                                    <div class="g_margin_bottom_10">
-                                        <label>Título</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.titulo">
+                            <div class="g_panel tabla_caja" x-sort:item="{{ $item['id'] }}">
+                                <div class="cabecera">
+                                    <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
+                                        style="touch-action: none; cursor: grab;">
+                                        <i class="fa-solid fa-up-down-left-right"></i>
+                                        {{ $item['id'] }}
                                     </div>
-
-                                    <div class="g_margin_bottom_10">
-                                        <label>Descripción</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.descripcion">
-                                    </div>
-                                </div>
-
-                                <div class="g_fila">
-                                    <div class="g_margin_bottom_10">
-                                        <label>Imagen</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.imagen">
-                                    </div>
-
-                                    <div class="g_margin_bottom_10">
-                                        <label>SEO Imagen</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.imagen_seo">
-                                        <p class="leyenda">Se mostrará en el SEO.</p>
-                                    </div>
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Subtítulo</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.subtitulo">
-                                </div>
-
-                                <div class="g_fila">
-                                    <div class="g_margin_bottom_10">
-                                        <label>Icono del botón</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.boton.icono">
-                                    </div>
-
-                                    <div class="g_margin_bottom_10">
-                                        <label>Color botón</label>
-                                        <input type="color" wire:model="lista.{{ $index }}.boton.fondo_color">
-                                    </div>
-                                </div>
-
-                                <div class="g_fila">
-                                    <div class="g_margin_bottom_10">
-                                        <label>Texto del botón</label>
-                                        <input type="text" wire:model="lista.{{ $index }}.boton.texto">
-                                    </div>
-
-                                    <div class="g_margin_bottom_10">
-                                        <label>Color texto</label>
-                                        <input type="color" wire:model="lista.{{ $index }}.boton.texto_color">
-                                    </div>
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <label>Enlace del botón</label>
-                                    <input type="text" wire:model="lista.{{ $index }}.boton.link">
-                                </div>
-
-                                <div class="g_margin_bottom_10">
-                                    <button type="button" wire:click="eliminarItem({{ $index }})"
-                                        class="boton_eliminar">
-                                        <i class="fa-solid fa-xmark"></i> Eliminar
+                                    <button type="button"
+                                        @click="itemsVisibility[{{ $index }}] = !itemsVisibility[{{ $index }}]">
+                                        <span x-show="itemsVisibility[{{ $index }}]"><i
+                                                class="fa-solid fa-angle-up"></i></span>
+                                        <span x-show="!itemsVisibility[{{ $index }}]"><i
+                                                class="fa-solid fa-angle-down"></i></span>
                                     </button>
                                 </div>
+
+                                <div x-show="itemsVisibility[{{ $index }}]" x-transition>
+                                    <div class="g_fila">
+                                        <div class="g_margin_bottom_10">
+                                            <label>Título</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.titulo"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        </div>
+
+                                        <div class="g_margin_bottom_10">
+                                            <label>Descripción</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.descripcion"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        </div>
+                                    </div>
+
+                                    <div class="g_fila">
+                                        <div class="g_margin_bottom_10">
+                                            <label>Imagen</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.imagen"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        </div>
+
+                                        <div class="g_margin_bottom_10">
+                                            <label>SEO Imagen</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.imagen_seo"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                            <p class="leyenda">Se mostrará en el SEO.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <label>Subtítulo</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.subtitulo"
+                                            @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                    </div>
+
+                                    <div class="g_fila">
+                                        <div class="g_margin_bottom_10">
+                                            <label>Icono del botón</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.boton.icono"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        </div>
+
+                                        <div class="g_margin_bottom_10">
+                                            <label>Color botón</label>
+                                            <input type="color"
+                                                wire:model="lista.{{ $index }}.boton.fondo_color">
+                                        </div>
+                                    </div>
+
+                                    <div class="g_fila">
+                                        <div class="g_margin_bottom_10">
+                                            <label>Texto del botón</label>
+                                            <input type="text" wire:model="lista.{{ $index }}.boton.texto"
+                                                @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        </div>
+
+                                        <div class="g_margin_bottom_10">
+                                            <label>Color texto</label>
+                                            <input type="color"
+                                                wire:model="lista.{{ $index }}.boton.texto_color">
+                                        </div>
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <label>Enlace del botón</label>
+                                        <input type="text" wire:model="lista.{{ $index }}.boton.link"
+                                            @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                        @error("lista.$index.boton.link")
+                                            <p class="mensaje_error">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div class="g_margin_bottom_10">
+                                        <button type="button" wire:click="eliminarItem({{ $index }})"
+                                            class="boton_eliminar">
+                                            <i class="fa-solid fa-xmark"></i> Eliminar
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -157,7 +181,7 @@
             <div class="g_columna_4 g_gap_pagina g_columna_invertir">
                 <div class="g_panel">
                     <h4 class="g_panel_titulo">Activo</h4>
-                    <select wire:model="activo">
+                    <select wire:model.live="activo">
                         <option value="0">DESACTIVADO</option>
                         <option value="1">ACTIVO</option>
                     </select>
@@ -197,9 +221,35 @@
                 },
 
                 handleBloque3Editar(item, position) {
-                    Livewire.dispatch('handleBloque3EditarOn', { item, position });
+                    Livewire.dispatch('handleBloque3EditarOn', {
+                        item,
+                        position
+                    });
                 }
             }
+        }
+
+        function alertaEliminarBloque3() {
+            Swal.fire({
+                title: '¿Quieres eliminar?',
+                text: "No podrás recuperarlo.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí, eliminar!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('eliminarSeccion3On');
+
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'Eliminaste correctamente.',
+                        'success'
+                    )
+                }
+            });
         }
     </script>
 

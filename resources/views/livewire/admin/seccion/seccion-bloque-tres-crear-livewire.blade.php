@@ -177,7 +177,7 @@
             <div class="g_columna_4 g_gap_pagina g_columna_invertir">
                 <div class="g_panel">
                     <h4 class="g_panel_titulo">Activo</h4>
-                    <select wire:model="activo">
+                    <select wire:model.live="activo">
                         <option value="0">DESACTIVADO</option>
                         <option value="1">ACTIVO</option>
                     </select>

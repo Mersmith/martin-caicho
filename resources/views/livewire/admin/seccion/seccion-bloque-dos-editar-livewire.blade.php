@@ -25,7 +25,6 @@
     </div>
 
     <!-- FORMULARIO -->
-    <!-- FORMULARIO -->
     <form wire:submit.prevent="store" class="formulario">
         <div class="g_fila">
             <!-- COLUMNA IZQUIERDA -->

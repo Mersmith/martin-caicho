@@ -19,7 +19,7 @@ class SeccionBloqueTresEditarLivewire extends Component
 
     public $lista = [];
 
-    public $activo = 0;
+    public $activo = false;
 
     protected function rules()
     {
@@ -28,13 +28,21 @@ class SeccionBloqueTresEditarLivewire extends Component
             'titulo' => 'nullable|string|max:255',
             'titulo_descripcion' => 'nullable|string',
             'lista.*.id' => 'required|integer',
+            'lista.*.boton.link' => 'nullable|url',
             'activo' => 'boolean',
         ];
     }
 
+    protected $validationAttributes = [
+        'nombre' => 'nombre',
+        'lista.*.id' => 'id',
+        'lista.*.boton.link' => 'link',
+    ];
+
     protected $messages = [
-        'nombre.required' => 'El nombre es obligatorio.',
-        'lista.*.id.required' => 'El ID del item es obligatorio.'
+        'nombre.required' => 'El :attribute es obligatorio.',
+        'lista.*.id.    ' => 'El :attribute del item es obligatorio.',
+        'lista.*.boton.link.url' => 'El :attribute debe ser válido.',
     ];
 
     public function mount($id)
@@ -66,7 +74,7 @@ class SeccionBloqueTresEditarLivewire extends Component
                         'texto' => '',
                         'texto_color' => '#000000',
                         'link' => '',
-                    ]
+                    ],
                 ],
             ];
         }
@@ -90,7 +98,7 @@ class SeccionBloqueTresEditarLivewire extends Component
                 'texto' => '',
                 'texto_color' => '#000000',
                 'link' => '',
-            ]
+            ],
         ];
 
         $this->dispatch('lista-updated', count($this->lista));
@@ -130,6 +138,16 @@ class SeccionBloqueTresEditarLivewire extends Component
         if ($index !== false) {
             $element = array_splice($this->lista, $index, 1)[0];
             array_splice($this->lista, $position, 0, [$element]);
+        }
+    }
+
+    #[On('eliminarSeccion3On')]
+    public function eliminarSeccion3On()
+    {
+        if ($this->seccion) {
+            $this->seccion->delete();
+
+            return redirect()->route('admin.seccion.bloque-tres.vista.todo');
         }
     }
 
