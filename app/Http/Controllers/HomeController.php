@@ -8,13 +8,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $seccion_3 = app(SeccionController::class)->getSeccion(3);
+        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_1');
+        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(3, 'bloque_2');
+        //dd($bloque2_1);
 
         $noticias = $this->getNoticias();
 
         $imagenes = $this->getImagenes();
 
-        return view('web.home', compact('seccion_3', 'noticias', 'imagenes'));
+        return view('web.home', compact('bloque1_1', 'bloque2_1', 'noticias', 'imagenes'));
     }
 
     public function getNoticias()

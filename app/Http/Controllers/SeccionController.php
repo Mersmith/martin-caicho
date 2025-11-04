@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Seccion;
 
 class SeccionController extends Controller
 {
-    public function getSeccion($id)
+    public function getSeccionPorTipo($id, $tipo)
     {
-        $seccion = Seccion::where('id', $id)
-            ->where('tipo', 'bloque_1')
+        return Seccion::where('id', $id)
+            ->where('tipo', $tipo)
             ->where('activo', true)
             ->first();
-
-        return $seccion;
     }
 }

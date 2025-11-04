@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-@include('partials.slider-principal', ['p_elemento' => $seccion_3])
+@include('partials.slider-principal', ['p_elemento' => $bloque1_1])
 
 <div class="g_centrar_pagina">
     <div class="g_pading_pagina g_gap_pagina">
