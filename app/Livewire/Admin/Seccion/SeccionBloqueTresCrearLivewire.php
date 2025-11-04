@@ -17,7 +17,7 @@ class SeccionBloqueTresCrearLivewire extends Component
 
     public $lista = [];
 
-    public $activo = 0;
+    public $activo = false;
 
     protected function rules()
     {
@@ -26,13 +26,21 @@ class SeccionBloqueTresCrearLivewire extends Component
             'titulo' => 'nullable|string|max:255',
             'titulo_descripcion' => 'nullable|string',
             'lista.*.id' => 'required|integer',
+            'lista.*.boton.link' => 'nullable|url',
             'activo' => 'boolean',
         ];
     }
 
+    protected $validationAttributes = [
+        'nombre' => 'nombre',
+        'lista.*.id' => 'id',
+        'lista.*.boton.link' => 'link',
+    ];
+
     protected $messages = [
-        'nombre.required' => 'El nombre es obligatorio.',
-        'lista.*.id.required' => 'El ID del item es obligatorio.'
+        'nombre.required' => 'El :attribute es obligatorio.',
+        'lista.*.id.    ' => 'El :attribute del item es obligatorio.',
+        'lista.*.boton.link.url' => 'El :attribute debe ser válido.',
     ];
 
     public function agregarItem()
@@ -81,9 +89,11 @@ class SeccionBloqueTresCrearLivewire extends Component
             'activo' => $this->activo,
         ]);
 
-        $this->reset(['nombre', 'titulo', 'titulo_descripcion',  'lista', 'activo']);
+        //$this->reset(['nombre', 'titulo', 'titulo_descripcion',  'lista', 'activo']);
 
         $this->dispatch('alertaLivewire', 'Creado');
+
+        return redirect()->route('admin.seccion.bloque-tres.vista.todo');
     }
 
     #[On('handleBloque3CrearOn')]
