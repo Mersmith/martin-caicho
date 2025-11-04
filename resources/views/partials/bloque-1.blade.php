@@ -1,56 +1,71 @@
-@php
-    $p = $p_elemento->contenido; // ya viene como array por el cast
+@if (!empty($p_elemento) && !empty($p_elemento->contenido))
+    @php
+        $p = $p_elemento->contenido;
 
-    $titulo = $p['titulo'] ?? null;
-    $titulo_descripcion = $p['titulo_descripcion'] ?? null;
+        $titulo = $p['titulo'];
+        $titulo_descripcion = $p['titulo_descripcion'];
 
-    $imagen = asset($p['imagen'] ?? 'assets/imagen/default.jpg');
-    $imagen_seo = $p['imagen_seo'] ?? 'Imagen del bloque';
-    $subtitulo = $p['subtitulo'] ?? '';
-    $subtitulo_descripcion = $p['subtitulo_descripcion'] ?? '';
-    $lista = $p['lista'] ?? [];
-    $boton = $p['boton'] ?? [];
+        $imagen = $p['imagen'];
+        $imagen_seo = $p['imagen_seo'];
 
-    $boton_icono = $boton['icono'] ?? 'fa-solid fa-link';
-    $boton_link = $boton['link'] ?? '#';
-    $boton_texto = $boton['texto'] ?? 'Leer más';
-    $boton_color = $boton['fondo_color'] ?? '#007bff';
-@endphp
+        $subtitulo = $p['subtitulo'];
+        $subtitulo_descripcion = $p['subtitulo_descripcion'];
 
-@include('partials.encabezado', [
-    'titulo' => $titulo,
-    'descripcion' => $titulo_descripcion,
-])
+        $lista = $p['lista'] ?? [];
 
-<section class="bloque_1">
-    <div class="bloque_imagen">
-        <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
-    </div>
+        $boton = $p['boton'] ?? [];
+        $boton_icono = $boton['icono'];
+        $boton_fondo_color = $boton['fondo_color'];
+        $boton_texto = $boton['texto'];
+        $boton_texto_color = $boton['texto_color'];
+        $boton_link = $boton['link'];
+    @endphp
 
-    <div class="bloque_cuerpo">
-        <h3>{!! $subtitulo ?: 'Título por defecto' !!}</h3>
-        <p>{!! $subtitulo_descripcion ?: 'Texto descriptivo del bloque.' !!}</p>
+    @include('partials.encabezado', [
+        'titulo' => $titulo,
+        'descripcion' => $titulo_descripcion,
+    ])
 
-        @if (!empty($lista) && is_array($lista))
-            <ul>
-                @foreach ($lista as $item)
-                    <li>
-                        @if (!empty($item['icono']))
-                            <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] ?? '#000' }}"></i>
-                        @endif
-                        <span style="color: {{ $item['texto_color'] ?? '#000' }}">
-                            {{ $item['texto'] ?? '' }}
-                        </span>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
+    <section class="bloque_1">
+        <div class="bloque_imagen">
+            <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
+        </div>
 
-        @if (!empty($boton_link) && !empty($boton_texto))
-            <a href="{{ $boton_link }}" target="_blank" class="btn-whatsapp"
-               style="background-color: {{ $boton_color }};">
-                <i class="{{ $boton_icono }}"></i> {{ $boton_texto }}
-            </a>
-        @endif
-    </div>
-</section>
+        <div class="bloque_cuerpo">
+
+            @if (!empty($subtitulo))
+                <h3>{!! $subtitulo !!}</h3>
+            @endif
+
+            @if (!empty($subtitulo_descripcion))
+                <h3>{!! $subtitulo_descripcion !!}</h3>
+            @endif
+
+            @if (!empty($lista) && is_array($lista))
+                <ul>
+                    @foreach ($lista as $item)
+                        <li>
+                            @if (!empty($item['icono']))
+                                <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] }}"></i>
+                            @endif
+                            <span style="color: {{ $item['texto_color'] }}">
+                                {{ $item['texto'] }}
+                            </span>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+
+            @if (!empty($boton_texto))
+                <a @if (!empty($boton_link)) href="{{ $boton_link }}" @endif target="_blank"
+                    class="btn-whatsapp"
+                    style="background-color: {{ $boton_fondo_color }}; color: {{ $boton_texto_color }}">
+                    @if (!empty($boton_icono))
+                        <i class="{{ $boton_icono }}"></i>
+                    @endif
+                    {{ $boton_texto }}
+                </a>
+            @endif
+        </div>
+    </section>
+@endif
