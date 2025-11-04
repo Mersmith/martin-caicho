@@ -16,6 +16,9 @@ use App\Livewire\Admin\Seccion\SeccionBloqueDosEditarLivewire;
 use App\Livewire\Admin\Seccion\SeccionBloqueTresTodoLivewire;
 use App\Livewire\Admin\Seccion\SeccionBloqueTresCrearLivewire;
 use App\Livewire\Admin\Seccion\SeccionBloqueTresEditarLivewire;
+use App\Livewire\Admin\Seccion\SeccionBloqueCuatroTodoLivewire;
+use App\Livewire\Admin\Seccion\SeccionBloqueCuatroCrearLivewire;
+use App\Livewire\Admin\Seccion\SeccionBloqueCuatroEditarLivewire;
 
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +38,6 @@ Route::get('/seccion/bloque-dos/editar/{id}', SeccionBloqueDosEditarLivewire::cl
 Route::get('/seccion/bloque-tres', SeccionBloqueTresTodoLivewire::class)->name('seccion.bloque-tres.vista.todo');
 Route::get('/seccion/bloque-tres/crear', SeccionBloqueTresCrearLivewire::class)->name('seccion.bloque-tres.vista.crear');
 Route::get('/seccion/bloque-tres/editar/{id}', SeccionBloqueTresEditarLivewire::class)->name('seccion.bloque-tres.vista.editar');
+Route::get('/seccion/bloque-cuatro', SeccionBloqueCuatroTodoLivewire::class)->name('seccion.bloque-cuatro.vista.todo');
+Route::get('/seccion/bloque-cuatro/crear', SeccionBloqueCuatroCrearLivewire::class)->name('seccion.bloque-cuatro.vista.crear');
+Route::get('/seccion/bloque-cuatro/editar/{id}', SeccionBloqueCuatroEditarLivewire::class)->name('seccion.bloque-cuatro.vista.editar');

@@ -591,6 +591,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 45,
+                "nombre": "Bloque 4",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.seccion.bloque-cuatro.vista.todo",
+                        "url": "/admin/seccion/bloque-cuatro",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.seccion.bloque-cuatro.vista.crear",
+                        "url": "/admin/seccion/bloque-cuatro/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

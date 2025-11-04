@@ -11,12 +11,13 @@ class HomeController extends Controller
         $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_1');
         $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(3, 'bloque_2');
         $bloque3_1 = app(SeccionController::class)->getSeccionPorTipo(6, 'bloque_3');
+        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_4');
 
         $noticias = $this->getNoticias();
 
         $imagenes = $this->getImagenes();
 
-        return view('web.home', compact('bloque1_1', 'bloque2_1', 'bloque3_1', 'noticias', 'imagenes'));
+        return view('web.home', compact('bloque1_1', 'bloque2_1', 'bloque3_1', 'bloque4_1', 'noticias', 'imagenes'));
     }
 
     public function getNoticias()

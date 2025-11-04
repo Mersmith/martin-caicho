@@ -8,7 +8,7 @@
 
 <div class="g_centrar_pagina">
     <div class="g_pading_pagina g_gap_pagina">
-        <div class="g_contenedor_columna">           
+        <div class="g_contenedor_columna">
             @include('partials.bloque-1', ['p_elemento' => $bloque2_1])
         </div>
 
@@ -19,13 +19,7 @@
 </div>
 
 <div class="g_margin_top_70">
-    @include('partials.call-to-action', [
-    'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
-    'titulo' => 'Descarga mi libro que todo peruano debe leer',
-    'subtitulo' => '“Perú, Tierra de Incautos”, una mirada crítica y constructiva.',
-    'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
-    'boton' => 'Registrate y descarga',
-    ])
+    @include('partials.call-to-action', ['p_elemento' => $bloque4_1])
 </div>
 
 <div class="g_centrar_pagina">
