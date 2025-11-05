@@ -1,45 +1,60 @@
-.contenido_post h1 {
+.ck-editor__main h2,
+.contenido_post h2 {
     font-weight: 700;
     font-size: 22px;
     line-height: 1.5;
 }
 
-.contenido_post h2 {
+.ck-editor__main h3,
+.contenido_post h3 {
     font-weight: 700;
     font-size: 19px;
     line-height: 1.5;
 }
 
-.contenido_post h3 {
+.ck-editor__main h4,
+.contenido_post h4 {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
 /* Párrafos */
-.contenido_post p {
-    font-size: 17px;
-    color: var(--color-texto-terciario);
+.ck-editor__main strong,
+.contenido_post strong {
+    font-weight: 600;
 }
 
-/* Imágenes */
-.contenido_post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1em 0;
+.ck-editor__main p,
+.contenido_post p {
+    font-size: 17px;
+    color: var(--color-negro);
+    line-height: 1.1;
+}
+
+.ck-editor__main p i,
+.contenido_post p i {
+    font-size: 17px;
+    color: var(--color-negro);
+    font-style: italic;
+}
+
+.ck-editor__main a,
+.contenido_post a {
+    cursor: pointer;
 }
 
 /* Imágenes centradas y responsive */
+.ck-editor__main img,
 .contenido_post img {
-    display: block;
-    margin: 1em auto;
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 1em auto;
 }
 
-
 /* Videos centrados y responsive */
+.ck-editor__main iframe,
 .contenido_post iframe {
     display: block;
     margin: 1em auto;
@@ -47,6 +62,7 @@
 }
 
 /* Contenedor general del post */
+.ck-editor__main figure,
 .contenido_post figure {
     display: table;
     margin: 1em auto;
@@ -55,6 +71,7 @@
 }
 
 /* La imagen dentro de la figura */
+.ck-editor__main figure img,
 .contenido_post figure img {
     display: block;
     margin: 0 auto;
@@ -63,6 +80,7 @@
 }
 
 /* El caption de la figura */
+.ck-editor__main figure figcaption,
 .contenido_post figure figcaption {
     font-size: 0.875rem;
     color: #666;
@@ -71,32 +89,39 @@
     font-style: italic;
 }
 
-
 /* Listas generales */
+.ck-editor__main ul,
+.ck-editor__main ol,
 .contenido_post ul,
 .contenido_post ol {
     padding-left: 2em;
-    /* espacio desde el borde */
     margin-bottom: 1em;
 }
 
 /* Items de lista */
+.ck-editor__main ul li,
 .contenido_post ul li {
     margin-bottom: 0.5em;
     list-style-type: disc;
 }
 
+.ck-editor__main ol li,
 .contenido_post ol li {
     margin-bottom: 0.5em;
     list-style-type: decimal;
 }
 
+.ck-editor__main ol li::marker,
 .contenido_post ol li::marker {
     font-weight: 600;
     color: #333;
 }
 
 /* Listas anidadas */
+.ck-editor__main ul ul,
+.ck-editor__main ul ol,
+.ck-editor__main ol ul,
+.ck-editor__main ol ol,
 .contenido_post ul ul,
 .contenido_post ul ol,
 .contenido_post ol ul,
@@ -105,9 +130,8 @@
     margin-left: 1.5em;
 }
 
-
-
 /* Blockquotes */
+.ck-editor__main blockquote,
 .contenido_post blockquote {
     border-left: 4px solid #ccc;
     padding-left: 1em;
@@ -117,12 +141,15 @@
 }
 
 /* Tablas básicas */
+.ck-editor__main table,
 .contenido_post table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1em;
 }
 
+.ck-editor__main th,
+.ck-editor__main td,
 .contenido_post th,
 .contenido_post td {
     border: 1px solid #ccc;
@@ -130,6 +157,7 @@
     text-align: left;
 }
 
+.ck-editor__main th,
 .contenido_post th {
     background-color: #f5f5f5;
 }
