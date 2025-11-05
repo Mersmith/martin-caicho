@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             SliderSeeder::class,
             TipoMensajeSeeder::class,
             MensajeSeeder::class,
+            SeccionSeeder::class,
         ]);
     }
 }
