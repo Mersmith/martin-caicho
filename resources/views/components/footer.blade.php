@@ -19,6 +19,26 @@
         </div>
     </div>
 
+    <div class="footer_terminos">
+        <span>
+            <a href="#">
+                Términos y Condiciones
+            </a>
+        </span>
+
+        <span>
+            <a href="#">
+                Políticas de Privacidad
+            </a>
+        </span>
+
+        <span>
+            <a href="#">
+                <i class="fa-solid fa-book-open"></i> Libro de Reclamaciones
+            </a>
+        </span>
+    </div>
+
     <div class="footer_copy">
         <p>© <strong>Martín Caicho</strong>.</p>
         <p>Todos los derechos reservados.</p>
