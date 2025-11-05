@@ -1,15 +1,35 @@
+@if (!empty($p_elemento) && !empty($p_elemento->contenido))
+
+@php
+$p = $p_elemento->contenido;
+
+$titulo = $p['titulo'] ?? '';
+$titulo_descripcion = $p['titulo_descripcion'] ?? '';
+$lista = $p['lista'] ?? [];
+@endphp
+
+@include('partials.encabezado', [
+'titulo' => $titulo,
+'descripcion' => $titulo_descripcion,
+])
+
+@if (!empty($lista) && is_array($lista))
 <div class="bloque_3">
-    @foreach ($cards ?? [] as $card)
-        <div class="card">
-            @if (!empty($card['icono']))
-                <i class="{{ $card['icono'] }}"></i>
-            @endif
+    @foreach ($lista as $item)
+    <div class="card">
+        @if (!empty($item['icono']))
+        <i class="{{ $item['icono'] }}"></i>
+        @endif
 
-            <h2>{!! $card['titulo'] ?? '' !!}</h2>
+        @if (!empty($item['subtitulo']))
+        <h2>{!! $item['subtitulo'] !!}</h2>
+        @endif
 
-            @if (!empty($card['descripcion']))
-                <p>{!! $card['descripcion'] !!}</p>
-            @endif
-        </div>
+        @if (!empty($item['subtitulo_descripcion']))
+        <p>{!! $item['subtitulo_descripcion'] !!}</p>
+        @endif
+    </div>
     @endforeach
 </div>
+@endif
+@endif

@@ -15,7 +15,8 @@ class NosotrosController extends Controller
         $bloque2_2 = app(SeccionController::class)->getSeccionPorTipo(2, 'bloque_2');
 
         $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_4');
+        $bloque7_1 = app(SeccionController::class)->getSeccionPorTipo(4, 'bloque_7');
 
-        return view('web.nosotros', compact('bloque5_1', 'bloque6_1', 'bloque2_1', 'bloque2_2', 'bloque4_1'));
+        return view('web.nosotros', compact('bloque5_1', 'bloque6_1', 'bloque2_1', 'bloque2_2', 'bloque4_1', 'bloque7_1'));
     }
 }
