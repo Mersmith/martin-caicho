@@ -390,6 +390,114 @@ class SeccionSeeder extends Seeder
                 ],
                 'activo' => true,
             ],
+            [
+                'nombre' => 'Call to Action - Nosotros',
+                'tipo' => 'bloque_4',
+                'contenido' => [
+                    'boton' => [
+                        'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
+                        'icono' => 'fa-solid fa-book',
+                        'texto' => 'Descargar mi Libro',
+                        'fondo_color' => '#00ac08',
+                        'texto_color' => '#ffffff',
+                    ],
+                    'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
+                    'titulo' => 'Mis propuestas para transformar el Perú',
+                    'subtitulo' => 'En mi libro “Perú, Tierra de Incautos”, comparto mi visión sobre cómo construir un país.',
+                    'imagen_seo' => '“Perú, Tierra de Incautos”, una mirada crítica y constructiva.',
+                ],
+                'activo' => true,
+            ],
+            [
+                'nombre' => 'Slider - Landing Libro',
+                'tipo' => 'bloque_1',
+                'contenido' => [
+                    'imagenes' => [
+                        [
+                            'id' => 1,
+                            'link' => '',
+                            'imagen_movil' => 'http://127.0.0.1:8000/assets/imagen/sliders-movil-1.jpg',
+                            'imagen_computadora' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-1.jpg',
+                        ],
+                        [
+                            'id' => 2,
+                            'link' => '',
+                            'imagen_movil' => 'http://127.0.0.1:8000/assets/imagen/sliders-movil-2.jpg',
+                            'imagen_computadora' => 'http://127.0.0.1:8000/assets/imagen/sliders-computadora-2.jpg',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+            [
+                'nombre' => 'Presentación - Landing Libro',
+                'tipo' => 'bloque_2',
+                'contenido' => [
+                    'boton' => [
+                        'link' => '/descargar-libro',
+                        'icono' => 'fa-solid fa-download',
+                        'texto' => 'Descarga el libro ahora',
+                        'fondo_color' => '#00ac08',
+                        'texto_color' => '#ffffff',
+                    ],
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'icono' => 'fa-solid fa-book-open',
+                            'texto' => 'Autor: Martín Caicho, empresario y comunicador',
+                            'icono_color' => '#00ac08',
+                            'texto_color' => '#01274C',
+                        ],
+                        [
+                            'id' => 2,
+                            'icono' => 'fa-solid fa-lightbulb',
+                            'texto' => 'Ideas claras para reflexionar y actuar por un Perú mejor',
+                            'icono_color' => '#00ac08',
+                            'texto_color' => '#01274C',
+                        ],
+                        [
+                            'id' => 3,
+                            'icono' => 'fa-solid fa-people-roof',
+                            'texto' => 'Analiza la realidad social, política y económica de nuestro país',
+                            'icono_color' => '#00ac08',
+                            'texto_color' => '#01274C',
+                        ],
+                        [
+                            'id' => 4,
+                            'icono' => 'fa-solid fa-flag',
+                            'texto' => 'Propone soluciones concretas para generar empleo, educación y desarrollo',
+                            'icono_color' => '#00ac08',
+                            'texto_color' => '#01274C',
+                        ],
+                    ],
+                    'imagen' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
+                    'titulo' => 'Descubre <span>“Perú, Tierra de Incautos”</span>',
+                    'invertir' => false,
+                    'subtitulo' => 'Una obra que <span>inspira y transforma</span>',
+                    'imagen_seo' => 'Martín Caicho Autor Peruano',
+                    'titulo_descripcion' => 'Un libro que revela la realidad del Perú, analiza los problemas que nos afectan y propone soluciones concretas para construir un país más justo, productivo y solidario. Sumérgete en una lectura que despierta conciencia y acción.',
+                    'subtitulo_descripcion' => 'Martín Caicho combina su experiencia como empresario, comunicador y líder social para ofrecer una mirada crítica, profunda y esperanzadora sobre el Perú. Este libro no solo denuncia, sino que propone soluciones claras y prácticas.',
+                ],
+                'activo' => true,
+            ],
+            [
+                'nombre' => 'Call to Action 1 - Landing Libro',
+                'tipo' => 'bloque_4',
+                'contenido' => [
+                    'boton' => [
+                        'link' => '#formulario-libro',
+                        'icono' => 'fa-solid fa-book',
+                        'texto' => 'Descargar Libro',
+                        'fondo_color' => '#00ac08',
+                        'texto_color' => '#ffffff',
+                    ],
+                    'imagen' => 'assets/imagen/sliders-computadora-1.jpg',
+                    'titulo' => 'Descubre cómo cambiar el Perú',
+                    'subtitulo' => 'Lee “Perú, Tierra de Incautos” y conoce soluciones reales para nuestro país.',
+                    'imagen_seo' => '¡Descarga tu ejemplar ahora!',
+                ],
+                'activo' => true,
+            ],
 
         ];
 

@@ -11,9 +11,13 @@ class LandingController extends Controller
 {
     public function libro()
     {
-        $sliders = $this->getLandingSliderLibro(1);
+        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(12, 'bloque_1');
 
-        return view('web.landing.libro', compact('sliders'));
+        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(13, 'bloque_2');
+
+        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(14, 'bloque_4');
+
+        return view('web.landing.libro', compact('bloque1_1', 'bloque2_1', 'bloque4_1'));
     }
 
     public function enviarLibro(Request $request, WhatsAppService $whatsapp)
