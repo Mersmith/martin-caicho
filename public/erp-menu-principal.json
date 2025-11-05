@@ -721,6 +721,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 50,
+                "nombre": "Pagina",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.pagina.vista.todo",
+                        "url": "/admin/pagina",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.pagina.vista.crear",
+                        "url": "/admin/pagina/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

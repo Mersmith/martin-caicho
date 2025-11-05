@@ -22,6 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('vendor/sweetalert2@11/sweetalert2@11.min.js') }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/sort@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
 
     <!-- STYLES -->
     @livewireStyles
@@ -39,13 +40,12 @@
 
         <!--CONTENIDO LAYOUT PAGINA-->
         <div class="contenido_layout_pagina">
-            <div class="g_centrar_pagina" @hasSection('anchoPantalla')
-                style="max-width: @yield('anchoPantalla')"
+            <div class="g_centrar_pagina" @hasSection('anchoPantalla') style="max-width: @yield('anchoPantalla')"
                 @endif">
                 <main class="g_pading_pagina">
                     @yield('content')
                     @if (isset($slot))
-                        {{ $slot }}
+                    {{ $slot }}
                     @endif
                 </main>
             </div>

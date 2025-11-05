@@ -73,3 +73,7 @@ php artisan make:livewire Admin/Seccion/SeccionBloqueSieteEditarLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueOchoTodoLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueOchoCrearLivewire
 php artisan make:livewire Admin/Seccion/SeccionBloqueOchoEditarLivewire
+
+php artisan make:livewire Admin/Pagina/PaginaTodoLivewire
+php artisan make:livewire Admin/Pagina/PaginaCrearLivewire
+php artisan make:livewire Admin/Pagina/PaginaEditarLivewire

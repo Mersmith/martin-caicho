@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('titulo');
             $table->string('slug')->unique();
             $table->enum('tipo', ['ckeditor', 'secciones', 'personalizado'])->default('personalizado');
-            $table->longText('contenido')->nullable(); // CKEditor
+            $table->longText('contenido')->nullable();
             $table->string('imagen')->nullable();
             $table->boolean('mostrar_en_menu')->default(true);
             $table->integer('orden')->default(0);
             $table->boolean('estado')->default(true);
-            
+
             $table->timestamps();
         });
     }
