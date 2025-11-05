@@ -15,7 +15,7 @@
 
             @include('partials.bloque-1', ['p_elemento' => $bloque2_2])
 
-            @include('partials.bloque-4', ['p_elemento' => $bloque6_1])
+            @include('partials.bloque-1', ['p_elemento' => $bloque2_3])
 
             @include('partials.bloque-3', ['p_elemento' => $bloque7_1])
         </div>
