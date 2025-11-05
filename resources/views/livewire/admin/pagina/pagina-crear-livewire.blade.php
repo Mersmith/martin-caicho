@@ -1,23 +1,33 @@
-@section('tituloPagina', 'Crear post')
+@section('tituloPagina', 'Crear Página')
 
-<div>
+@section('anchoPantalla', '100%')
+
+<div class="g_gap_pagina">
     <!-- CABECERA -->
     <div class="g_panel cabecera_titulo_pagina">
-        <h2>Crear post</h2>
+        <h2>Crear Página</h2>
+
+        <!--BOTONES-->
+        <div class="cabecera_titulo_botones">
+            <a href="{{ route('admin.pagina.vista.todo') }}" class="g_boton g_boton_light">
+                Inicio <i class="fa-solid fa-house"></i></a>
+
+            <a href="{{ route('admin.pagina.vista.todo') }}" class="g_boton g_boton_darkt">
+                <i class="fa-solid fa-arrow-left"></i> Regresar</a>
+        </div>
     </div>
 
     <!-- FORMULARIO -->
-    <div class="formulario">
+    <form wire:submit.prevent="store" class="formulario">
         <div class="g_fila">
-            <div class="g_columna_8">
+            <div class="g_columna_8 g_gap_pagina">
                 <div class="g_panel">
+                    <!--TITULO-->
+                    <h4 class="g_panel_titulo">Contenido</h4>
 
-
-                    <div class="g_panel">
-                        <!-- Content -->
-                        <div wire:ignore style="g_ckeditor">
-                            <label for="content">Contenido</label>
-                            <textarea id="content" class="w-full form-control" rows="6" wire:ignore x-data x-init="ClassicEditor.create($refs.miEditor, {
+                    <!-- contenido -->
+                    <div wire:ignore style="g_ckeditor" class="g_margin_bottom_10">
+                        <textarea id="contenido" class="w-full form-control" rows="6" wire:ignore x-data x-init="ClassicEditor.create($refs.miEditor, {
                                 toolbar: [
                                     'undo', 'redo', '|',
                                     'heading', '|',
@@ -37,26 +47,31 @@
                             })
                             .then(editor => {
                                 editor.model.document.on('change:data', () => {
-                                    @this.set('content', editor.getData())
+                                    @this.set('contenido', editor.getData())
                                 });
                             })
                             .catch(error => {
                                 console.error(error);
-                            });" x-ref="miEditor">{!! $content !!}</textarea>
+                            });" x-ref="miEditor">{!! $contenido !!}</textarea>
 
-                            @error('content')
-                            <p class="mensaje_error">{{ $message }}</p>
-                            @enderror
-                        </div>
+                        @error('contenido')
+                        <p class="mensaje_error">{{ $message }}</p>
+                        @enderror
                     </div>
-
                 </div>
             </div>
         </div>
 
         <!-- BOTONES -->
-        <div class="formulario_botones">
-            <button wire:click="crearPost" class="guardar" wire:loading.attr="disabled">Guardar</button>
+        <div class="g_margin_top_20">
+            <div class="formulario_botones">
+                <button type="submit" class="guardar" wire:loading.attr="disabled" wire:target="store">
+                    <span wire:loading.remove wire:target="store">Crear</span>
+                    <span wire:loading wire:target="store">Guardando...</span>
+                </button>
+
+                <a href="{{ route('admin.pagina.vista.todo') }}" class="cancelar">Cancelar</a>
+            </div>
         </div>
 
-    </div>
+</div>

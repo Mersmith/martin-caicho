@@ -10,12 +10,12 @@ use Illuminate\Support\Str;
 #[Layout('layouts.admin.layout-admin')]
 class PaginaCrearLivewire extends Component
 {
-    public $content;
+    public $contenido;
 
     protected function rules()
     {
         return [
-            'content' => 'required|string',
+            'contenido' => 'required|string',
         ];
     }
 
@@ -24,7 +24,7 @@ class PaginaCrearLivewire extends Component
         $this->validate();
 
         Pagina::create([
-            'content' => $this->content,
+            'contenido' => $this->contenido,
         ]);
 
         $this->dispatch('alertaLivewire', "Creado");
