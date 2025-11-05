@@ -17,7 +17,13 @@ class LandingController extends Controller
 
         $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(14, 'bloque_4');
 
-        return view('web.landing.libro', compact('bloque1_1', 'bloque2_1', 'bloque4_1'));
+        $bloque8_1 = app(SeccionController::class)->getSeccionPorTipo(15, 'bloque_8');
+
+        $bloque2_2 = app(SeccionController::class)->getSeccionPorTipo(16, 'bloque_2');
+
+        $bloque4_2 = app(SeccionController::class)->getSeccionPorTipo(17, 'bloque_4');
+
+        return view('web.landing.libro', compact('bloque1_1', 'bloque2_1', 'bloque4_1', 'bloque8_1', 'bloque2_2', 'bloque4_2'));
     }
 
     public function enviarLibro(Request $request, WhatsAppService $whatsapp)

@@ -31,6 +31,9 @@ use App\Livewire\Admin\Seccion\{
     SeccionBloqueSieteTodoLivewire,
     SeccionBloqueSieteCrearLivewire,
     SeccionBloqueSieteEditarLivewire,
+    SeccionBloqueOchoTodoLivewire,
+    SeccionBloqueOchoCrearLivewire,
+    SeccionBloqueOchoEditarLivewire,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -65,4 +68,7 @@ Route::prefix('seccion')->name('seccion.')->group(function () {
     Route::get('/bloque-siete', SeccionBloqueSieteTodoLivewire::class)->name('bloque-siete.vista.todo');
     Route::get('/bloque-siete/crear', SeccionBloqueSieteCrearLivewire::class)->name('bloque-siete.vista.crear');
     Route::get('/bloque-siete/editar/{id}', SeccionBloqueSieteEditarLivewire::class)->name('bloque-siete.vista.editar');
+    Route::get('/bloque-ocho', SeccionBloqueOchoTodoLivewire::class)->name('bloque-ocho.vista.todo');
+    Route::get('/bloque-ocho/crear', SeccionBloqueOchoCrearLivewire::class)->name('bloque-ocho.vista.crear');
+    Route::get('/bloque-ocho/editar/{id}', SeccionBloqueOchoEditarLivewire::class)->name('bloque-ocho.vista.editar');
 });

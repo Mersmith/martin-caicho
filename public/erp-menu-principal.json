@@ -695,6 +695,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 49,
+                "nombre": "Bloque 8",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.seccion.bloque-ocho.vista.todo",
+                        "url": "/admin/seccion/bloque-ocho",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.seccion.bloque-ocho.vista.crear",
+                        "url": "/admin/seccion/bloque-ocho/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

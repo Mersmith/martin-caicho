@@ -93,48 +93,7 @@
                 </div>
             </div>
 
-            @include('partials.encabezado', [
-            'titulo' => 'Lo que dicen sobre <span>“Perú, Tierra de Incautos”</span>',
-            ])
-
-            @include('partials.slider-testimonios', [
-            'testimonios' => [
-            [
-            'nombre' => 'Ana Torres',
-            'cargo' => 'Docente Universitaria',
-            'comentario' =>
-            '“Perú, Tierra de Incautos” me abrió los ojos sobre los desafíos del país y propone soluciones claras. Una
-            lectura imprescindible.',
-            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-            ],
-            [
-            'nombre' => 'Carlos Méndez',
-            'cargo' => 'Emprendedor',
-            'comentario' =>
-            'Las ideas de Martín Caicho me inspiraron a actuar y pensar en cómo podemos mejorar nuestra economía y
-            sociedad.',
-            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-            ],
-            [
-            'nombre' => 'Lucía Rojas',
-            'cargo' => 'Periodista',
-            'comentario' =>
-            'Un libro profundo y crítico que invita a la reflexión. Excelente para quienes quieren entender la realidad
-            del Perú.',
-            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-            ],
-            [
-            'nombre' => 'Jorge Salazar',
-            'cargo' => 'Estudiante Universitario',
-            'comentario' =>
-            'Inspirador y educativo. Me ayudó a comprender mejor los problemas del país y pensar en soluciones
-            prácticas.',
-            'foto' => 'http://127.0.0.1:8000/assets/imagen/default.jpg',
-            ],
-            ],
-            'id' => 1,
-            ])
-
+            @include('partials.slider-testimonios', ['p_elemento' => $bloque8_1])
         </div>
     </div>
 </div>
@@ -142,12 +101,12 @@
 <div class="g_centrar_pagina">
     <div class="g_pading_pagina g_gap_pagina">
         <div class="g_contenedor_columna">
-            @include('partials.bloque-1', ['p_elemento' => $bloque2_1])
+            @include('partials.bloque-1', ['p_elemento' => $bloque2_2])
         </div>
     </div>
 </div>
 
 <div class="g_margin_top_70">
-    @include('partials.call-to-action', ['p_elemento' => $bloque4_1])
+    @include('partials.call-to-action', ['p_elemento' => $bloque4_2])
 </div>
 @endsection

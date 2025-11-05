@@ -3,8 +3,8 @@
 @php
 $p = $p_elemento->contenido;
 
-$titulo = $p['titulo'] ?? '';
-$titulo_descripcion = $p['titulo_descripcion'] ?? '';
+$titulo = $p['titulo'];
+$titulo_descripcion = $p['titulo_descripcion'];
 $lista = $p['lista'] ?? [];
 @endphp
 

@@ -1,35 +1,56 @@
-@if (!empty($testimonios) && count($testimonios) > 0)
-    @php
-        $slidesCount = count($testimonios);
-    @endphp
+@if (!empty($p_elemento) && !empty($p_elemento->contenido))
 
-    <div class="partials_contenedor_slider_testimonios">
-        <div class="swiper SwiperSliderTestimonios-{{ $id ?? 'default' }}">
-            <div class="swiper-wrapper">
-                @foreach ($testimonios as $t)
-                    <div class="swiper-slide">
-                        <div class="testimonio_card">
-                            <div class="testimonio_foto">
-                                <img src="{{ $t['foto'] ?? asset('assets/imagen/default.jpg') }}"
-                                     alt="{{ $t['nombre'] ?? 'Persona' }}">
-                            </div>
-                            <p class="testimonio_comentario">"{{ $t['comentario'] ?? '' }}"</p>
-                            <p class="testimonio_nombre">{{ $t['nombre'] ?? '' }}</p>
-                            @if (!empty($t['cargo']))
-                                <p class="testimonio_cargo">{{ $t['cargo'] }}</p>
-                            @endif
-                        </div>
+@php
+$p = $p_elemento->contenido;
+
+$titulo = $p['titulo'];
+$titulo_descripcion = $p['titulo_descripcion'];
+$lista = $p['lista'] ?? [];
+
+$slidesCount = count($lista);
+@endphp
+
+@include('partials.encabezado', [
+'titulo' => $titulo,
+'descripcion' => $titulo_descripcion,
+])
+
+@if (!empty($lista) && is_array($lista))
+<div class="partials_contenedor_slider_testimonios">
+    <div class="swiper SwiperSliderTestimonios-{{ $p->id ?? 'default' }}">
+        <div class="swiper-wrapper">
+            @foreach ($lista as $item)
+            <div class="swiper-slide">
+                <div class="testimonio_card">
+                    @if (!empty($item['imagen']))
+                    <div class="testimonio_foto">
+                        <img src="{{ $item['imagen'] }}" alt="{{ $item['imagen_seo'] }}">
                     </div>
-                @endforeach
+                    @endif
+
+                    @if (!empty($item['descripcion']))
+                    <p class="testimonio_comentario">"{{ $item['descripcion'] }}"</p>
+                    @endif
+
+                    @if (!empty($item['titulo']))
+                    <p class="testimonio_nombre">{{ $item['titulo']}}</p>
+                    @endif
+
+                    @if (!empty($item['subtitulo']))
+                    <p class="testimonio_cargo">{{ $item['subtitulo'] }}</p>
+                    @endif
+                </div>
             </div>
+            @endforeach
         </div>
     </div>
+</div>
 
-    <script>
-        (function() {
+<script>
+    (function() {
             const slidesCount = {{ $slidesCount }};
-            const selector = '.SwiperSliderTestimonios-{{ $id ?? 'default' }}';
-    
+            const selector = '.SwiperSliderTestimonios-{{ $p->id ?? 'default' }}';
+
             new Swiper(selector, {
                 slidesPerView: 3.5,
                 spaceBetween: 20,
@@ -39,7 +60,7 @@
                 } : false,
                 loop: slidesCount > 4, // 👈 solo hace loop si hay más de 4 slides
                 grabCursor: slidesCount > 1,
-    
+
                 breakpoints: {
                     1024: {
                         slidesPerView: Math.min(3.5, slidesCount),
@@ -56,6 +77,7 @@
                 }
             });
         })();
-    </script>
-    
+</script>
+
+@endif
 @endif
