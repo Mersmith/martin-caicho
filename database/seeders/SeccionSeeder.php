@@ -610,6 +610,16 @@ class SeccionSeeder extends Seeder
                 ],
                 'activo' => true,
             ],
+            [
+                'nombre' => 'Terminos y Condiciones',
+                'tipo' => 'bloque-9',
+                'contenido' => [
+                    'titulo' => 'Terminos y Condiciones',
+                    'subtitulo' => '',
+                    'content_html' => '<p>Declaro haber sido informado, conforme a Ley N° 29733 - Ley de Protección de Datos Personales (“la Ley”) y al Decreto Supremo 003-2013/JUS - Reglamento de la Ley (“el Reglamento)”, doy mi consentimiento libre, previo , informado, expreso e inequívoco para que <strong>AYBAR S.A.C. </strong>realice el tratamiento de mis datos personales que le proporcione de manera física o digital , con la finalidad de ejecutar cualquier relación contractual que mantengo y/o mantendré con la misma, contactarme y para fines estadísticos y/o analíticos.</p>',
+                ],
+                'activo' => true,
+            ],
         ];
 
         foreach ($secciones as $seccion) {

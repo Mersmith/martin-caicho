@@ -99,18 +99,8 @@ class PaginaSeeder extends Seeder
                     'lista' => [
                         [
                             'id' => 1,
-                            'seccion_id' => 12,
-                            'tipo' => 'bloque-1',
-                        ],
-                        [
-                            'id' => 2,
-                            'seccion_id' => 13,
-                            'tipo' => 'bloque-2',
-                        ],
-                        [
-                            'id' => 3,
-                            'seccion_id' => 15,
-                            'tipo' => 'bloque-8',
+                            'seccion_id' => 18,
+                            'tipo' => 'bloque-9',
                         ],
                     ],
                 ],
