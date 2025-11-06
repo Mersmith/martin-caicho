@@ -44,7 +44,7 @@ class SeccionBloqueNueveCrearLivewire extends Component
 
         Seccion::create([
             'nombre' => $this->nombre,
-            'tipo' => 'bloque_9',
+            'tipo' => 'bloque-9',
             'contenido' => [
                 'titulo' => $this->titulo,
                 'subtitulo' => $this->subtitulo,

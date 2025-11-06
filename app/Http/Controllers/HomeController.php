@@ -8,10 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque_1');
-        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(2, 'bloque_2');
-        $bloque3_1 = app(SeccionController::class)->getSeccionPorTipo(3, 'bloque_3');
-        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(4, 'bloque_4');
+        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(1, 'bloque-1');
+        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(2, 'bloque-2');
+        $bloque3_1 = app(SeccionController::class)->getSeccionPorTipo(3, 'bloque-3');
+        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(4, 'bloque-4');
 
         $noticias = $this->getNoticias();
 

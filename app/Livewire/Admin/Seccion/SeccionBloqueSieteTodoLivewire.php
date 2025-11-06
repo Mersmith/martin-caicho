@@ -11,7 +11,7 @@ class SeccionBloqueSieteTodoLivewire extends Component
 {
     public function render()
     {
-        $secciones = Seccion::where('tipo', 'bloque_7')
+        $secciones = Seccion::where('tipo', 'bloque-7')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
 

@@ -9,7 +9,7 @@ class NoticiaController extends Controller
     public function index()
     {
         $noticias = Noticia::where('estado', true)->latest()->paginate(6);
-        return view('web.noticias.index', compact('noticias'));
+        return view('web.paginas.noticias', compact('noticias'));
     }
 
     public function show($slug)
@@ -19,6 +19,6 @@ class NoticiaController extends Controller
         $otrosPosts = Noticia::where('estado', true)->latest()
             ->paginate(5);
 
-        return view('web.noticias.show', compact('post', 'otrosPosts'));
+        return view('web.paginas.noticias-item', compact('post', 'otrosPosts'));
     }
 }

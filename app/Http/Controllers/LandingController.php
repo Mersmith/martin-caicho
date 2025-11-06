@@ -11,17 +11,17 @@ class LandingController extends Controller
 {
     public function libro()
     {
-        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(12, 'bloque_1');
+        $bloque1_1 = app(SeccionController::class)->getSeccionPorTipo(12, 'bloque-1');
 
-        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(13, 'bloque_2');
+        $bloque2_1 = app(SeccionController::class)->getSeccionPorTipo(13, 'bloque-2');
 
-        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(14, 'bloque_4');
+        $bloque4_1 = app(SeccionController::class)->getSeccionPorTipo(14, 'bloque-4');
 
-        $bloque8_1 = app(SeccionController::class)->getSeccionPorTipo(15, 'bloque_8');
+        $bloque8_1 = app(SeccionController::class)->getSeccionPorTipo(15, 'bloque-8');
 
-        $bloque2_2 = app(SeccionController::class)->getSeccionPorTipo(16, 'bloque_2');
+        $bloque2_2 = app(SeccionController::class)->getSeccionPorTipo(16, 'bloque-2');
 
-        $bloque4_2 = app(SeccionController::class)->getSeccionPorTipo(17, 'bloque_4');
+        $bloque4_2 = app(SeccionController::class)->getSeccionPorTipo(17, 'bloque-4');
 
         return view('web.landing.libro', compact('bloque1_1', 'bloque2_1', 'bloque4_1', 'bloque8_1', 'bloque2_2', 'bloque4_2'));
     }

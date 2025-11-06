@@ -21,4 +21,4 @@ Route::get('/noticias/{slug}', [NoticiaController::class, 'show'])->name('notici
 Route::get('/contacto', [MensajeController::class, 'index'])->name('contacto.index'); //pagina personalizada
 Route::post('/contacto/enviar', [MensajeController::class, 'enviar'])->name('contacto.enviar');
 
-Route::get('/{slug}', [PaginaController::class, 'show'])->name('pagina');
+Route::get('/{slug?}', [PaginaController::class, 'show'])->name('pagina.mostrar');

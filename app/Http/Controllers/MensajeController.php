@@ -9,7 +9,7 @@ class MensajeController extends Controller
 {
     public function index()
     {
-        return view('web.contacto');
+        return view('web.paginas.contacto');
     }
 
     public function enviar(Request $request)

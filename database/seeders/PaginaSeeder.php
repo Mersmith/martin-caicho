@@ -21,7 +21,7 @@ class PaginaSeeder extends Seeder
                 'activo' => true,
             ],
             [
-                'tipo' => 'secciones',
+                'tipo' => 'personalizado',
                 'titulo' => 'Martin Caicho',
                 'slug' => 'martin-caicho',
                 'contenido' => [
@@ -29,17 +29,17 @@ class PaginaSeeder extends Seeder
                         [
                             'id' => 1,
                             'seccion_id' => 6,
-                            'tipo' => 'bloque_6',
+                            'tipo' => 'bloque-6',
                         ],
                         [
                             'id' => 2,
                             'seccion_id' => 7,
-                            'tipo' => 'bloque_2',
+                            'tipo' => 'bloque-2',
                         ],
                         [
                             'id' => 3,
                             'seccion_id' => 8,
-                            'tipo' => 'bloque_2',
+                            'tipo' => 'bloque-2',
                         ],
                     ],
                 ],
@@ -67,7 +67,7 @@ class PaginaSeeder extends Seeder
                 'activo' => true,
             ],
             [
-                'tipo' => 'secciones',
+                'tipo' => 'personalizado',
                 'titulo' => 'Perú Tierra de Incautos',
                 'slug' => 'peru-tierra-de-incautos',
                 'contenido' => [
@@ -75,17 +75,42 @@ class PaginaSeeder extends Seeder
                         [
                             'id' => 1,
                             'seccion_id' => 12,
-                            'tipo' => 'bloque_1',
+                            'tipo' => 'bloque-1',
                         ],
                         [
                             'id' => 2,
                             'seccion_id' => 13,
-                            'tipo' => 'bloque_2',
+                            'tipo' => 'bloque-2',
                         ],
                         [
                             'id' => 3,
                             'seccion_id' => 15,
-                            'tipo' => 'bloque_8',
+                            'tipo' => 'bloque-8',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'secciones',
+                'titulo' => 'Terminos y Condiciones',
+                'slug' => 'terminos-y-condiciones',
+                'contenido' => [
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'seccion_id' => 12,
+                            'tipo' => 'bloque-1',
+                        ],
+                        [
+                            'id' => 2,
+                            'seccion_id' => 13,
+                            'tipo' => 'bloque-2',
+                        ],
+                        [
+                            'id' => 3,
+                            'seccion_id' => 15,
+                            'tipo' => 'bloque-8',
                         ],
                     ],
                 ],

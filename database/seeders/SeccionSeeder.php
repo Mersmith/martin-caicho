@@ -16,7 +16,7 @@ class SeccionSeeder extends Seeder
         $secciones = [
             [
                 'nombre' => 'Slider Principal - Inicio',
-                'tipo' => 'bloque_1',
+                'tipo' => 'bloque-1',
                 'contenido' => [
                     'lista' => [
                         [
@@ -37,7 +37,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Presentación - Inicio',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'boton' => [
                         'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
@@ -88,7 +88,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Soy También - Inicio',
-                'tipo' => 'bloque_3',
+                'tipo' => 'bloque-3',
                 'contenido' => [
                     'lista' => [
                         [
@@ -144,7 +144,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Call to Action - Inicio',
-                'tipo' => 'bloque_4',
+                'tipo' => 'bloque-4',
                 'contenido' => [
                     'boton' => [
                         'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
@@ -162,7 +162,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Banner - Nosotros',
-                'tipo' => 'bloque_5',
+                'tipo' => 'bloque-5',
                 'contenido' => [
                     'boton' => [
                         'link' => '',
@@ -180,7 +180,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Titulo - Nosotros',
-                'tipo' => 'bloque_6',
+                'tipo' => 'bloque-6',
                 'contenido' => [
                     'titulo' => 'La <span>Solución</span> para un Perú con futuro',
                     'subtitulo' => 'Propongo una visión renovadora basada en tres ejes: desarrollo económico inclusivo, fortalecimiento de los valores ciudadanos y modernización de la gestión pública. Desde mi experiencia en el sector privado y la función pública, impulso ideas que buscan unirnos como peruanos para construir un país más justo, productivo y solidario.',
@@ -189,7 +189,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Desarrollo - Nosotros',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'boton' => [
                         'link' => '',
@@ -247,7 +247,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Gestión - Nosotros',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'boton' => [
                         'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
@@ -305,7 +305,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Valores - Nosotros',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'boton' => [
                         'link' => '',
@@ -363,7 +363,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Compromiso con el Perú - Nosotros',
-                'tipo' => 'bloque_7',
+                'tipo' => 'bloque-7',
                 'contenido' => [
                     'lista' => [
                         [
@@ -392,7 +392,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Call to Action - Nosotros',
-                'tipo' => 'bloque_4',
+                'tipo' => 'bloque-4',
                 'contenido' => [
                     'boton' => [
                         'link' => 'http://127.0.0.1:8000/peru-tierra-de-incautos',
@@ -410,7 +410,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Slider - Landing Libro',
-                'tipo' => 'bloque_1',
+                'tipo' => 'bloque-1',
                 'contenido' => [
                     'imagenes' => [
                         [
@@ -431,7 +431,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Presentación - Landing Libro',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'boton' => [
                         'link' => '/descargar-libro',
@@ -482,7 +482,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Call to Action 1 - Landing Libro',
-                'tipo' => 'bloque_4',
+                'tipo' => 'bloque-4',
                 'contenido' => [
                     'boton' => [
                         'link' => '#formulario-libro',
@@ -500,7 +500,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Testimonios - Landing Libro',
-                'tipo' => 'bloque_8',
+                'tipo' => 'bloque-8',
                 'contenido' => [
                     'titulo' => 'Lo que dicen sobre <span>“Perú, Tierra de Incautos”</span>',
                     'titulo_descripcion' => '',
@@ -543,7 +543,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Autor - Landing Libro',
-                'tipo' => 'bloque_2',
+                'tipo' => 'bloque-2',
                 'contenido' => [
                     'titulo' => 'Martín Caicho <span>Autor y Emprendedor Peruano</span>',
                     'titulo_descripcion' => '',
@@ -594,7 +594,7 @@ class SeccionSeeder extends Seeder
             ],
             [
                 'nombre' => 'Call to Action Final - Landing Libro',
-                'tipo' => 'bloque_4',
+                'tipo' => 'bloque-4',
                 'contenido' => [
                     'boton' => [
                         'link' => '#formulario-libro',
