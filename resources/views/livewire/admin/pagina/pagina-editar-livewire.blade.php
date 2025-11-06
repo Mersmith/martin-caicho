@@ -83,7 +83,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="text" wire:model="lista.{{ $index }}.seccion_id"
+                                    <input type="number" wire:model="lista.{{ $index }}.seccion_id"
                                         wire:key="seccion_id-{{ $index }}" @pointerdown.stop @mousedown.stop
                                         @touchstart.stop draggable="false">
                                     @error("lista.$index.seccion_id")

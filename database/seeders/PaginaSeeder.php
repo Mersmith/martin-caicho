@@ -12,6 +12,107 @@ class PaginaSeeder extends Seeder
      */
     public function run(): void
     {
-        //Pagina::factory()->create(['titulo' => 'Nosotros', 'slug' => 'nosotros']);
+        $paginas = [
+            [
+                'tipo' => 'secciones',
+                'titulo' => 'Inicio',
+                'slug' => 'inicio',
+                'contenido' => [
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'seccion_id' => 1,
+                            'tipo' => 'bloque_1',
+                        ],
+                        [
+                            'id' => 2,
+                            'seccion_id' => 2,
+                            'tipo' => 'bloque_2',
+                        ],
+                        [
+                            'id' => 3,
+                            'seccion_id' => 3,
+                            'tipo' => 'bloque_3',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'secciones',
+                'titulo' => 'Martin Caicho',
+                'slug' => 'martin-caicho',
+                'contenido' => [
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'seccion_id' => 6,
+                            'tipo' => 'bloque_6',
+                        ],
+                        [
+                            'id' => 2,
+                            'seccion_id' => 7,
+                            'tipo' => 'bloque_2',
+                        ],
+                        [
+                            'id' => 3,
+                            'seccion_id' => 8,
+                            'tipo' => 'bloque_2',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'personalizado',
+                'titulo' => 'Noticias',
+                'slug' => 'noticias',
+                'contenido' => [],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'personalizado',
+                'titulo' => 'Noticias - Item',
+                'slug' => 'noticias/',
+                'contenido' => [],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'personalizado',
+                'titulo' => 'Contacto',
+                'slug' => 'contacto',
+                'contenido' => [],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'secciones',
+                'titulo' => 'Perú Tierra de Incautos',
+                'slug' => 'peru-tierra-de-incautos',
+                'contenido' => [
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'seccion_id' => 12,
+                            'tipo' => 'bloque_1',
+                        ],
+                        [
+                            'id' => 2,
+                            'seccion_id' => 13,
+                            'tipo' => 'bloque_2',
+                        ],
+                        [
+                            'id' => 3,
+                            'seccion_id' => 15,
+                            'tipo' => 'bloque_8',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+        ];
+
+        foreach ($paginas as $pagina) {
+            Pagina::create($pagina);
+        }
     }
 }
