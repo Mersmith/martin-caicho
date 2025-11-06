@@ -13,35 +13,35 @@ class SeccionBloqueUnoEditarLivewire extends Component
     public $seccion;
 
     public $nombre;
-    public $imagenes = [];
+    public $lista = [];
     public $activo = false;
 
     protected function rules()
     {
         return [
             'nombre' => 'required|string|max:255',
-            'imagenes.*.id' => 'required|integer',
-            'imagenes.*.imagen_computadora' => 'required|string',
-            'imagenes.*.imagen_movil' => 'required|string',
-            'imagenes.*.link' => 'nullable|url',
+            'lista.*.id' => 'required|integer',
+            'lista.*.imagen_computadora' => 'required|string',
+            'lista.*.imagen_movil' => 'required|string',
+            'lista.*.link' => 'nullable|url',
             'activo' => 'boolean',
         ];
     }
 
     protected $validationAttributes = [
         'nombre' => 'nombre',
-        'imagenes.*.id' => 'id',
-        'imagenes.*.imagen_computadora' => 'imagen computadora',
-        'imagenes.*.imagen_movil' => 'imagen móvil',
-        'imagenes.*.link' => 'link',
+        'lista.*.id' => 'id',
+        'lista.*.imagen_computadora' => 'imagen computadora',
+        'lista.*.imagen_movil' => 'imagen móvil',
+        'lista.*.link' => 'link',
     ];
 
     protected $messages = [
         'nombre.required' => 'El :attribute es requerido.',
-        'imagenes.*.id.required' => 'El :attribute es requerido.',
-        'imagenes.*.imagen_computadora.required' => 'El :attribute es requerido.',
-        'imagenes.*.imagen_movil.required' => 'El :attribute es requerido.',
-        'imagenes.*.link.url' => 'El :attribute debe ser válido.',
+        'lista.*.id.required' => 'El :attribute es requerido.',
+        'lista.*.imagen_computadora.required' => 'El :attribute es requerido.',
+        'lista.*.imagen_movil.required' => 'El :attribute es requerido.',
+        'lista.*.link.url' => 'El :attribute debe ser válido.',
     ];
 
     public function mount($id)
@@ -53,10 +53,10 @@ class SeccionBloqueUnoEditarLivewire extends Component
 
         $contenido = $this->seccion->contenido ?? [];
 
-        if (isset($contenido['imagenes']) && is_array($contenido['imagenes'])) {
-            $this->imagenes = $contenido['imagenes'];
+        if (isset($contenido['lista']) && is_array($contenido['lista'])) {
+            $this->lista = $contenido['lista'];
         } else {
-            $this->imagenes = [
+            $this->lista = [
                 [
                     'id' => 1,
                     'imagen_computadora' => '',
@@ -69,10 +69,10 @@ class SeccionBloqueUnoEditarLivewire extends Component
 
     public function agregarItem()
     {
-        $maxId = collect($this->imagenes)->max('id');
+        $maxId = collect($this->lista)->max('id');
         $nextId = $maxId ? $maxId + 1 : 1;
 
-        $this->imagenes[] = [
+        $this->lista[] = [
             'id' => $nextId,
             'imagen_computadora' => '',
             'imagen_movil' => '',
@@ -82,7 +82,7 @@ class SeccionBloqueUnoEditarLivewire extends Component
 
     public function eliminarItem($index)
     {
-        array_splice($this->imagenes, $index, 1);
+        array_splice($this->lista, $index, 1);
     }
 
     public function store()
@@ -92,12 +92,12 @@ class SeccionBloqueUnoEditarLivewire extends Component
         $this->seccion->update([
             'nombre' => $this->nombre,
             'contenido' => [
-                'imagenes' => $this->imagenes,
+                'lista' => $this->lista,
             ],
             'activo' => $this->activo,
         ]);
 
-        //$this->reset(['nombre', 'imagenes', 'activo']);
+        //$this->reset(['nombre', 'lista', 'activo']);
 
         $this->dispatch('alertaLivewire', "Actualizado");
     }
@@ -105,11 +105,11 @@ class SeccionBloqueUnoEditarLivewire extends Component
     #[On('handleBloque1EditarOn')]
     public function handleBloque1EditarOn($item, $position)
     {
-        $index = array_search($item, array_column($this->imagenes, 'id'));
+        $index = array_search($item, array_column($this->lista, 'id'));
 
         if ($index !== false) {
-            $element = array_splice($this->imagenes, $index, 1)[0];
-            array_splice($this->imagenes, $position, 0, [$element]);
+            $element = array_splice($this->lista, $index, 1)[0];
+            array_splice($this->lista, $position, 0, [$element]);
         }
     }
 

@@ -18,7 +18,7 @@ class SeccionSeeder extends Seeder
                 'nombre' => 'Slider Principal - Inicio',
                 'tipo' => 'bloque_1',
                 'contenido' => [
-                    'imagenes' => [
+                    'lista' => [
                         [
                             'id' => 1,
                             'link' => '',

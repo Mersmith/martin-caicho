@@ -67,7 +67,7 @@
                         </thead>
 
                         <tbody x-sort="handleBloque1Editar">
-                            @foreach ($imagenes as $index => $imagen)
+                            @foreach ($lista as $index => $imagen)
                             <tr x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
                                 <td>
                                     <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
@@ -75,28 +75,27 @@
                                         <i class="fa-solid fa-up-down-left-right"></i>
                                         {{ $imagen['id'] }}
                                     </div>
-                                </td>                              
+                                </td>
                                 <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.imagen_computadora"
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen_computadora"
                                         wire:key="imagen_computadora-{{ $index }}" @pointerdown.stop @mousedown.stop
                                         @touchstart.stop draggable="false">
-                                    @error("imagenes.$index.imagen_computadora")
+                                    @error("lista.$index.imagen_computadora")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>
                                 <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.imagen_movil"
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen_movil"
                                         wire:key="imagen_movil-{{ $index }}" @pointerdown.stop @mousedown.stop
                                         @touchstart.stop draggable="false">
-                                    @error("imagenes.$index.imagen_movil")
+                                    @error("lista.$index.imagen_movil")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>
                                 <td>
-                                    <input type="text" wire:model="imagenes.{{ $index }}.link"
-                                        wire:key="link-{{ $index }}" @pointerdown.stop @mousedown.stop @touchstart.stop
-                                        draggable="false">
-                                    @error("imagenes.$index.link")
+                                    <input type="text" wire:model="lista.{{ $index }}.link" wire:key="link-{{ $index }}"
+                                        @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                    @error("lista.$index.link")
                                     <p class="mensaje_error">{{ $message }}</p>
                                     @enderror
                                 </td>

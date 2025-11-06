@@ -35,7 +35,7 @@
                                     class="fa-solid fa-asterisk"></i></span></label>
                         <input type="text" id="nombre" name="nombre" wire:model.live="nombre">
                         @error('nombre')
-                            <p class="mensaje_error">{{ $message }}</p>
+                        <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -64,47 +64,44 @@
                         </thead>
 
                         <tbody x-sort="handleSliderEditar">
-                            @foreach ($imagenes as $index => $imagen)
-                                <tr class="sorteable_item" x-sort:item="{{ $imagen['id'] }}"
-                                    wire:key="imagen-{{ $index }}">
-                                    <td><i class="fa-solid fa-up-down-left-right"></i></td>
-                                    <td>
-                                        <input type="number" wire:model="imagenes.{{ $index }}.id"
-                                            class="form-control" value="{{ $imagen['id'] }}" readonly
-                                            wire:key="id-{{ $index }}">
-                                        @error("imagenes.$index.id")
-                                            <p class="mensaje_error">{{ $message }}</p>
-                                        @enderror
-                                    </td>
-                                    <td>
-                                        <input type="text"
-                                            wire:model="imagenes.{{ $index }}.imagen_computadora"
-                                            class="form-control" wire:key="imagen_computadora-{{ $index }}">
-                                        @error("imagenes.$index.imagen_computadora")
-                                            <p class="mensaje_error">{{ $message }}</p>
-                                        @enderror
-                                    </td>
-                                    <td>
-                                        <input type="text" wire:model="imagenes.{{ $index }}.imagen_movil"
-                                            class="form-control" wire:key="imagen_movil-{{ $index }}">
-                                        @error("imagenes.$index.imagen_movil")
-                                            <p class="mensaje_error">{{ $message }}</p>
-                                        @enderror
-                                    </td>
-                                    <td>
-                                        <input type="text" wire:model="imagenes.{{ $index }}.link"
-                                            class="form-control" wire:key="link-{{ $index }}">
-                                        @error("imagenes.$index.link")
-                                            <p class="mensaje_error">{{ $message }}</p>
-                                        @enderror
-                                    </td>
-                                    <td>
-                                        <button type="button" wire:click="eliminarItem({{ $index }})"
-                                            class="boton_eliminar" wire:key="boton-eliminar-{{ $index }}">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                            @foreach ($lista as $index => $imagen)
+                            <tr class="sorteable_item" x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
+                                <td><i class="fa-solid fa-up-down-left-right"></i></td>
+                                <td>
+                                    <input type="number" wire:model="lista.{{ $index }}.id" class="form-control"
+                                        value="{{ $imagen['id'] }}" readonly wire:key="id-{{ $index }}">
+                                    @error("lista.$index.id")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen_computadora"
+                                        class="form-control" wire:key="imagen_computadora-{{ $index }}">
+                                    @error("lista.$index.imagen_computadora")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.imagen_movil" class="form-control"
+                                        wire:key="imagen_movil-{{ $index }}">
+                                    @error("lista.$index.imagen_movil")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.link" class="form-control"
+                                        wire:key="link-{{ $index }}">
+                                    @error("lista.$index.link")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
+                                        wire:key="boton-eliminar-{{ $index }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -122,7 +119,7 @@
                         <option value="1">ACTIVO</option>
                     </select>
                     @error('activo')
-                        <p class="mensaje_error">{{ $message }}</p>
+                    <p class="mensaje_error">{{ $message }}</p>
                     @enderror
                 </div>
             </div>

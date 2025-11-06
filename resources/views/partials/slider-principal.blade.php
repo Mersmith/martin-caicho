@@ -1,10 +1,10 @@
-@if (!empty($p_elemento) && !empty($p_elemento->contenido['imagenes']))
+@if (!empty($p_elemento) && !empty($p_elemento->contenido['lista']))
 <div class="g_centrar_contenedor">
     <div class="partials_contenedor_slider_principal">
         <!-- Swiper -->
         <div class="swiper SwiperSliderPrincipal-{{ $p_elemento->id }} ">
             <div class="swiper-wrapper">
-                @foreach ($p_elemento->contenido['imagenes'] as $index => $slide)
+                @foreach ($p_elemento->contenido['lista'] as $index => $slide)
                 <div class="swiper-slide">
                     <a href="{{ $slide['link'] }}">
                         <img src="{{ $slide['imagen_computadora'] }}" alt="" class="imagen_computadora" />
@@ -24,7 +24,7 @@
     var swiper = new Swiper(".SwiperSliderPrincipal-{{ $p_elemento->id }}", {
             slidesPerView: 1,
             spaceBetween: 0,
-            loop: {{ count($p_elemento->contenido['imagenes']) > 1 ? 'true' : 'false' }},
+            loop: {{ count($p_elemento->contenido['lista']) > 1 ? 'true' : 'false' }},
             autoplay: {
                 delay: 5000, // 5000 ms = 5 segundos
                 disableOnInteraction: false, // para que siga después de interactuar
