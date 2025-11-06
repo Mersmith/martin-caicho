@@ -575,6 +575,14 @@
                         "url": "/admin/seccion/bloque-ocho",
                         "nivel": 3,
                         "submenus": []
+                    },
+                    {
+                        "id": 120,
+                        "nombre": "Bloque 9",
+                        "ruta": "admin.seccion.bloque-nueve.vista.todo",
+                        "url": "/admin/seccion/bloque-nueve",
+                        "nivel": 3,
+                        "submenus": []
                     }
                 ]
             },
