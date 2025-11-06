@@ -22,6 +22,29 @@
         <div class="g_fila">
             <div class="g_columna_8 g_gap_pagina">
                 <div class="g_panel">
+                    <!-- Titulo -->
+                    <div class="g_margin_bottom_10">
+                        <label for="titulo">Titulo <span class="obligatorio"><i
+                                    class="fa-solid fa-asterisk"></i></span></label>
+                        <input type="text" id="titulo" wire:model.live="titulo" required>
+                        @error('titulo')
+                        <p class="mensaje_error">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!--SLUG-->
+                    <div class="g_margin_bottom_10">
+                        <label for="slug">Slug <span class="obligatorio"><i
+                                    class="fa-solid fa-asterisk"></i></span></label>
+                        <input type="text" id="slug" name="slug" wire:model.live="slug" required disabled>
+                        <p class="leyenda">Se genera automático</p>
+                        @error('slug')
+                        <p class="mensaje_error">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="g_panel">
                     <!--TITULO-->
                     <h4 class="g_panel_titulo">Contenido</h4>
 
@@ -55,6 +78,27 @@
                             });" x-ref="miEditor">{!! $contenido !!}</textarea>
 
                         @error('contenido')
+                        <p class="mensaje_error">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="g_columna_4 g_gap_pagina g_columna_invertir">
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">Activo</h4>
+                    <select wire:model.live="activo">
+                        <option value="0">DESACTIVADO</option>
+                        <option value="1">ACTIVO</option>
+                    </select>
+                </div>
+
+                <div class="g_panel">
+                    <h4 class="g_panel_titulo">Imagen</h4>
+                    <div class="g_margin_bottom_10">
+                        <!-- Imagen -->
+                        <input type="text" wire:model.live="meta_imagen">
+                        @error('meta_imagen')
                         <p class="mensaje_error">{{ $message }}</p>
                         @enderror
                     </div>

@@ -14,14 +14,23 @@ return new class extends Migration
         Schema::create('paginas', function (Blueprint $table) {
             $table->id();
 
+            $table->enum('tipo', ['ckeditor', 'secciones', 'personalizado'])->default('personalizado');
             $table->string('titulo');
             $table->string('slug')->unique();
-            $table->enum('tipo', ['ckeditor', 'secciones', 'personalizado'])->default('personalizado');
+
             $table->longText('contenido')->nullable();
-            $table->string('imagen')->nullable();
+
+            // SEO opcional
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_imagen')->nullable();
+            $table->string('meta_imagen_alt')->nullable();
+
+            $table->unsignedBigInteger('views')->default(0);
+
             $table->boolean('mostrar_en_menu')->default(true);
             $table->integer('orden')->default(0);
-            $table->boolean('estado')->default(true);
+            $table->boolean('activo')->default(true);
 
             $table->timestamps();
         });

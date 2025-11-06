@@ -19,10 +19,14 @@ class Pagina extends Model
         'titulo',
         'slug',
         'contenido',
-        'imagen',
+        'meta_title',
+        'meta_description',
+        'meta_imagen',
+        'meta_imagen_alt',
+        'views',
         'mostrar_en_menu',
         'orden',
-        'estado',
+        'activo',
     ];
 
     public function menus()
