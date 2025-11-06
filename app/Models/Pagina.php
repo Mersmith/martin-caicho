@@ -29,6 +29,10 @@ class Pagina extends Model
         'activo',
     ];
 
+    protected $casts = [
+        'contenido' => 'array',
+    ];
+
     public function menus()
     {
         return $this->hasMany(Menu::class);
