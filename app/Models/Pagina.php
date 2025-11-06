@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Pagina extends Model
 {
     /** @use HasFactory<\Database\Factories\PaginaFactory> */
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    const TIPO_CKEDITOR = 'ckeditor';
     const TIPO_SECCIONES = 'secciones';
     const TIPO_PERSONALIZADO = 'personalizado';
 

@@ -2,7 +2,7 @@
 
 @section('anchoPantalla', '100%')
 
-<div class="g_gap_pagina">
+<div x-data="dataPaginaCrear" class="g_gap_pagina">
     <!-- CABECERA -->
     <div class="g_panel cabecera_titulo_pagina">
         <h2>Crear Página</h2>
@@ -45,42 +45,62 @@
                 </div>
 
                 <div class="g_panel">
-                    <!--TITULO-->
-                    <h4 class="g_panel_titulo">Contenido</h4>
+                    <h4 class="g_panel_titulo">Lista</h4>
 
-                    <!-- contenido -->
-                    <div wire:ignore style="g_ckeditor" class="g_margin_bottom_10">
-                        <textarea id="contenido" class="w-full form-control" rows="6" wire:ignore x-data x-init="ClassicEditor.create($refs.miEditor, {
-                                toolbar: [
-                                    'undo', 'redo', '|',
-                                    'heading', '|',
-                                    'bold', 'italic', '|',
-                                    'link', 'uploadImage', 'insertTable', 'blockQuote',
-                                    'mediaEmbed', '|',
-                                    'bulletedList', 'numberedList', '|',
-                                    'outdent', 'indent'
-                                ],
-                                ckfinder: {
-                                    uploadUrl: '{{ route('admin.imagen.upload-local') }}?_token={{ csrf_token() }}'
-                                },
-                                link: {
-                                    addTargetToExternalLinks: true,
-                                    defaultProtocol: 'https://'
-                                }
-                            })
-                            .then(editor => {
-                                editor.model.document.on('change:data', () => {
-                                    @this.set('contenido', editor.getData())
-                                });
-                            })
-                            .catch(error => {
-                                console.error(error);
-                            });" x-ref="miEditor">{!! $contenido !!}</textarea>
-
-                        @error('contenido')
-                        <p class="mensaje_error">{{ $message }}</p>
-                        @enderror
+                    <!--BOTON-->
+                    <div class="formulario_botones g_margin_bottom_20">
+                        <button type="button" wire:click="agregarItem()" class="agregar">
+                            <i class="fa-solid fa-plus"></i>
+                            Agregar item
+                        </button>
                     </div>
+
+                    <table class="tabla_eliminar">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>SECCIÓN ID</th>
+                                <th>TIPO</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody x-sort="handlePaginaCrear">
+                            @foreach ($lista as $index => $imagen)
+                            <tr x-sort:item="{{ $imagen['id'] }}" wire:key="imagen-{{ $index }}">
+                                <td>
+                                    <div x-sort:handle class="handle cursor-move" title="Arrastra aquí"
+                                        style="touch-action: none; cursor: grab;">
+                                        <i class="fa-solid fa-up-down-left-right"></i>
+                                        {{ $imagen['id'] }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.seccion_id"
+                                        wire:key="seccion_id-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
+                                    @error("lista.$index.seccion_id")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <input type="text" wire:model="lista.{{ $index }}.tipo" wire:key="tipo-{{ $index }}"
+                                        @pointerdown.stop @mousedown.stop @touchstart.stop draggable="false">
+                                    @error("lista.$index.tipo")
+                                    <p class="mensaje_error">{{ $message }}</p>
+                                    @enderror
+                                </td>
+                                <td>
+                                    <button type="button" wire:click="eliminarItem({{ $index }})" class="boton_eliminar"
+                                        wire:key="boton-eliminar-{{ $index }}" @pointerdown.stop @mousedown.stop
+                                        @touchstart.stop draggable="false">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -117,5 +137,18 @@
                 <a href="{{ route('admin.pagina.vista.todo') }}" class="cancelar">Cancelar</a>
             </div>
         </div>
+    </form>
 
+    <script>
+        function dataPaginaCrear() {
+            return {
+                handlePaginaCrear(item, position) {
+                    Livewire.dispatch('handlePaginaCrearOn', {
+                        item: item,
+                        position: position,
+                    });
+                },
+            }
+        }
+    </script>
 </div>
