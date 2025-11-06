@@ -9,7 +9,7 @@ $imagen = $p['imagen'];
 $imagen_seo = $p['imagen_seo'];
 @endphp
 
-<div class="nosotros-banner">
+<div class="partials_contenedor_bloque_5">
     @if (!empty($imagen))
     <img src="{{ asset($imagen) }}" alt="{{ $imagen_seo }}">
     @endif

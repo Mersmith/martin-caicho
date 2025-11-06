@@ -1,57 +1,72 @@
 @if (!empty($p_elemento) && !empty($p_elemento->contenido))
+@php
+$p = $p_elemento->contenido;
 
-    @php
-        $p = $p_elemento->contenido;
+$invertir = $p['invertir'];
 
-        $titulo = $p['titulo'] ?? '';
-        $titulo_descripcion = $p['titulo_descripcion'] ?? '';
-        $lista = $p['lista'] ?? [];
-    @endphp
+$titulo = $p['titulo'];
+$titulo_descripcion = $p['titulo_descripcion'];
 
-    @include('partials.encabezado', [
-        'titulo' => $titulo,
-        'descripcion' => $titulo_descripcion,
-    ])
+$imagen = $p['imagen'];
+$imagen_seo = $p['imagen_seo'];
 
-    @if (!empty($lista) && is_array($lista))
-        <section class="bloque_2">
+$subtitulo = $p['subtitulo'];
+$subtitulo_descripcion = $p['subtitulo_descripcion'];
+
+$lista = $p['lista'] ?? [];
+
+$boton = $p['boton'] ?? [];
+$boton_icono = $boton['icono'];
+$boton_fondo_color = $boton['fondo_color'];
+$boton_texto = $boton['texto'];
+$boton_texto_color = $boton['texto_color'];
+$boton_link = $boton['link'];
+@endphp
+
+@include('partials.encabezado', [
+'titulo' => $titulo,
+'descripcion' => $titulo_descripcion,
+])
+
+<section class="partials_contenedor_bloque_2 {{ $invertir ? 'invertir' : '' }}">
+    <div class="bloque_imagen">
+        <img src="{{ $imagen }}" alt="{{ $imagen_seo }}">
+    </div>
+
+    <div class="bloque_cuerpo">
+
+        @if (!empty($subtitulo))
+        <h3>{!! $subtitulo !!}</h3>
+        @endif
+
+        @if (!empty($subtitulo_descripcion))
+        <p>{!! $subtitulo_descripcion !!}</p>
+        @endif
+
+        @if (!empty($lista) && is_array($lista))
+        <ul>
             @foreach ($lista as $item)
-                <div class="card">
-
-                    @if (!empty($item['titulo']))
-                        <h3>{!! $item['titulo'] !!}</h3>
-                    @endif
-
-                    @if (!empty($item['descripcion']))
-                        <p>{!! $item['descripcion'] !!}</p>
-                    @endif
-
-                    @if (!empty($item['imagen']))
-                        <img src="{{ $item['imagen'] }}" alt="{{ $item['imagen_seo'] ?? '' }}">
-                    @endif
-
-                    @if (!empty($item['subtitulo']))
-                        <div class="contenido">
-                            <p>{!! $item['subtitulo'] !!}</p>
-                        </div>
-                    @endif
-
-                    @php
-                        $boton = $item['boton'] ?? null;
-                    @endphp
-
-                    @if (!empty($boton) && !empty($boton['texto']))
-                        <a href="{{ $boton['link'] ?? '#' }}" target="_blank" class="btn-whatsapp"
-                            style="background-color: {{ $boton['fondo_color'] ?? '#000' }}; color: {{ $boton['texto_color'] ?? '#fff' }}">
-                            @if (!empty($boton['icono']))
-                                <i class="{{ $boton['icono'] }}"></i>
-                            @endif
-                            {{ $boton['texto'] }}
-                        </a>
-                    @endif
-
-                </div>
+            <li>
+                @if (!empty($item['icono']))
+                <i class="{{ $item['icono'] }}" style="color: {{ $item['icono_color'] }}"></i>
+                @endif
+                <span style="color: {{ $item['texto_color'] }}">
+                    {{ $item['texto'] }}
+                </span>
+            </li>
             @endforeach
-        </section>
-    @endif
+        </ul>
+        @endif
+
+        @if (!empty($boton_texto))
+        <a @if (!empty($boton_link)) href="{{ $boton_link }}" @endif target="_blank" class="btn-whatsapp"
+            style="background-color: {{ $boton_fondo_color }}; color: {{ $boton_texto_color }}">
+            @if (!empty($boton_icono))
+            <i class="{{ $boton_icono }}"></i>
+            @endif
+            {{ $boton_texto }}
+        </a>
+        @endif
+    </div>
+</section>
 @endif

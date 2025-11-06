@@ -1,4 +1,4 @@
-.contenedor_call_to_action {
+.partials_contenedor_bloque_4 {
     position: relative;
     width: 100%;
     height: 400px;
@@ -9,7 +9,7 @@
     color: var(--color-blanco);
 }
 
-.contenedor_call_to_action::before {
+.partials_contenedor_bloque_4::before {
     content: "";
     position: absolute;
     top: 0;
@@ -21,7 +21,7 @@
     z-index: 1;
 }
 
-.contenedor_call_to_action .imagen {
+.partials_contenedor_bloque_4 .imagen {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@
     object-position: 78% 33%;
 }
 
-.contenedor_call_to_action .cuerpo {
+.partials_contenedor_bloque_4 .cuerpo {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -41,17 +41,17 @@
     text-align: left;
 }
 
-.contenedor_call_to_action .cuerpo h2 {
+.partials_contenedor_bloque_4 .cuerpo h2 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.contenedor_call_to_action .cuerpo p {
+.partials_contenedor_bloque_4 .cuerpo p {
     font-size: 1.2rem;
     margin-bottom: 25px;
 }
 
-.contenedor_call_to_action .boton {
+.partials_contenedor_bloque_4 .boton {
     display: inline-block;
     background-color: var(--color-verde);
     color: var(--color-blanco);
@@ -62,14 +62,13 @@
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.contenedor_call_to_action .boton:hover {
+.partials_contenedor_bloque_4 .boton:hover {
     background-color: var(--color-celeste);
     transform: scale(1.05);
 }
 
 @media (max-width: 1000px) {
-    .contenedor_call_to_action .imagen {
+    .partials_contenedor_bloque_4 .imagen {
         object-position: 90% 33%;
     }
-
 }

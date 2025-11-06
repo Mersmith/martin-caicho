@@ -16,7 +16,7 @@ $slidesCount = count($lista);
 ])
 
 @if (!empty($lista) && is_array($lista))
-<div class="partials_contenedor_slider_testimonios">
+<div class="partials_contenedor_bloque_8">
     <div class="swiper SwiperSliderTestimonios-{{ $p->id ?? 'default' }}">
         <div class="swiper-wrapper">
             @foreach ($lista as $item)
