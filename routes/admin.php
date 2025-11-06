@@ -15,6 +15,12 @@ use App\Livewire\Admin\Pagina\{
     PaginaEditarLivewire
 };
 
+use App\Livewire\Admin\Menu\{
+    MenuTodoLivewire,
+    MenuCrearLivewire,
+    MenuEditarLivewire
+};
+
 use App\Livewire\Admin\Seccion\{
     SeccionTodoLivewire,
     SeccionBloqueUnoTodoLivewire,
@@ -60,6 +66,12 @@ Route::prefix('pagina')->name('pagina.vista.')->group(function () {
     Route::get('/', PaginaTodoLivewire::class)->name('todo');
     Route::get('/crear', PaginaCrearLivewire::class)->name('crear');
     Route::get('/editar/{id}', PaginaEditarLivewire::class)->name('editar');
+});
+
+Route::prefix('menu')->name('menu.vista.')->group(function () {
+    Route::get('/', MenuTodoLivewire::class)->name('todo');
+    Route::get('/crear', MenuCrearLivewire::class)->name('crear');
+    Route::get('/editar/{id}', MenuEditarLivewire::class)->name('editar');
 });
 
 Route::prefix('seccion')->name('seccion.')->group(function () {

@@ -14,28 +14,10 @@ class PaginaSeeder extends Seeder
     {
         $paginas = [
             [
-                'tipo' => 'secciones',
+                'tipo' => 'personalizado',
                 'titulo' => 'Inicio',
-                'slug' => 'inicio',
-                'contenido' => [
-                    'lista' => [
-                        [
-                            'id' => 1,
-                            'seccion_id' => 1,
-                            'tipo' => 'bloque_1',
-                        ],
-                        [
-                            'id' => 2,
-                            'seccion_id' => 2,
-                            'tipo' => 'bloque_2',
-                        ],
-                        [
-                            'id' => 3,
-                            'seccion_id' => 3,
-                            'tipo' => 'bloque_3',
-                        ],
-                    ],
-                ],
+                'slug' => '/',
+                'contenido' => [],
                 'activo' => true,
             ],
             [

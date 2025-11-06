@@ -1,4 +1,4 @@
-@section('tituloPagina', 'Página')
+@section('tituloPagina', 'Menu')
 
 @section('anchoPantalla', '100%')
 
@@ -6,21 +6,21 @@
     <!--CABECERA TITULO PAGINA-->
     <div class="g_panel cabecera_titulo_pagina">
         <!--TITULO-->
-        <h2>Página</h2>
+        <h2>Menu</h2>
 
         <!--BOTONES-->
         <div class="cabecera_titulo_botones">
-            <a href="{{ route('admin.pagina.vista.todo') }}" class="g_boton g_boton_light">
+            <a href="{{ route('admin.menu.vista.todo') }}" class="g_boton g_boton_light">
                 Inicio <i class="fa-solid fa-house"></i></a>
 
-            <a href="{{ route('admin.pagina.vista.crear') }}" class="g_boton g_boton_primary">
+            <a href="{{ route('admin.menu.vista.crear') }}" class="g_boton g_boton_primary">
                 Crear <i class="fa-solid fa-square-plus"></i></a>
         </div>
     </div>
 
     <!--TABLA-->
     <div class="g_panel">
-        @if ($paginas->count())
+        @if ($menus->count())
         <!--TABLA CABECERA-->
         <div class="tabla_cabecera">
             <!--TABLA CABECERA BOTONES-->
@@ -56,14 +56,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($paginas as $index => $item)
+                        @foreach ($menus as $index => $item)
                         <tr>
                             <td> {{ $index + 1 }} </td>
-                            <td class="g_resaltar">{{ $item->titulo }}</td>
+                            <td class="g_resaltar">{{ $item->nombre }}</td>
 
                             <td>{{ $item->slug }}</td>
                             <td class="centrar_iconos">
-                                <a href="{{ route('admin.pagina.vista.editar', $item) }}" class="g_accion_editar">
+                                <a href="{{ route('admin.menu.vista.editar', $item) }}" class="g_accion_editar">
                                     <span><i class="fa-solid fa-pencil"></i></span>
                                 </a>
                             </td>
@@ -74,14 +74,14 @@
             </div>
         </div>
 
-        @if ($paginas->hasPages())
+        @if ($menus->hasPages())
         <div>
-            {{ $banners->onEachSide(1)->links() }}
+            {{ $menus->onEachSide(1)->links() }}
         </div>
         @endif
         @else
         <div class="g_vacio">
-            <p>No hay paginas disponibles.</p>
+            <p>No hay menus disponibles.</p>
             <i class="fa-regular fa-face-grin-wink"></i>
         </div>
         @endif

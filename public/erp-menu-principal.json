@@ -611,6 +611,32 @@
                         "submenus": []
                     }
                 ]
+            },
+            {
+                "id": 51,
+                "nombre": "Menús",
+                "ruta": "#",
+                "url": "#",
+                "icono": "fa-solid fa-comment",
+                "nivel": 2,
+                "submenus": [
+                    {
+                        "id": 111,
+                        "nombre": "Todo",
+                        "ruta": "admin.menu.vista.todo",
+                        "url": "/admin/menu",
+                        "nivel": 3,
+                        "submenus": []
+                    },
+                    {
+                        "id": 112,
+                        "nombre": "Crear",
+                        "ruta": "admin.menu.vista.crear",
+                        "url": "/admin/menu/crear",
+                        "nivel": 3,
+                        "submenus": []
+                    }
+                ]
             }
         ]
     }

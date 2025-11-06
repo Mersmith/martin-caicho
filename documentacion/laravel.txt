@@ -81,3 +81,7 @@ php artisan make:livewire Admin/Seccion/SeccionBloqueNueveEditarLivewire
 php artisan make:livewire Admin/Pagina/PaginaTodoLivewire
 php artisan make:livewire Admin/Pagina/PaginaCrearLivewire
 php artisan make:livewire Admin/Pagina/PaginaEditarLivewire
+
+php artisan make:livewire Admin/Menu/MenuTodoLivewire
+php artisan make:livewire Admin/Menu/MenuCrearLivewire
+php artisan make:livewire Admin/Menu/MenuEditarLivewire
