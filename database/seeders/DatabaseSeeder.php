@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
             ImagenSeeder::class,
             SliderSeeder::class,
             TipoMensajeSeeder::class,
+            TipoFormularioSeeder::class,
             MensajeSeeder::class,
+            FormularioPaginaContactoSeeder::class,
             SeccionSeeder::class,
         ]);
     }
