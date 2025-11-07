@@ -33,13 +33,28 @@
                 @endforeach
             </ul>
         </nav>
+        <div class="web_nav_overlay" id="web_nav_overlay"></div>
     </div>
 </header>
 
 <script>
-    // Toggle menú móvil
-    document.getElementById('web_menu_toggle').addEventListener('click', () => {
-        document.getElementById('web_nav_menu').classList.toggle('active');
+    const toggleMenu = document.getElementById('web_menu_toggle');
+    const navMenu = document.getElementById('web_nav_menu');
+    const overlay = document.getElementById('web_nav_overlay');
+
+    // Abrir / cerrar menú lateral
+    toggleMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic fuera
+    overlay.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
+            item.classList.remove('submenu_abierto');
+        });
     });
 
     // Toggle submenús (solo uno abierto a la vez)
@@ -48,24 +63,25 @@
             const parent = btn.closest('.menu_item');
             const abierto = parent.classList.contains('submenu_abierto');
 
-            // Cerrar todos los submenús
             document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
                 item.classList.remove('submenu_abierto');
             });
 
-            // Si el que se clickeó no estaba abierto, abrirlo
             if (!abierto) {
                 parent.classList.add('submenu_abierto');
             }
         });
     });
 
-    // Si se hace clic en un enlace que no tiene hijos → cerrar todos los submenús
+    // Si se hace clic en un enlace normal → cerrar menú
     document.querySelectorAll('.menu_item:not(.tiene_hijos) .nav_link').forEach(link => {
         link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
             document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
                 item.classList.remove('submenu_abierto');
             });
         });
     });
 </script>
+

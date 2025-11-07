@@ -5,7 +5,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
     transition: all 0.3s ease;
 }
 
@@ -59,7 +59,7 @@
     color: var(--color-verde);
 }
 
-/* Icono del desplegable */
+/* Icono desplegable */
 .icono_flecha {
     font-size: 0.8em;
     transition: transform 0.3s ease;
@@ -111,31 +111,59 @@
     display: none;
 }
 
+.web_nav_overlay {
+   display: none;
+}
+
 @media (max-width: 768px) {
     .web_menu_toggle {
         display: block;
     }
 
-    .web_nav_menu {
-        position: absolute;
-        top: 60px;
+    /* Fondo oscuro detrás del menú */
+    .web_nav_overlay {
+        display: block;
+        position: fixed;
+        top: 0;
         left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .web_nav_overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Sidebar del menú */
+    .web_nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
         background-color: var(--color-blanco);
-        width: 100%;
         flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        box-shadow: var(--sombra);
-        transition: max-height 0.3s ease-in-out;
+        padding: 20px;
+        gap: 16px;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease;
+        z-index: 1000;
     }
 
     .web_nav_menu.active {
-        max-height: 500px;
+        right: 0;
     }
 
     .menu_principal {
         flex-direction: column;
+        gap: 0;
     }
 
     .submenu {
@@ -153,8 +181,20 @@
     .nav_link {
         display: flex;
         justify-content: space-between;
-        padding: 12px 20px;
+        padding: 12px 0;
         width: 100%;
-        border-bottom: var(--borde-card);
+        border-bottom: 1px solid var(--color-plomo);
+    }
+
+    /* Logo dentro del sidebar */
+    .sidebar_logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar_logo img {
+        height: 50px;
     }
 }
