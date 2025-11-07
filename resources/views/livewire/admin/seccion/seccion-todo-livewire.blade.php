@@ -10,11 +10,8 @@
 
         <!--BOTONES-->
         <div class="cabecera_titulo_botones">
-            <a href="{{ route('admin.slider.vista.todo') }}" class="g_boton g_boton_light">
+            <a href="{{ route('admin.seccion.vista.todo') }}" class="g_boton g_boton_light">
                 Inicio <i class="fa-solid fa-house"></i></a>
-
-            <a href="{{ route('admin.slider.vista.crear') }}" class="g_boton g_boton_primary">
-                Crear <i class="fa-solid fa-square-plus"></i></a>
         </div>
     </div>
 

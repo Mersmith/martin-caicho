@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
             MenuSeeder::class,
             NoticiaSeeder::class,
             ImagenSeeder::class,
-            SliderSeeder::class,
             TipoFormularioSeeder::class,
             FormularioPaginaContactoSeeder::class,
             SeccionSeeder::class,

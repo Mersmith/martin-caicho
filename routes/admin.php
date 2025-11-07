@@ -3,12 +3,6 @@
 use App\Livewire\Admin\Imagen\ImagenTodoLivewire;
 use App\Http\Controllers\ImagenController;
 
-use App\Livewire\Admin\Slider\{
-    SliderTodoLivewire,
-    SliderCrearLivewire,
-    SliderEditarLivewire
-};
-
 use App\Livewire\Admin\Pagina\{
     PaginaTodoLivewire,
     PaginaCrearLivewire,
@@ -55,12 +49,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/imagen', ImagenTodoLivewire::class)->name('imagen.vista.todo');
 Route::post('/upload-local-imagen', [ImagenController::class, 'uploadLocalImagen'])->name('imagen.upload-local');
-
-Route::prefix('slider')->name('slider.vista.')->group(function () {
-    Route::get('/', SliderTodoLivewire::class)->name('todo');
-    Route::get('/crear', SliderCrearLivewire::class)->name('crear');
-    Route::get('/editar/{id}', SliderEditarLivewire::class)->name('editar');
-});
 
 Route::prefix('pagina')->name('pagina.vista.')->group(function () {
     Route::get('/', PaginaTodoLivewire::class)->name('todo');
