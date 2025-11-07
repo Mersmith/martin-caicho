@@ -42,11 +42,30 @@
         document.getElementById('web_nav_menu').classList.toggle('active');
     });
 
-    // Toggle submenús
+    // Toggle submenús (solo uno abierto a la vez)
     document.querySelectorAll('.toggle_submenu').forEach(btn => {
         btn.addEventListener('click', () => {
             const parent = btn.closest('.menu_item');
-            parent.classList.toggle('submenu_abierto');
+            const abierto = parent.classList.contains('submenu_abierto');
+
+            // Cerrar todos los submenús
+            document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
+                item.classList.remove('submenu_abierto');
+            });
+
+            // Si el que se clickeó no estaba abierto, abrirlo
+            if (!abierto) {
+                parent.classList.add('submenu_abierto');
+            }
+        });
+    });
+
+    // Si se hace clic en un enlace que no tiene hijos → cerrar todos los submenús
+    document.querySelectorAll('.menu_item:not(.tiene_hijos) .nav_link').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
+                item.classList.remove('submenu_abierto');
+            });
         });
     });
 </script>
