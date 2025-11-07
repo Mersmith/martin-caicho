@@ -1,12 +1,7 @@
-@php
-    use App\Models\Menu;
-    $menus = Menu::whereNull('parent_id')->where('estado', true)->orderBy('orden')->get();
-@endphp
-
 <header class="web_header">
     <div class="web_header_cuerpo">
         <a href="{{ route('home') }}">
-            <img class="logo" src="http://127.0.0.1:8000/assets/imagen/logo.png" alt="Logo">
+            <img class="logo" src="{{ asset('assets/imagen/logo.png') }}" alt="Logo">
         </a>
 
         <button class="web_menu_toggle" id="web_menu_toggle" aria-label="Abrir menú">
@@ -16,7 +11,7 @@
         <nav class="web_nav_menu" id="web_nav_menu">
             @foreach ($menus as $menu)
                 @if ($menu->pagina)
-                    <a href="{{ $menu->pagina->slug }}" class="nav_link">
+                    <a href="{{ url($menu->pagina->slug) }}" class="nav_link">
                         {{ $menu->nombre }}
                     </a>
                 @elseif($menu->url)
@@ -26,10 +21,3 @@
         </nav>
     </div>
 </header>
-
-<script>
-    // Muestra / oculta menú en móviles
-    document.getElementById('web_menu_toggle').addEventListener('click', () => {
-        document.getElementById('web_nav_menu').classList.toggle('active');
-    });
-</script>
