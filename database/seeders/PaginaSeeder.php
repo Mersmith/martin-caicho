@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Pagina;
+use Illuminate\Database\Seeder;
 
 class PaginaSeeder extends Seeder
 {
@@ -100,6 +100,21 @@ class PaginaSeeder extends Seeder
                         [
                             'id' => 1,
                             'seccion_id' => 18,
+                            'tipo' => 'bloque-9',
+                        ],
+                    ],
+                ],
+                'activo' => true,
+            ],
+            [
+                'tipo' => 'secciones',
+                'titulo' => 'Políticas de Privacidad',
+                'slug' => 'politicas-de-privacidad',
+                'contenido' => [
+                    'lista' => [
+                        [
+                            'id' => 1,
+                            'seccion_id' => 19,
                             'tipo' => 'bloque-9',
                         ],
                     ],

@@ -21,19 +21,19 @@
 
     <div class="footer_terminos">
         <span>
-            <a href="#">
+            <a href="/terminos-y-condiciones">
                 Términos y Condiciones
             </a>
         </span>
 
         <span>
-            <a href="#">
+            <a href="/politicas-de-privacidad">
                 Políticas de Privacidad
             </a>
         </span>
 
         <span>
-            <a href="#">
+            <a href="/libro-de-reclamaciones">
                 <i class="fa-solid fa-book-open"></i> Libro de Reclamaciones
             </a>
         </span>
