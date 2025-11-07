@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Menu;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\Models\Menu;
 
 class LayoutWebServiceProvider extends ServiceProvider
 {
@@ -13,6 +13,7 @@ class LayoutWebServiceProvider extends ServiceProvider
         View::composer('layouts.app', function ($view) {
             $menus = Menu::whereNull('parent_id')
                 ->where('estado', true)
+                ->with('children')
                 ->orderBy('orden')
                 ->get();
 
