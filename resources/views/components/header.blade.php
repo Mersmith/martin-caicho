@@ -29,6 +29,7 @@
                             <ul class="submenu">
                                 @foreach ($menu->children as $child)
                                     <li>
+                                        <i class="fa-solid fa-circle fa-2xs"></i>
                                         <a href="{{ $child->url ? url($child->url) : '#' }}">{{ $child->nombre }}</a>
                                     </li>
                                 @endforeach
@@ -92,4 +93,3 @@
         link.addEventListener('click', cerrarMenu);
     });
 </script>
-
