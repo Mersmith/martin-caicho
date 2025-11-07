@@ -9,6 +9,15 @@
         </button>
 
         <nav class="web_nav_menu" id="web_nav_menu">
+            <div class="cabecera_sidebar">
+                <button class="web_menu_toggle" id="web_menu_cerrar" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <a href="{{ route('home') }}">
+                    <img class="logo" src="{{ asset('assets/imagen/logo.png') }}" alt="Logo">
+                </a>
+            </div>
             <ul class="menu_principal">
                 @foreach ($menus as $menu)
                     <li class="menu_item {{ $menu->children->count() ? 'tiene_hijos' : '' }}">
@@ -41,6 +50,16 @@
     const toggleMenu = document.getElementById('web_menu_toggle');
     const navMenu = document.getElementById('web_nav_menu');
     const overlay = document.getElementById('web_nav_overlay');
+    const closeMenu = document.getElementById('web_menu_cerrar'); // 👈 botón cerrar
+
+    // 👉 Función reutilizable para cerrar el menú
+    const cerrarMenu = () => {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
+            item.classList.remove('submenu_abierto');
+        });
+    };
 
     // Abrir / cerrar menú lateral
     toggleMenu.addEventListener('click', () => {
@@ -48,14 +67,9 @@
         overlay.classList.toggle('active');
     });
 
-    // Cerrar menú al hacer clic fuera
-    overlay.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
-            item.classList.remove('submenu_abierto');
-        });
-    });
+    // Cerrar al hacer clic fuera o en el botón "X"
+    overlay.addEventListener('click', cerrarMenu);
+    closeMenu.addEventListener('click', cerrarMenu);
 
     // Toggle submenús (solo uno abierto a la vez)
     document.querySelectorAll('.toggle_submenu').forEach(btn => {
@@ -75,13 +89,7 @@
 
     // Si se hace clic en un enlace normal → cerrar menú
     document.querySelectorAll('.menu_item:not(.tiene_hijos) .nav_link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.querySelectorAll('.menu_item.submenu_abierto').forEach(item => {
-                item.classList.remove('submenu_abierto');
-            });
-        });
+        link.addEventListener('click', cerrarMenu);
     });
 </script>
 
